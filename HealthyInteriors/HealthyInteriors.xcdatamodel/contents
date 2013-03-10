@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CheckListAnswers" representedClassName="CheckListAnswers" syncable="YES">
+        <attribute name="checkListID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="checkListQuestions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CheckListQuestionAnswers" inverseName="questionCheckList" inverseEntity="CheckListQuestionAnswers" syncable="YES"/>
+    </entity>
+    <entity name="CheckListQuestionAnswers" representedClassName="CheckListQuestionAnswers" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questionCheckList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CheckListAnswers" inverseName="checkListQuestions" inverseEntity="CheckListAnswers" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchRequest" entity="CheckListQuestionAnswers" predicateString="questionID CONTAINS &quot;&quot;"/>
+    <elements>
+        <element name="CheckListAnswers" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="CheckListQuestionAnswers" positionX="160" positionY="192" width="128" height="90"/>
+    </elements>
+</model>
