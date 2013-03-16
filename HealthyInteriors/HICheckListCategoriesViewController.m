@@ -10,7 +10,8 @@
 #import "HICheckListQuestionsViewController.h"
 
 @interface HICheckListCategoriesViewController ()
-
+- (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCategoryCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation HICheckListCategoriesViewController
@@ -36,34 +37,94 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    return 1;
+    cell.textLabel.text = @"Completion Report";
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)configureCategoryCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    return self.checkListModel.categoriesCount;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
     //get the category
     HICheckListCategoryModel * category = [self.checkListModel categoryAtIndex:indexPath.row];
     cell.textLabel.text = category.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    return cell;
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        
+        case 1:
+            return self.checkListModel.categoriesCount;
+            break;
+        default:
+            break;
+    }
+    
+    return 0;
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return @"Reports";
+            break;
+            
+        case 1:
+            return @"Categories";
+            break;
+        default:
+            return @"Error";
+            break;
+    }
+    
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0: {
+            static NSString *CellIdentifier = @"ReportCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            
+            [self configureReportCell:cell atIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        case 1: {
+            static NSString *CellIdentifier = @"CategoryCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            
+            [self configureCategoryCell:cell atIndexPath:indexPath];
+            return cell;
+            break;
+        }
+        default:
+            return nil;
+            break;
+    }
 }
 
 /*
@@ -109,11 +170,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HICheckListQuestionsViewController *detailViewController = [[HICheckListQuestionsViewController alloc] init];
-    detailViewController.categoryModel = [self.checkListModel categoryAtIndex:indexPath.row];
-    //detailViewController.checkListAnswers
     
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    switch (indexPath.section) {
+        case 1: {
+            HICheckListQuestionsViewController *detailViewController = [[HICheckListQuestionsViewController alloc] init];
+            detailViewController.categoryModel = [self.checkListModel categoryAtIndex:indexPath.row];
+            detailViewController.checkListAnswers = self.checkListAnswers;
+            
+            [self.navigationController pushViewController:detailViewController animated:YES];
+            
+            break;
+        }
+            
+        default:
+            break;
+    }
      
 }
 

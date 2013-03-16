@@ -7,12 +7,13 @@
     </entity>
     <entity name="CheckListQuestionAnswers" representedClassName="CheckListQuestionAnswers" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="questionCheckList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CheckListAnswers" inverseName="checkListQuestions" inverseEntity="CheckListAnswers" syncable="YES"/>
     </entity>
     <fetchRequest name="FetchRequest" entity="CheckListQuestionAnswers" predicateString="questionID CONTAINS &quot;&quot;"/>
     <elements>
-        <element name="CheckListAnswers" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="CheckListQuestionAnswers" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="CheckListAnswers" positionX="160" positionY="192" width="227" height="90"/>
+        <element name="CheckListQuestionAnswers" positionX="495" positionY="207" width="218" height="103"/>
     </elements>
 </model>

@@ -12,6 +12,7 @@
 
 @interface HICheckListsTableViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers;
 @end
 
 @implementation HICheckListsTableViewController
@@ -35,6 +36,7 @@
  
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showNewCheckList)];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -225,11 +227,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CheckListAnswers *answers = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    HICheckListCategoriesViewController * vc = [[HICheckListCategoriesViewController alloc] init];
-    vc.checkListAnswers = answers;
-    vc.checkListModel = [self.templateDelegate checkListWithID:answers.checkListID];
-    
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushDetailView:[self.templateDelegate checkListWithID:answers.checkListID] answers:answers];
     
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 //	    if (!self.detailViewController) {
@@ -267,10 +265,17 @@
         abort();
     }
     
-    HICheckListCategoriesViewController * vc = [[HICheckListCategoriesViewController alloc] init];
-    vc.checkListModel = checkListModel;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self pushDetailView:checkListModel answers:answers];
     
 }
+
+- (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers
+{
+    HICheckListCategoriesViewController * vc = [[HICheckListCategoriesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    vc.checkListModel = checkListModel;
+    vc.checkListAnswers = answers;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end

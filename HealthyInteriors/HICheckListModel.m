@@ -7,6 +7,7 @@
 //
 
 #import "HICheckListModel.h"
+#import "HICheckListCategoryModel.h"
 
 @interface HICheckListModel (/*private*/)
 @property (nonatomic, retain) NSMutableArray * categories;
@@ -20,6 +21,8 @@
         self.name = @"";
         self.description = @"";
         self.categories = [[NSMutableArray alloc] init];
+        self.goodAnswerColour = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+        self.badAnswerColour = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
     }
     return self;
 }

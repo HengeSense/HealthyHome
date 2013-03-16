@@ -13,6 +13,7 @@
 - (id) init {
     if (self = [super init]) {
         self.answerType = AnswerTypeNone;
+        self.yesIsBad = YES;
     }
     return self;
 }

@@ -7,13 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HIQuestionDetailBaseViewController.h"
 #import "HICheckListQuestionModel.h"
 
-@interface HICheckListQuestionDetailViewController : UIViewController
+typedef NS_ENUM(NSInteger, AnswerValue) {
+    AnswerValueNone,
+    AnswerValueYes,
+    AnswerValueNo
+};
 
-@property (strong, nonatomic) HICheckListQuestionModel * questionModel;
+@protocol HIQuestionDetailDelegate;
+
+@interface HICheckListQuestionDetailViewController : HIQuestionDetailBaseViewController
+
+@property (assign, nonatomic) AnswerValue answerValue;
 @property (strong, nonatomic) IBOutlet UILabel *QuestionLabel;
-@property (strong, nonatomic) IBOutlet UIView *AnswerControl;
-@property (strong, nonatomic) IBOutlet UIWebView *InfoView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *answerSegmentControl;
+
+- (IBAction)answerSelected:(id)sender;
+- (IBAction)infoClicked;
+- (IBAction)NotesClicked;
+- (IBAction)CameraClicked;
+- (IBAction)MicrophoneClicked:(id)sender;
 
 @end

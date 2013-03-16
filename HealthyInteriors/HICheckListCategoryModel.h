@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HICheckListQuestionModel.h"
 
 @class HICheckListModel;
+@class HICheckListQuestionModel;
 
 @interface HICheckListCategoryModel : NSObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) HICheckListModel * checkList;
 

@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 @property (nonatomic, strong) NSString * text;
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, assign) AnswerType answerType;
+@property (nonatomic, assign) BOOL yesIsBad;
 @property (nonatomic, strong) NSString * information;
 
 - (id) init;

@@ -43,6 +43,8 @@
         checkListsController.templateDelegate = self.templateManager;
         
         navController = [[UINavigationController alloc] initWithRootViewController:checkListsController];
+        navController.tabBarItem.image = [UIImage imageNamed:@"White_list_30.png"];
+        navController.tabBarItem.title = @"CheckLists";
         secondController = [[HISecondViewController alloc]initWithNibName:@"HISecondViewController_iPhone" bundle:nil];
         
         
@@ -102,7 +104,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HealthyInteriors" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HealthyInteriors" withExtension:@"mom"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

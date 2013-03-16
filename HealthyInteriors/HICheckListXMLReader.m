@@ -44,6 +44,7 @@
         
         self.currentQuestion = [self.currentCategory addQuestionWithText:@""];
         self.currentQuestion.key = [attributeDict valueForKey:@"id"];
+        self.currentQuestion.yesIsBad = [[attributeDict valueForKey:@"yesIsBad"] isEqualToString:@"true"];
         NSString * type = [attributeDict valueForKey:@"type"];
         if ([type isEqualToString:@"boolean"]) {
             self.currentQuestion.answerType = AnswerTypeBoolean;

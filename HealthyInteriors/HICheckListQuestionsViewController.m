@@ -8,9 +8,9 @@
 
 #import "HICheckListQuestionsViewController.h"
 #import "HICheckListQuestionDetailViewController.h"
+#import "CheckListQuestionAnswers+HIFunctions.h"
 
 @interface HICheckListQuestionsViewController ()
-
 @end
 
 @implementation HICheckListQuestionsViewController
@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.categoryModel.name;
+    self.managedObjectContext = self.checkListAnswers.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,11 +63,16 @@
 
     //get the category
     HICheckListQuestionModel * question = [self.categoryModel getQuestionAtIndex:indexPath.row];
-    cell.textLabel.text = question.text;
-    cell.imageView.image = [UIImage imageNamed:@"question_24.png"];
+    cell.textLabel.text = question.text;    
+    cell.imageView.image = [self.checkListAnswers largeImageForAnswerToQuestion:question.key forTemplateQuestion:question];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    HICheckListQuestionModel * question = [self.categoryModel getQuestionAtIndex:indexPath.row];
+    cell.textLabel.textColor = [self.checkListAnswers colourForAnswerToQuestion:question.key forTemplateQuestion:question];
 }
 
 /*
@@ -117,8 +123,108 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
-    detailViewController.questionModel = [self.categoryModel getQuestionAtIndex:indexPath.row];
+    HICheckListQuestionModel * questionModel = [self.categoryModel getQuestionAtIndex:indexPath.row];
+    detailViewController.questionModel = questionModel;
+    detailViewController.delegate = self;
+    
+    AnswerValue value = AnswerValueNone;
+    if ([self.checkListAnswers questionHasBeenAnswered:questionModel.key]) {
+        if ([self.checkListAnswers questionAnsweredYes:questionModel.key]) {
+            value = AnswerValueYes;
+        } else {
+            value = AnswerValueNo;
+        }
+    }
+    detailViewController.AnswerValue = value;
     [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (void)doContextSave
+{
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate.
+         You should not use this function in a shipping application, although it may be useful during development.
+         If it is not possible to recover from the error,
+         display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (CheckListQuestionAnswers *)createNewAnswerForQuestion:(NSString *)questionID
+{
+    //add a new answer
+    CheckListQuestionAnswers *thisAnswer = [NSEntityDescription insertNewObjectForEntityForName:@"CheckListQuestionAnswers" inManagedObjectContext:self.managedObjectContext];
+    
+    thisAnswer.questionID = questionID;
+    thisAnswer.questionCheckList = self.checkListAnswers;
+    return thisAnswer;
+}
+
+- (void) setValueforQuestionID:(NSString *)questionID to:(BOOL)value
+{
+    CheckListQuestionAnswers *thisAnswer;
+    
+    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+        
+        thisAnswer = [self createNewAnswerForQuestion:questionID];
+        
+    } else {
+        
+        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
+        
+    }
+    
+    thisAnswer.answer = [NSNumber numberWithBool:value];
+    
+    [self doContextSave];
+}
+
+- (NSString *)getNotesforQuestionID:(NSString *)questionID
+{
+    CheckListQuestionAnswers *thisAnswer;
+    
+    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+        
+        thisAnswer = [self createNewAnswerForQuestion:questionID];
+        
+    } else {
+        
+        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
+        
+    }
+    
+    return thisAnswer.notes;
+    
+}
+
+- (void) setNotesforQuestionID:(NSString *)questionID to:(NSString *)text
+{
+    CheckListQuestionAnswers *thisAnswer;
+    
+    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+        
+        thisAnswer = [self createNewAnswerForQuestion:questionID];
+        
+    } else {
+        
+        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
+        
+    }
+    
+    thisAnswer.notes = text;
+    
+    [self doContextSave];
+    
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "HICheckListCategoryModel.h"
-#import "HICheckListModel.h"
 
 @interface HICheckListCategoryModel (/*private*/)
 @property (nonatomic, retain) NSMutableArray * questions;
