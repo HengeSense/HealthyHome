@@ -7,10 +7,10 @@
 //
 
 #import "HINewCheckListViewController.h"
-#import "HIAppDelegate.h"
+#import "HICheckListTemplateManager.h"
+#import "HINewCheckListCellView.h"
 
 @interface HINewCheckListViewController ()
-
 @end
 
 @implementation HINewCheckListViewController
@@ -45,7 +45,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.templateManagerDelegate getNumberOfTemplates];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -55,73 +55,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
+    HINewCheckListCellView *cell = [tableView dequeueReusableCellWithIdentifier:@"HiNewCheckListCellView"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"HiNewCheckListCellView" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
     }
     
-    HICheckListModel * checkListModel = [self.templateManagerDelegate checkListWithIndex:indexPath.row];
-    cell.textLabel.text = checkListModel.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    HICheckListModel * checkListModel = [self.templateManagerDelegate checkListWithIndex:indexPath.section];
+    
+    [cell configureCellWithTemplate:checkListModel];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HINewCheckListDetailViewController *detailViewController = [[HINewCheckListDetailViewController alloc] init];
     detailViewController.delegate = self;
-    detailViewController.model = [self.templateManagerDelegate checkListWithIndex:indexPath.row];
+    detailViewController.model = [self.templateManagerDelegate checkListWithIndex:indexPath.section];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
-- (void)viewControllerDidDismissWithOK:(UIViewController *)viewController {
-    //get the model
+- (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address
+{
+//get the model
     HICheckListModel * model = ((HINewCheckListDetailViewController *)viewController).model;
-    [self dismissViewControllerAnimated:YES completion:^(void){[self.delegate requestCreationOfCheckList:model];}];
+    [self dismissViewControllerAnimated:YES completion:^(void){[self.delegate requestCreationOfCheckList:model  withAddress:(NSString *)address];}];
 }
 
 @end

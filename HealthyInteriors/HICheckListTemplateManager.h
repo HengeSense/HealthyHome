@@ -12,5 +12,7 @@
 @interface HICheckListTemplateManager : NSObject <HICheckListTemplateDelegate>
 
 - (id)init;
+- (NSString *)getTemplateNameWithIndex:(int)index;
+- (HICheckListModel *)getTemplateWithIndex:(int)index;
 
 @end

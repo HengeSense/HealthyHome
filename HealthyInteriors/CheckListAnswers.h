@@ -2,7 +2,7 @@
 //  CheckListAnswers.h
 //  HealthyInteriors
 //
-//  Created by Mark O'Flynn on 10/03/13.
+//  Created by Mark O'Flynn on 1/04/13.
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 
 @interface CheckListAnswers : NSManagedObject
 
-@property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * checkListID;
+@property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSSet *checkListQuestions;
 @end
 

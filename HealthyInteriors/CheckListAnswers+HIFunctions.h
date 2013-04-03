@@ -11,8 +11,9 @@
 
 @interface CheckListAnswers (HIFunctions)
 
-- (BOOL)questionHasBeenAnswered:(NSString *)questionID;
+- (BOOL)answerToQuestionExists:(NSString *)questionID;
 - (BOOL)questionAnsweredYes:(NSString *)questionID;
+- (BOOL)questionHasValidAnswer:(NSString *)questionID;
 - (CheckListQuestionAnswers *)answerToQuestionWithID:(NSString *)questionID;
 - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
 - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;

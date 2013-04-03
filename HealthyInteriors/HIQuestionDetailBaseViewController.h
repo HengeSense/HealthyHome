@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HICheckListQuestionModel.h"
 #import "HIQuestionDetailDelegate.h"
+#import "HIViewController.h"
 
-@interface HIQuestionDetailBaseViewController : UIViewController
+@interface HIQuestionDetailBaseViewController : HIViewController
 
 @property (nonatomic, strong) HICheckListQuestionModel * questionModel;
 @property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;

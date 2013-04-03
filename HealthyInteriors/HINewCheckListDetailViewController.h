@@ -8,21 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "HICheckListModel.h"
+#import "HIViewController.h"
 
 @protocol NewCheckListDelegate;
 
-@interface HINewCheckListDetailViewController : UIViewController
+@interface HINewCheckListDetailViewController : HIViewController
 
 @property (nonatomic, weak) id <NewCheckListDelegate> delegate;
 @property (nonatomic, strong) HICheckListModel * model;
 
 @property (strong, nonatomic) IBOutlet UILabel *checkListTitle;
 @property (strong, nonatomic) IBOutlet UILabel *checkListDescription;
+@property (strong, nonatomic) IBOutlet UITextField *addressField;
 
 @end
 
 @protocol NewCheckListDelegate <NSObject>
 
-- (void)viewControllerDidDismissWithOK:(UIViewController *)viewController;
+- (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address;
 
 @end

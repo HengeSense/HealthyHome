@@ -9,8 +9,7 @@
 #import "HIAppDelegate.h"
 #import "HICheckListsTableViewController.h"
 #import "HICheckListTemplateManager.h"
-
-#import "HIFirstViewController.h"
+#import "HIHomeViewController.h"
 
 #import "HISecondViewController.h"
 
@@ -30,6 +29,11 @@
     
     self.templateManager = [[HICheckListTemplateManager alloc] init];
     
+    self.backgroundImage = [UIImage imageNamed:@"mochaGrunge"];
+    
+    //Home Tab
+    HIHomeViewController * homeViewController;
+    
     UINavigationController *navController;
     HICheckListsTableViewController *checkListsController;
     
@@ -38,15 +42,16 @@
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         
-        checkListsController = [[HICheckListsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+        checkListsController = [[HICheckListsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
         checkListsController.managedObjectContext = self.managedObjectContext;
         checkListsController.templateDelegate = self.templateManager;
         
         navController = [[UINavigationController alloc] initWithRootViewController:checkListsController];
-        navController.tabBarItem.image = [UIImage imageNamed:@"White_list_30.png"];
-        navController.tabBarItem.title = @"CheckLists";
+        navController.tabBarItem.image = [UIImage imageNamed:@"library"];
+        navController.tabBarItem.title = @"My Checklists";
         secondController = [[HISecondViewController alloc]initWithNibName:@"HISecondViewController_iPhone" bundle:nil];
         
+        homeViewController = [[HIHomeViewController alloc] init];
         
 //        viewController1 = [[HIFirstViewController alloc] initWithNibName:@"HIFirstViewController_iPhone" bundle:nil];
 //        viewController2 = [[HISecondViewController alloc] initWithNibName:@"HISecondViewController_iPhone" bundle:nil];
@@ -59,8 +64,11 @@
     }
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[navController, secondController];
+    self.tabBarController.viewControllers = @[homeViewController, navController, secondController];
     self.window.rootViewController = self.tabBarController;
+    
+    [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -104,7 +112,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HealthyInteriors" withExtension:@"mom"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"HealthyInteriors" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -118,10 +126,10 @@
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"HealthyInteriors.sqlite"];
-    
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];    
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          

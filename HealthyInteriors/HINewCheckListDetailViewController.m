@@ -7,6 +7,7 @@
 //
 
 #import "HINewCheckListDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface HINewCheckListDetailViewController ()
 
@@ -30,11 +31,15 @@
     
     self.checkListTitle.text = self.model.name;
     self.checkListDescription.text = self.model.description;
+    
+    [self.addressField becomeFirstResponder];
+    
 }
 
 - (void)doneAction {
 
-    [self.delegate viewControllerDidDismissWithOK:self];
+    [self.delegate viewController:self didDismissOKWithAddress:self.addressField.text];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,4 +48,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setAddressField:nil];
+    [super viewDidUnload];
+}
 @end

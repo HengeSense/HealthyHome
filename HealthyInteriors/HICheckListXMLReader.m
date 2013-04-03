@@ -28,10 +28,7 @@
 
 	if ([elementName isEqualToString:@"CheckList"]) {
         
-		self.currentCheckList = [[HICheckListModel alloc] init];
-        self.currentCheckList.name = [attributeDict valueForKey:@"name"];
-        self.currentCheckList.key = [attributeDict valueForKey:@"id"];
-        
+		self.currentCheckList = self.checkList;        
 		NSLog(@"Creating CheckList: %@", self.currentCheckList.name);
         
 	} else if ([elementName isEqualToString:@"Category"]) {
@@ -72,8 +69,8 @@
   namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
     
     NSString * elementString = [self.currentElementValue stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if ([elementName isEqualToString:@"CheckList"]) {
-        self.checkList = self.currentCheckList;
+    if ([elementName isEqualToString:@"checkListShortInfo"]) {
+        self.currentCheckList.shortDescription = elementString;
     } else if ([elementName isEqualToString:@"checkListInfo"]) {
         self.currentCheckList.description = elementString;
     } else if ([elementName isEqualToString:@"questionText"]) {

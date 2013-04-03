@@ -9,8 +9,13 @@
 #import "HICheckListsTableViewController.h"
 #import "HICheckListCategoriesViewController.h"
 #import "CheckListAnswers.h"
+#import "CMPopTipView.h"
 
 @interface HICheckListsTableViewController ()
+@property (nonatomic, strong) UIBarButtonItem * createListButton;
+@property (nonatomic, strong) EMHint * hintView;
+@property (nonatomic, strong) CMPopTipView * hintPopup;
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers;
 @end
@@ -29,15 +34,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"Checklists";
+    self.navigationItem.title = @"My Checklists";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showNewCheckList)];
+    self.createListButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showNewCheckList)];
+    self.navigationItem.rightBarButtonItem = self.createListButton;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    int sections = [[self.fetchedResultsController sections] count];
+    if (sections == 0) {
+        [self showPopTipView];
+    }
+
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,7 +64,7 @@
 
 - (void)showNewCheckList {
 
-    HINewCheckListViewController * newc = [[HINewCheckListViewController alloc] initWithStyle:UITableViewStylePlain];
+    HINewCheckListViewController * newc = [[HINewCheckListViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController * nc = [[UINavigationController alloc] initWithRootViewController:newc];
     newc.delegate = self;
     newc.templateManagerDelegate = self.templateDelegate;
@@ -81,7 +96,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"checkListID" cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -149,9 +164,11 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     CheckListAnswers *answers = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    HICheckListModel * template = [self.templateDelegate checkListWithID:answers.checkListID];
-    cell.textLabel.text = template.name;
-    
+    NSString *address = @"Unknown";
+    if (![answers.address isEqualToString:@""]) {
+         address = answers.address;
+    }
+    cell.textLabel.text = address;
     NSString *dateString = [NSDateFormatter localizedStringFromDate:answers.creationDate
                                                           dateStyle:NSDateFormatterShortStyle
                                                           timeStyle:NSDateFormatterShortStyle];
@@ -162,14 +179,30 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{ 
-    return [[self.fetchedResultsController sections] count];
+{
+    int count = [[self.fetchedResultsController sections] count];
+    NSLog(@"Number of sections:%d", count);
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    int numberOfItems = [sectionInfo numberOfObjects];
+    return numberOfItems;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if ([[self.fetchedResultsController sections] count] > section)
+    {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+
+        HICheckListModel * template = [self.templateDelegate checkListWithID:[sectionInfo name]];
+        return template.name;
+    }
+    
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -240,14 +273,19 @@
 //    }
 }
 
-- (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel
+- (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel withAddress:(NSString *)address
 {
+    [self dismissPopTipView];
+    
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     CheckListAnswers *answers = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     answers.creationDate = [NSDate date];
     answers.checkListID = checkListModel.key;
+    if (address != nil) {
+        answers.address = address;
+    }
     
     NSError *error = nil;
     if (![context save:&error]) {
@@ -264,9 +302,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
     [self pushDetailView:checkListModel answers:answers];
-    
 }
 
 - (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers
@@ -277,5 +313,28 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)showPopTipView {
+    NSString *message = @"Press + to create a checklist from one of the templates.";
+    CMPopTipView *popTipView = [[CMPopTipView alloc] initWithMessage:message];
+    popTipView.delegate = self;
+    popTipView.dismissTapAnywhere = YES;
+    [popTipView autoDismissAnimated:YES atTimeInterval:5.0];
+    [popTipView presentPointingAtBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
+    
+    self.hintPopup = popTipView;
+}
+
+- (void)dismissPopTipView {
+    if (self.hintPopup != nil) {
+        [self.hintPopup dismissAnimated:NO];
+        self.hintPopup = nil;
+    }
+}
+
+
+#pragma mark CMPopTipViewDelegate methods
+- (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView {
+    self.hintPopup = nil;
+}
 
 @end

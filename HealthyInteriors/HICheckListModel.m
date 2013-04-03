@@ -20,6 +20,8 @@
     if (self = [super init]) {
         self.name = @"";
         self.description = @"";
+        self.shortDescription = @"";
+        self.filename = @"";
         self.categories = [[NSMutableArray alloc] init];
         self.goodAnswerColour = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
         self.badAnswerColour = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];

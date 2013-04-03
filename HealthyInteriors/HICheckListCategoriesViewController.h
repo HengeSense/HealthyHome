@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HICheckListModel.h"
 #import "CheckListAnswers.h"
+#import "HITableViewController.h"
 
-@interface HICheckListCategoriesViewController : UITableViewController
+@interface HICheckListCategoriesViewController : HITableViewController
 
 @property (nonatomic, strong) HICheckListModel * checkListModel;
 @property (nonatomic, strong) CheckListAnswers * checkListAnswers;

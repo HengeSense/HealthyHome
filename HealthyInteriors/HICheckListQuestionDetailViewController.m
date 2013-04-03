@@ -10,6 +10,8 @@
 #import "HIQuestionInfoViewController.h"
 #import "HIQuestionNotesViewController.h"
 
+#import "CustomBadge.h"
+
 @interface HICheckListQuestionDetailViewController ()
 - (void)setUpViewController:(HIQuestionInfoViewController *)vc ;
 @end
@@ -41,6 +43,24 @@
         
     }
     
+    self.infoButton.enabled = ![self.questionModel.information isEqualToString:@""];
+    
+    if (self.notesExist) {
+        
+        
+        CustomBadge *notesBadge = [CustomBadge customBadgeWithString:@"\u2713"
+                                                       withStringColor:[UIColor whiteColor]
+                                                        withInsetColor:[UIColor redColor]
+                                                        withBadgeFrame:YES
+                                                   withBadgeFrameColor:[UIColor whiteColor]
+                                                             withScale:1.0
+                                                           withShining:YES];
+        
+        //[notesBadge setFrame:CGRectMake()];
+        [self.view addSubview:notesBadge];
+
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

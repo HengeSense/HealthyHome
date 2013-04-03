@@ -10,10 +10,11 @@
 #import "HINewCheckListDetailViewController.h"
 #import "HICheckListModel.h"
 #import "HICheckListTemplateDelegate.h"
+#import "HITableViewController.h"
 
 @protocol NewCheckListCreationDelegate;
 
-@interface HINewCheckListViewController : UITableViewController <NewCheckListDelegate>
+@interface HINewCheckListViewController : HITableViewController <NewCheckListDelegate>
 
 @property (nonatomic, weak) id <NewCheckListCreationDelegate> delegate;
 @property (nonatomic, weak) id <HICheckListTemplateDelegate> templateManagerDelegate;
@@ -22,6 +23,6 @@
 
 @protocol NewCheckListCreationDelegate  <NSObject>
 
-- (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel;
+- (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel withAddress:(NSString *)address;
 
 @end

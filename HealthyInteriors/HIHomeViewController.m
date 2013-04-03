@@ -1,33 +1,33 @@
 //
-//  HIFirstViewController.m
+//  HIHomeViewController.m
 //  HealthyInteriors
 //
-//  Created by Mark O'Flynn on 7/03/13.
+//  Created by Mark O'Flynn on 22/03/13.
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#import "HIFirstViewController.h"
+#import "HIHomeViewController.h"
 
-@interface HIFirstViewController ()
+@interface HIHomeViewController ()
 
 @end
 
-@implementation HIFirstViewController
+@implementation HIHomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"First", @"First");
-        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+        // Custom initialization
     }
     return self;
 }
-							
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.tabBarItem.title = @"Home";
+    self.tabBarItem.image = [UIImage imageNamed:@"home"];
 }
 
 - (void)didReceiveMemoryWarning

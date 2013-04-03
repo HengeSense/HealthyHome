@@ -9,64 +9,62 @@
 #import "CheckListQuestionAnswers+HIFunctions.h"
 #import "CheckListAnswers+HIFunctions.h"
 
+static NSString *const OKAnswer = @"thumb_up_%@.png";
+static NSString *const NOKAnswer = @"thumb_dn_%@.png";
+static NSString *const NotAnswered = @"question_%@.png";
+static NSString *const Small = @"16";
+static NSString *const Large = @"24";
+
 @implementation CheckListQuestionAnswers (HIFunctions)
 
-- (UIImage *)smallImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel
+- (UIImage *)ImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel imageSize:(NSString *)size
 {
-    if ([self.answer boolValue]) {
+    if (self.questionAnswered) {
         
-        if (!templateModel.yesIsBad) {
+        if ([self.answer boolValue]) {
             
-            return [UIImage imageNamed:@"thumb_dn_16.png"];
-
+            //Yes answer to the question
+            
+            if (templateModel.yesIsBad) {
+                
+                return [UIImage imageNamed:[NSString stringWithFormat:NOKAnswer, size]];
+                
+            } else {
+                
+                return [UIImage imageNamed:[NSString stringWithFormat:OKAnswer, size]];
+                
+            }
+            
         } else {
-
-            return [UIImage imageNamed:@"thumb_up_16.png"];
             
+            //No answer to the question
+            
+            if (templateModel.yesIsBad) {
+                
+                return [UIImage imageNamed:[NSString stringWithFormat:OKAnswer, size]];
+                
+            } else {
+                
+                return [UIImage imageNamed:[NSString stringWithFormat:NOKAnswer, size]];
+                
+            }
         }
         
     } else {
         
-        if (templateModel.yesIsBad) {
-            
-            return [UIImage imageNamed:@"thumb_dn_16.png"];
-            
-        } else {
-            
-            return [UIImage imageNamed:@"thumb_up_16.png"];
-            
-        }
+        return [UIImage imageNamed:[NSString stringWithFormat:NotAnswered, size]];
     }
+    
+}
 
+- (UIImage *)smallImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel
+{
+    return [self ImageForAnswerToTemplateQuestion:templateModel imageSize:@"16"];
 }
 
 - (UIImage *)largeImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
-    if ([self.answer boolValue]) {
-        
-        if (templateModel.yesIsBad) {
-            
-            return [UIImage imageNamed:@"thumb_dn_24.png"];
-            
-        } else {
-            
-            return [UIImage imageNamed:@"thumb_up_24.png"];
-            
-        }
-        
-    } else {
-        
-        if (!templateModel.yesIsBad) {
-            
-            return [UIImage imageNamed:@"thumb_dn_24.png"];
-            
-        } else {
-            
-            return [UIImage imageNamed:@"thumb_up_24.png"];
-            
-        }
-    }
-    
+    return [self ImageForAnswerToTemplateQuestion:templateModel imageSize:@"24"];
 }
 
 @end

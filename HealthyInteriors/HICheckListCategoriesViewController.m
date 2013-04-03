@@ -8,10 +8,15 @@
 
 #import "HICheckListCategoriesViewController.h"
 #import "HICheckListQuestionsViewController.h"
+#import "HICategoriesTableViewController.h"
+#import "HIReportsTableViewController.h"
+#import "HICheckListGenericTableViewController.h"
 
 @interface HICheckListCategoriesViewController ()
-- (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
-- (void)configureCategoryCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, strong) UISegmentedControl * tableTypeSegmentedControl;
+@property (nonatomic, strong) HICategoriesTableViewController *categories;
+@property (nonatomic, strong) HIReportsTableViewController *reports;
+@property (nonatomic, strong) HICheckListGenericTableViewController * currentTableDelegate;
 @end
 
 @implementation HICheckListCategoriesViewController
@@ -20,7 +25,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        
+        
     }
     return self;
 }
@@ -28,8 +34,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = self.checkListModel.name;
-        
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: self.tableTypeSegmentedControl];
+    self.categories = [[HICategoriesTableViewController alloc] init];
+    self.categories.checkListModel = self.checkListModel;
+    self.categories.checkListAnswers = self.checkListAnswers;
+    self.categories.navController = self.navigationController;
+    self.reports = [[HIReportsTableViewController alloc] init];
+    self.reports.checkListModel = self.checkListModel;
+    self.reports.checkListAnswers = self.checkListAnswers;
+    self.reports.navController = self.navigationController;
+
+    [self tableTypeControlPressed:self.tableTypeSegmentedControl];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,155 +52,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    cell.textLabel.text = @"Completion Report";
-}
 
-- (void)configureCategoryCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    //get the category
-    HICheckListCategoryModel * category = [self.checkListModel categoryAtIndex:indexPath.row];
-    cell.textLabel.text = category.name;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    switch (section) {
-        case 0:
-            return 1;
-            break;
-        
-        case 1:
-            return self.checkListModel.categoriesCount;
-            break;
-        default:
-            break;
+- (UISegmentedControl*)tableTypeSegmentedControl {
+    if (!_tableTypeSegmentedControl) {
+        _tableTypeSegmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Categories",@"Reports", nil]];
+        [_tableTypeSegmentedControl addTarget:self action:@selector(tableTypeControlPressed:) forControlEvents:UIControlEventValueChanged];
+        _tableTypeSegmentedControl.selectedSegmentIndex = 0;
+        _tableTypeSegmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     }
     
-    return 0;
-    
+    return _tableTypeSegmentedControl;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (void)tableTypeControlPressed:(UISegmentedControl *)sender
 {
-    switch (section) {
-        case 0:
-            return @"Reports";
-            break;
-            
-        case 1:
-            return @"Categories";
-            break;
-        default:
-            return @"Error";
-            break;
+ 
+    if (self.tableTypeSegmentedControl.selectedSegmentIndex == 0) {
+        self.currentTableDelegate = self.categories;
+    } else {
+        self.currentTableDelegate = self.reports;
     }
+    self.tableView.delegate = self.currentTableDelegate;
+    self.tableView.dataSource = self.currentTableDelegate;
     
+    [UIView transitionWithView: self.tableView
+                      duration: 0.35f
+                       options: UIViewAnimationOptionTransitionCrossDissolve
+                    animations: ^(void)
+     {
+         [self.tableView reloadData];
+     }
+                    completion: ^(BOOL isFinished)
+     {
+     }];
+
     
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    switch (indexPath.section) {
-        case 0: {
-            static NSString *CellIdentifier = @"ReportCell";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            
-            [self configureReportCell:cell atIndexPath:indexPath];
-            return cell;
-            break;
-        }
-        case 1: {
-            static NSString *CellIdentifier = @"CategoryCell";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            
-            [self configureCategoryCell:cell atIndexPath:indexPath];
-            return cell;
-            break;
-        }
-        default:
-            return nil;
-            break;
-    }
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    switch (indexPath.section) {
-        case 1: {
-            HICheckListQuestionsViewController *detailViewController = [[HICheckListQuestionsViewController alloc] init];
-            detailViewController.categoryModel = [self.checkListModel categoryAtIndex:indexPath.row];
-            detailViewController.checkListAnswers = self.checkListAnswers;
-            
-            [self.navigationController pushViewController:detailViewController animated:YES];
-            
-            break;
-        }
-            
-        default:
-            break;
-    }
-     
 }
 
 @end

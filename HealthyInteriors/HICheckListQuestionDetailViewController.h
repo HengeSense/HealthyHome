@@ -21,8 +21,14 @@ typedef NS_ENUM(NSInteger, AnswerValue) {
 @interface HICheckListQuestionDetailViewController : HIQuestionDetailBaseViewController
 
 @property (assign, nonatomic) AnswerValue answerValue;
+@property (assign, nonatomic) BOOL notesExist;
+
 @property (strong, nonatomic) IBOutlet UILabel *QuestionLabel;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *answerSegmentControl;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
+@property (strong, nonatomic) IBOutlet UIButton *notesButton;
+@property (strong, nonatomic) IBOutlet UIButton *cameraButton;
+@property (strong, nonatomic) IBOutlet UIButton *micButton;
 
 - (IBAction)answerSelected:(id)sender;
 - (IBAction)infoClicked;

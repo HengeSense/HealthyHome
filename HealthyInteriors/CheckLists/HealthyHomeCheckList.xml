@@ -1,5 +1,6 @@
 
-<CheckList name="Healthy Home Checklist" id="EBF07194-6718-4EDC-B20B-C6C7B72BEF30">
+<CheckList>
+    <checkListShortInfo>How to achieve healthier spaces in your home</checkListShortInfo>
     <checkListInfo>Take a walk around your home with this checklist to identify aspects of your home environment that could be improved to achieve healthier spaces.</checkListInfo>
     <Categories>
         <Category title="Outdoors" id="09C26530-2039-4E2F-806D-4B964FBE4745">

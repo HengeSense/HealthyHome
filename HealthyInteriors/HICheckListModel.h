@@ -13,10 +13,13 @@
 @interface HICheckListModel : NSObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, strong) NSString * key;
+@property (nonatomic, retain) NSString * key;
+@property (nonatomic, retain) NSString * shortDescription;
 @property (nonatomic, retain) NSString * description;
-@property (nonatomic, strong) UIColor *goodAnswerColour;
-@property (nonatomic, strong) UIColor *badAnswerColour;
+@property (nonatomic, retain) NSString * filename;
+@property (nonatomic, assign) BOOL isPurchased;
+@property (nonatomic, retain) UIColor *goodAnswerColour;
+@property (nonatomic, retain) UIColor *badAnswerColour;
 
 - (id) init;
 - (HICheckListCategoryModel *)addCategroyWithName:(NSString *)categoryName;

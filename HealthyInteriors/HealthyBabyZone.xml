@@ -1,0 +1,15 @@
+
+<CheckList>
+    <checkListShortInfo>How to achieve a healthy space for your baby</checkListShortInfo>
+    <checkListInfo>Look at your babies room and follow the advice in the checklist.</checkListInfo>
+    <Categories>
+        <Category title="Test 1" id="2DD533BF-2A49-4FE1-81F3-B8C1C2B8B79D">
+            <Questions>
+                <Question type="boolean" id="8CD22DDC-DEB7-44B0-811D-82F69AB6B58C" yesIsBad="true">
+                    <questionText>Is your baby located next to a busy road or business where cars idle ?</questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+            </Questions>
+        </Category>
+    </Categories>
+</CheckList> 

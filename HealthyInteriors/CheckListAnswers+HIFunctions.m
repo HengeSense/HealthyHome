@@ -12,11 +12,21 @@
 @implementation CheckListAnswers (HIFunctions)
 
 
-- (BOOL)questionHasBeenAnswered:(NSString *)questionID
+- (BOOL)answerToQuestionExists:(NSString *)questionID
+{
+    CheckListQuestionAnswers * answer = [self answerToQuestionWithID:questionID];
+    if (answer) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)questionHasValidAnswer:(NSString *)questionID
 {
     for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
         if ([answer.questionID isEqualToString:questionID]) {
-            return YES;
+            return [answer.questionAnswered boolValue];
         }
     }
     return NO;
@@ -25,7 +35,7 @@
 - (BOOL)questionAnsweredYes:(NSString *)questionID
 {
     for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
-        if ([answer.questionID isEqualToString:questionID]) {
+        if ([answer.questionID isEqualToString:questionID] && [answer.questionAnswered boolValue]) {
             return [answer.answer boolValue];
         }
     }
@@ -44,7 +54,7 @@
 
 - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
-    if ([self questionHasBeenAnswered:questionID]) {
+    if ([self answerToQuestionExists:questionID]) {
         return [[self answerToQuestionWithID:questionID] smallImageForAnswerToTemplateQuestion:templateModel];
     } else {
         return [UIImage imageNamed:@"question_16.png"];
@@ -54,7 +64,7 @@
 
 - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
-    if ([self questionHasBeenAnswered:questionID]) {
+    if ([self answerToQuestionExists:questionID]) {
         return [[self answerToQuestionWithID:questionID] largeImageForAnswerToTemplateQuestion:templateModel];
     } else {
         return [UIImage imageNamed:@"question_24.png"];
@@ -64,7 +74,7 @@
 - (UIColor *)colourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
 
-    if (![self questionHasBeenAnswered:questionID]) {
+    if (![self answerToQuestionExists:questionID]) {
         return [UIColor blackColor];
     } else if ([self questionAnsweredYes:questionID]) {
         if (templateModel.yesIsBad) {

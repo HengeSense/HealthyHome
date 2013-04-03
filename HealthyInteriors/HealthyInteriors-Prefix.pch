@@ -13,6 +13,8 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 
+
+    #import "HIAppDelegate.h"
     #import "HICheckListModel.h"
 
 #endif

@@ -10,6 +10,8 @@
 @class HICheckListModel;
 
 @protocol HICheckListTemplateDelegate <NSObject>
+
+- (int)getNumberOfTemplates;
 - (HICheckListModel *)checkListWithName:(NSString *)name;
 - (HICheckListModel *)checkListWithID:(NSString *)key;
 - (HICheckListModel *)checkListWithIndex:(NSUInteger)index;

@@ -128,11 +128,17 @@
     detailViewController.delegate = self;
     
     AnswerValue value = AnswerValueNone;
-    if ([self.checkListAnswers questionHasBeenAnswered:questionModel.key]) {
-        if ([self.checkListAnswers questionAnsweredYes:questionModel.key]) {
-            value = AnswerValueYes;
-        } else {
-            value = AnswerValueNo;
+    if ([self.checkListAnswers answerToQuestionExists:questionModel.key]) {
+        
+        if ([self.checkListAnswers questionHasValidAnswer:questionModel.key]) {
+            
+            CheckListQuestionAnswers *answer = [self.checkListAnswers answerToQuestionWithID:questionModel.key];
+            if ([self.checkListAnswers questionAnsweredYes:questionModel.key]) {
+                value = AnswerValueYes;
+            } else {
+                value = AnswerValueNo;
+            }
+            detailViewController.notesExist = ![answer.notes isEqualToString:@""];
         }
     }
     detailViewController.AnswerValue = value;
@@ -174,7 +180,7 @@
 {
     CheckListQuestionAnswers *thisAnswer;
     
-    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
         
         thisAnswer = [self createNewAnswerForQuestion:questionID];
         
@@ -185,6 +191,7 @@
     }
     
     thisAnswer.answer = [NSNumber numberWithBool:value];
+    thisAnswer.questionAnswered = [NSNumber numberWithBool:YES];
     
     [self doContextSave];
 }
@@ -193,7 +200,7 @@
 {
     CheckListQuestionAnswers *thisAnswer;
     
-    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
         
         thisAnswer = [self createNewAnswerForQuestion:questionID];
         
@@ -211,7 +218,7 @@
 {
     CheckListQuestionAnswers *thisAnswer;
     
-    if (![self.checkListAnswers questionHasBeenAnswered:questionID]) {
+    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
         
         thisAnswer = [self createNewAnswerForQuestion:questionID];
         

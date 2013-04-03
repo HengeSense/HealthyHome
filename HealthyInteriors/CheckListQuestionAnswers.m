@@ -2,7 +2,7 @@
 //  CheckListQuestionAnswers.m
 //  HealthyInteriors
 //
-//  Created by Mark O'Flynn on 11/03/13.
+//  Created by Mark O'Flynn on 1/04/13.
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
@@ -13,8 +13,9 @@
 @implementation CheckListQuestionAnswers
 
 @dynamic answer;
-@dynamic questionID;
 @dynamic notes;
+@dynamic questionAnswered;
+@dynamic questionID;
 @dynamic questionCheckList;
 
 @end
