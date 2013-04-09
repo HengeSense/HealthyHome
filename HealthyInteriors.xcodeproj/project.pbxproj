@@ -130,6 +130,7 @@
 		4D0321941712E57600D29881 /* HIPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPhotoViewController.h; sourceTree = "<group>"; };
 		4D0321951712E57600D29881 /* HIPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPhotoViewController.m; sourceTree = "<group>"; };
 		4D0321961712E57600D29881 /* HIPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIPhotoViewController.xib; sourceTree = "<group>"; };
+		4D12C61017145FD300EA639E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		4D13F45D170C336000CA5E8A /* HITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITableViewController.h; sourceTree = "<group>"; };
 		4D13F45E170C336000CA5E8A /* HITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITableViewController.m; sourceTree = "<group>"; };
 		4D13F461170C356400CA5E8A /* textured_paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textured_paper.png; sourceTree = "<group>"; };
@@ -529,6 +530,7 @@
 		4DA3A98716E8B9AE00D8CE62 /* HealthyInteriors */ = {
 			isa = PBXGroup;
 			children = (
+				4D12C61017145FD300EA639E /* .gitignore */,
 				4DA3A99016E8B9AE00D8CE62 /* HIAppDelegate.h */,
 				4DA3A99116E8B9AE00D8CE62 /* HIAppDelegate.m */,
 				4DA3A9A016E8B9AE00D8CE62 /* HISecondViewController.h */,
