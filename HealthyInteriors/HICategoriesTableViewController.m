@@ -94,6 +94,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HICheckListQuestionsViewController *detailViewController = [[HICheckListQuestionsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    detailViewController.managedObjectContext = self.managedObjectContext;
     detailViewController.categoryModel = [self.checkListModel categoryAtIndex:indexPath.row];
     detailViewController.checkListAnswers = self.checkListAnswers;
     

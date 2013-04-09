@@ -36,6 +36,7 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView: self.tableTypeSegmentedControl];
     self.categories = [[HICategoriesTableViewController alloc] init];
+    self.categories.managedObjectContext = self.managedObjectContext;
     self.categories.checkListModel = self.checkListModel;
     self.categories.checkListAnswers = self.checkListAnswers;
     self.categories.navController = self.navigationController;

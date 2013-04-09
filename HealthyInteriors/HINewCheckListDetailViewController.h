@@ -12,7 +12,7 @@
 
 @protocol NewCheckListDelegate;
 
-@interface HINewCheckListDetailViewController : HIViewController
+@interface HINewCheckListDetailViewController : HIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) id <NewCheckListDelegate> delegate;
 @property (nonatomic, strong) HICheckListModel * model;

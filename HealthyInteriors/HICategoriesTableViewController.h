@@ -11,4 +11,6 @@
 
 @interface HICategoriesTableViewController : HICheckListGenericTableViewController 
 
+@property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
+
 @end

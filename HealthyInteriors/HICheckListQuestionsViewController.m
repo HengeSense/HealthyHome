@@ -9,6 +9,7 @@
 #import "HICheckListQuestionsViewController.h"
 #import "HICheckListQuestionDetailViewController.h"
 #import "CheckListQuestionAnswers+HIFunctions.h"
+#import "CheckListAnswerImages.h"
 
 @interface HICheckListQuestionsViewController ()
 @end
@@ -29,6 +30,11 @@
     [super viewDidLoad];
     self.navigationItem.title = self.categoryModel.name;
     self.managedObjectContext = self.checkListAnswers.managedObjectContext;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,45 +81,6 @@
     cell.textLabel.textColor = [self.checkListAnswers colourForAnswerToQuestion:question.key forTemplateQuestion:question];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -124,24 +91,12 @@
 {
     HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
     HICheckListQuestionModel * questionModel = [self.categoryModel getQuestionAtIndex:indexPath.row];
+    detailViewController.managedObjectContext = self.managedObjectContext;
     detailViewController.questionModel = questionModel;
-    detailViewController.delegate = self;
     
-    AnswerValue value = AnswerValueNone;
-    if ([self.checkListAnswers answerToQuestionExists:questionModel.key]) {
-        
-        if ([self.checkListAnswers questionHasValidAnswer:questionModel.key]) {
-            
-            CheckListQuestionAnswers *answer = [self.checkListAnswers answerToQuestionWithID:questionModel.key];
-            if ([self.checkListAnswers questionAnsweredYes:questionModel.key]) {
-                value = AnswerValueYes;
-            } else {
-                value = AnswerValueNo;
-            }
-            detailViewController.notesExist = ![answer.notes isEqualToString:@""];
-        }
-    }
-    detailViewController.AnswerValue = value;
+    CheckListQuestionAnswers * answer = [self getAnswerManagedObjectForQuestionID:questionModel.key];
+    detailViewController.answer = answer;
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
@@ -166,6 +121,16 @@
     [self.tableView reloadData];
 }
 
+- (CheckListQuestionAnswers *)getAnswerManagedObjectForQuestionID:(NSString *)questionID
+{
+    CheckListQuestionAnswers * thisAnswer = [self.checkListAnswers  answerToQuestionWithID:questionID];
+    if (!thisAnswer) {
+        thisAnswer = [self createNewAnswerForQuestion:questionID];
+    }
+    
+    return thisAnswer;
+}
+
 - (CheckListQuestionAnswers *)createNewAnswerForQuestion:(NSString *)questionID
 {
     //add a new answer
@@ -173,65 +138,11 @@
     
     thisAnswer.questionID = questionID;
     thisAnswer.questionCheckList = self.checkListAnswers;
+    thisAnswer.answer = AnswerStateNotAnswered;
+    
+    [self doContextSave];
+    
     return thisAnswer;
-}
-
-- (void) setValueforQuestionID:(NSString *)questionID to:(BOOL)value
-{
-    CheckListQuestionAnswers *thisAnswer;
-    
-    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
-        
-        thisAnswer = [self createNewAnswerForQuestion:questionID];
-        
-    } else {
-        
-        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
-        
-    }
-    
-    thisAnswer.answer = [NSNumber numberWithBool:value];
-    thisAnswer.questionAnswered = [NSNumber numberWithBool:YES];
-    
-    [self doContextSave];
-}
-
-- (NSString *)getNotesforQuestionID:(NSString *)questionID
-{
-    CheckListQuestionAnswers *thisAnswer;
-    
-    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
-        
-        thisAnswer = [self createNewAnswerForQuestion:questionID];
-        
-    } else {
-        
-        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
-        
-    }
-    
-    return thisAnswer.notes;
-    
-}
-
-- (void) setNotesforQuestionID:(NSString *)questionID to:(NSString *)text
-{
-    CheckListQuestionAnswers *thisAnswer;
-    
-    if (![self.checkListAnswers answerToQuestionExists:questionID]) {
-        
-        thisAnswer = [self createNewAnswerForQuestion:questionID];
-        
-    } else {
-        
-        thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
-        
-    }
-    
-    thisAnswer.notes = text;
-    
-    [self doContextSave];
-    
 }
 
 @end

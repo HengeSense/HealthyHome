@@ -29,7 +29,8 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lined_paper.png"]];
     [self.view setOpaque:NO];
     self.navigationItem.title = @"Notes";
-    self.notesView.text = [self.delegate getNotesforQuestionID:self.questionModel.key];
+    
+    self.notesView.text = self.answer.notes;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -46,7 +47,7 @@
 
 -  (void)textViewDidEndEditing:(UITextView *)textView
 {
-    [self.delegate setNotesforQuestionID:self.questionModel.key to:textView.text];
+    [self.delegate setNotesTo:textView.text];
 }
 
 @end

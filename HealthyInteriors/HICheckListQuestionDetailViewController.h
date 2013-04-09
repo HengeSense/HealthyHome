@@ -7,31 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HIQuestionDetailBaseViewController.h"
 #import "HICheckListQuestionModel.h"
+#import "CheckListAnswers+HIFunctions.h"
+#import "HIViewController.h"
+#import "HIQuestionDetailDelegate.h"
 
-typedef NS_ENUM(NSInteger, AnswerValue) {
-    AnswerValueNone,
-    AnswerValueYes,
-    AnswerValueNo
-};
+@class SVSegmentedControl;
+@class CustomBadge;
 
 @protocol HIQuestionDetailDelegate;
 
-@interface HICheckListQuestionDetailViewController : HIQuestionDetailBaseViewController
+@interface HICheckListQuestionDetailViewController : HIViewController <HIQuestionDetailDelegate, UIImagePickerControllerDelegate>
 
-@property (assign, nonatomic) AnswerValue answerValue;
-@property (assign, nonatomic) BOOL notesExist;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
+@property (nonatomic, strong) CheckListQuestionAnswers * answer;
 
 @property (strong, nonatomic) IBOutlet UILabel *QuestionLabel;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *answerSegmentControl;
-@property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UIButton *notesButton;
 @property (strong, nonatomic) IBOutlet UIButton *cameraButton;
 @property (strong, nonatomic) IBOutlet UIButton *micButton;
+@property (strong, nonatomic) SVSegmentedControl *segmentControlAnswer;
+@property (strong, nonatomic) UIBarButtonItem * infoButton;
+@property (strong, nonatomic) CustomBadge * notesBadge;
 
-- (IBAction)answerSelected:(id)sender;
-- (IBAction)infoClicked;
+- (void)infoClicked;
 - (IBAction)NotesClicked;
 - (IBAction)CameraClicked;
 - (IBAction)MicrophoneClicked:(id)sender;

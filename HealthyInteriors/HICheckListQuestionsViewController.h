@@ -10,10 +10,9 @@
 #import "HICheckListCategoryModel.h"
 #import "CheckListAnswers+HIFunctions.h"
 #import "HICheckListQuestionDetailViewController.h"
-#import "HIQuestionDetailDelegate.h"
 #import "HITableViewController.h"
 
-@interface HICheckListQuestionsViewController : HITableViewController <HIQuestionDetailDelegate>
+@interface HICheckListQuestionsViewController : HITableViewController
 
 @property (nonatomic, retain) HICheckListCategoryModel * categoryModel;
 @property (nonatomic, strong) CheckListAnswers * checkListAnswers;

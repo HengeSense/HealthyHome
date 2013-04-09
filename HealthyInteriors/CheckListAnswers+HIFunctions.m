@@ -11,35 +11,45 @@
 
 @implementation CheckListAnswers (HIFunctions)
 
+//
+//- (BOOL)answerToQuestionExists:(NSString *)questionID
+//{
+//    CheckListQuestionAnswers * answer = [self answerToQuestionWithID:questionID];
+//    if (answer) {
+//        return YES;
+//    } else {
+//        return NO;
+//    }
+//}
+//
+//- (BOOL)questionHasValidAnswer:(NSString *)questionID
+//{
+//    for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
+//        if ([answer.questionID isEqualToString:questionID]) {
+//            return [answer.questionAnswered boolValue];
+//        }
+//    }
+//    return NO;
+//}
+//
+//- (BOOL)questionAnsweredYes:(NSString *)questionID
+//{
+//    for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
+//        if ([answer.questionID isEqualToString:questionID] && [answer.questionAnswered boolValue]) {
+//            return [answer.answer boolValue];
+//        }
+//    }
+//    return NO;
+//}
 
-- (BOOL)answerToQuestionExists:(NSString *)questionID
+- (AnswerState)getAnswerStateForQuestion:(NSString *)questionID
 {
     CheckListQuestionAnswers * answer = [self answerToQuestionWithID:questionID];
     if (answer) {
-        return YES;
+        return  [answer.answer integerValue];
     } else {
-        return NO;
+        return AnswerStateNotAnswered;
     }
-}
-
-- (BOOL)questionHasValidAnswer:(NSString *)questionID
-{
-    for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
-        if ([answer.questionID isEqualToString:questionID]) {
-            return [answer.questionAnswered boolValue];
-        }
-    }
-    return NO;
-}
-
-- (BOOL)questionAnsweredYes:(NSString *)questionID
-{
-    for (CheckListQuestionAnswers * answer in self.checkListQuestions) {
-        if ([answer.questionID isEqualToString:questionID] && [answer.questionAnswered boolValue]) {
-            return [answer.answer boolValue];
-        }
-    }
-    return NO;
 }
 
 - (CheckListQuestionAnswers *)answerToQuestionWithID:(NSString *)questionID
@@ -54,8 +64,9 @@
 
 - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
-    if ([self answerToQuestionExists:questionID]) {
-        return [[self answerToQuestionWithID:questionID] smallImageForAnswerToTemplateQuestion:templateModel];
+    CheckListQuestionAnswers * answer = [self answerToQuestionWithID:questionID];
+    if (answer) {
+        return [answer smallImageForAnswerToTemplateQuestion:templateModel];
     } else {
         return [UIImage imageNamed:@"question_16.png"];
     }
@@ -64,7 +75,8 @@
 
 - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
-    if ([self answerToQuestionExists:questionID]) {
+    CheckListQuestionAnswers * answer = [self answerToQuestionWithID:questionID];
+    if (answer) {
         return [[self answerToQuestionWithID:questionID] largeImageForAnswerToTemplateQuestion:templateModel];
     } else {
         return [UIImage imageNamed:@"question_24.png"];
@@ -74,20 +86,33 @@
 - (UIColor *)colourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel
 {
 
-    if (![self answerToQuestionExists:questionID]) {
-        return [UIColor blackColor];
-    } else if ([self questionAnsweredYes:questionID]) {
-        if (templateModel.yesIsBad) {
-            return templateModel.categoryModel.checkList.badAnswerColour;
-        } else {
-            return templateModel.categoryModel.checkList.goodAnswerColour;
-        }
-    } else {
-        if (templateModel.yesIsBad) {
-            return templateModel.categoryModel.checkList.goodAnswerColour;
-        } else {
-            return templateModel.categoryModel.checkList.badAnswerColour;
-        }
+    switch ([self getAnswerStateForQuestion:questionID]) {
+            
+        case AnswerStateYes:
+            
+            if (templateModel.yesIsBad) {
+                return templateModel.categoryModel.checkList.badAnswerColour;
+            } else {
+                return templateModel.categoryModel.checkList.goodAnswerColour;
+            }
+            break;
+            
+        case AnswerStateNo:
+            
+            if (templateModel.yesIsBad) {
+                return templateModel.categoryModel.checkList.goodAnswerColour;
+            } else {
+                return templateModel.categoryModel.checkList.badAnswerColour;
+            }
+            break;
+            
+        case AnswerStateNotApplicable:
+            
+        case AnswerStateNotAnswered:
+            
+        default:
+            return [UIColor blackColor];
+
     }
 }
 

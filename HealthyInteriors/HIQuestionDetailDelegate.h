@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CheckListAnswers+HIFunctions.h"
 
 @protocol HIQuestionDetailDelegate <NSObject>
 
-- (void) setValueforQuestionID:(NSString *)questionID to:(BOOL)value;
-- (NSString *)getNotesforQuestionID:(NSString *)questionID;
-- (void) setNotesforQuestionID:(NSString *)questionID to:(NSString *)text;
+- (void) setValueTo:(AnswerState)value;
+- (void) setNotesTo:(NSString *)text;
+- (void) addImageWithFullName:(NSString *)fullname andThumbnailName:(NSString *)thumbnailName;
 
 @end

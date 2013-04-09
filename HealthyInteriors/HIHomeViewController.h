@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HIViewController.h"
 
-@interface HIHomeViewController : UIViewController
+@interface HIHomeViewController : HIViewController
+
+@property (strong, nonatomic) IBOutlet UILabel *infoLabel;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UILabel *startInfo;
 
 @end

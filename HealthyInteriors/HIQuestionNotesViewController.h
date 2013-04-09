@@ -6,10 +6,15 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#import "HIQuestionDetailBaseViewController.h"
+#import "HIViewController.h"
+#import "HIQuestionDetailDelegate.h"
 
-@interface HIQuestionNotesViewController : HIQuestionDetailBaseViewController <UITextViewDelegate>
+@interface HIQuestionNotesViewController : HIViewController <UITextViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *notesView;
+
+@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
+@property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
+@property (nonatomic, strong) CheckListQuestionAnswers * answer;
 
 @end

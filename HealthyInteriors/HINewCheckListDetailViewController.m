@@ -32,8 +32,18 @@
     self.checkListTitle.text = self.model.name;
     self.checkListDescription.text = self.model.description;
     
+    [self.addressField addTarget:self
+                       action:@selector(textFieldFinished:)
+             forControlEvents:UIControlEventEditingDidEndOnExit];
+
     [self.addressField becomeFirstResponder];
     
+}
+
+- (IBAction)textFieldFinished:(id)sender
+{
+    [self resignFirstResponder];
+    [self doneAction];
 }
 
 - (void)doneAction {

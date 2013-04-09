@@ -11,7 +11,7 @@
 
 static NSString *const OKAnswer = @"thumb_up_%@.png";
 static NSString *const NOKAnswer = @"thumb_dn_%@.png";
-static NSString *const NotAnswered = @"question_%@.png";
+static NSString *const NAAnswered = @"question_%@.png";
 static NSString *const Small = @"16";
 static NSString *const Large = @"24";
 
@@ -19,42 +19,31 @@ static NSString *const Large = @"24";
 
 - (UIImage *)ImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel imageSize:(NSString *)size
 {
-    if (self.questionAnswered) {
-        
-        if ([self.answer boolValue]) {
-            
-            //Yes answer to the question
+
+    switch ([self.answer integerValue]) {
+        case AnswerStateYes:
             
             if (templateModel.yesIsBad) {
-                
                 return [UIImage imageNamed:[NSString stringWithFormat:NOKAnswer, size]];
-                
             } else {
-                
                 return [UIImage imageNamed:[NSString stringWithFormat:OKAnswer, size]];
-                
             }
+            break;
             
-        } else {
-            
-            //No answer to the question
+        case AnswerStateNo:
             
             if (templateModel.yesIsBad) {
-                
                 return [UIImage imageNamed:[NSString stringWithFormat:OKAnswer, size]];
-                
             } else {
-                
                 return [UIImage imageNamed:[NSString stringWithFormat:NOKAnswer, size]];
-                
             }
-        }
-        
-    } else {
-        
-        return [UIImage imageNamed:[NSString stringWithFormat:NotAnswered, size]];
-    }
+            break;
     
+        case AnswerStateNotApplicable:
+    
+        default:
+            return [UIImage imageNamed:[NSString stringWithFormat:NAAnswered, size]];
+    }
 }
 
 - (UIImage *)smallImageForAnswerToTemplateQuestion:(HICheckListQuestionModel *)templateModel

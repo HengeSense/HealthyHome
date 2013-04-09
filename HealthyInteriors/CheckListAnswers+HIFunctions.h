@@ -9,11 +9,20 @@
 #import "CheckListAnswers.h"
 #import "HICheckListQuestionModel.h"
 
+typedef NS_ENUM(NSInteger, AnswerState) {
+    AnswerStateNotAnswered,
+    AnswerStateNotApplicable,
+    AnswerStateYes,
+    AnswerStateNo
+};
+
 @interface CheckListAnswers (HIFunctions)
 
-- (BOOL)answerToQuestionExists:(NSString *)questionID;
-- (BOOL)questionAnsweredYes:(NSString *)questionID;
-- (BOOL)questionHasValidAnswer:(NSString *)questionID;
+
+//- (BOOL)answerToQuestionExists:(NSString *)questionID;
+//- (BOOL)questionAnsweredYes:(NSString *)questionID;
+//- (BOOL)questionHasValidAnswer:(NSString *)questionID;
+- (AnswerState)getAnswerStateForQuestion:(NSString *)questionID;
 - (CheckListQuestionAnswers *)answerToQuestionWithID:(NSString *)questionID;
 - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
 - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;

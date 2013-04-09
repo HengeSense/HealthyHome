@@ -13,6 +13,7 @@
 
 @interface HICheckListCategoriesViewController : HITableViewController
 
+@property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
 @property (nonatomic, strong) HICheckListModel * checkListModel;
 @property (nonatomic, strong) CheckListAnswers * checkListAnswers;
 

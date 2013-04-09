@@ -13,7 +13,6 @@
 
 @interface HICheckListsTableViewController ()
 @property (nonatomic, strong) UIBarButtonItem * createListButton;
-@property (nonatomic, strong) EMHint * hintView;
 @property (nonatomic, strong) CMPopTipView * hintPopup;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -308,6 +307,7 @@
 - (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers
 {
     HICheckListCategoriesViewController * vc = [[HICheckListCategoriesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    vc.managedObjectContext = self.managedObjectContext;
     vc.checkListModel = checkListModel;
     vc.checkListAnswers = answers;
     [self.navigationController pushViewController:vc animated:YES];

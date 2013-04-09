@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HIQuestionDetailBaseViewController.h"
+#import "HIViewController.h"
+#import "HIQuestionDetailDelegate.h"
 
-@interface HIQuestionInfoViewController : HIQuestionDetailBaseViewController
+@interface HIQuestionInfoViewController : HIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *infoView;
+
+@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
+@property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
+@property (nonatomic, strong) CheckListQuestionAnswers * answer;
 
 @end
