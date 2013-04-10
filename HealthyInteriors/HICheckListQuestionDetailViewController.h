@@ -20,8 +20,12 @@
 @interface HICheckListQuestionDetailViewController : HIViewController <HIQuestionDetailDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CheckListAnswers * checkListAnswers;
+@property (nonatomic, retain) HICheckListCategoryModel * categoryModel;
 @property (nonatomic, strong) HICheckListQuestionModel * questionModel;
 @property (nonatomic, strong) CheckListQuestionAnswers * answer;
+@property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, strong) NSArray * navStack;
 
 @property (strong, nonatomic) IBOutlet UILabel *QuestionLabel;
 @property (strong, nonatomic) IBOutlet UIButton *notesButton;
@@ -38,5 +42,7 @@
 - (IBAction)NotesClicked;
 - (IBAction)CameraClicked;
 - (IBAction)MicrophoneClicked:(id)sender;
+- (IBAction)nextButtonPressed;
+- (IBAction)prevButtonPressed;
 
 @end

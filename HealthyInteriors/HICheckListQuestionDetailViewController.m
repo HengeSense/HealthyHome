@@ -33,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.navigationItem.title = @"Question";
+    
+    self.labelQuestionTitle.text = [NSString stringWithFormat:@"Question #%d", self.currentIndex + 1];
     
     self.infoButton = [[UIBarButtonItem alloc] initWithTitle:@"Healthy Info" style:UIBarButtonItemStylePlain target:self action:@selector(infoClicked)];
     self.navigationItem.rightBarButtonItem = self.infoButton;
@@ -68,6 +69,10 @@
     self.segmentControlAnswer.hidden = YES;
     
     self.infoButton.enabled = ![self.questionModel.information isEqualToString:@""];
+    
+    self.nextButton.enabled = (self.currentIndex + 1 != self.categoryModel.questionsCount);
+    self.prevButton.enabled = (self.currentIndex != 0);
+    
     
 //    if (self.notesExist) {
 //        
@@ -123,10 +128,10 @@
 
 - (void)infoClicked {
     
-//    HIQuestionInfoViewController * vc = [[HIQuestionInfoViewController alloc] init];
-//    vc.questionModel = self.questionModel;
-//    vc.delegate = self.delegate;
-//    [self.navigationController pushViewController:vc animated:YES];
+    HIQuestionInfoViewController * vc = [[HIQuestionInfoViewController alloc] init];
+    vc.questionModel = self.questionModel;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -151,6 +156,71 @@
 }
 
 - (IBAction)MicrophoneClicked:(id)sender {
+}
+
+- (IBAction)nextButtonPressed {
+    
+    HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
+    HICheckListQuestionModel * questionModel = [self.categoryModel getQuestionAtIndex:self.currentIndex + 1];
+    detailViewController.categoryModel = self.categoryModel;
+    detailViewController.managedObjectContext = self.managedObjectContext;
+    detailViewController.checkListAnswers = self.checkListAnswers;
+    detailViewController.questionModel = questionModel;
+    detailViewController.currentIndex = self.currentIndex + 1;
+    
+    CheckListQuestionAnswers * answer = [self getAnswerManagedObjectForQuestionID:questionModel.key];
+    detailViewController.answer = answer;
+    
+    //[self.navigationController pushViewController:detailViewController animated:YES];
+    // Replace the current view controller
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:[[self navigationController] viewControllers]];
+    [viewControllers removeLastObject];
+    [viewControllers addObject:detailViewController];
+    [self.navigationController setViewControllers:viewControllers animated:YES];
+}
+
+- (IBAction)prevButtonPressed {
+    
+    HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
+    HICheckListQuestionModel * questionModel = [self.categoryModel getQuestionAtIndex:self.currentIndex - 1];
+    detailViewController.categoryModel = self.categoryModel;
+    detailViewController.managedObjectContext = self.managedObjectContext;
+    detailViewController.checkListAnswers = self.checkListAnswers;
+    detailViewController.questionModel = questionModel;
+    detailViewController.currentIndex = self.currentIndex - 1;
+    
+    CheckListQuestionAnswers * answer = [self getAnswerManagedObjectForQuestionID:questionModel.key];
+    detailViewController.answer = answer;
+    
+    // Replace the current view controller
+    NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:[[self navigationController] viewControllers]];
+    [viewControllers insertObject:detailViewController atIndex:[viewControllers count]-1];
+    [self.navigationController setViewControllers:viewControllers animated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (CheckListQuestionAnswers *)getAnswerManagedObjectForQuestionID:(NSString *)questionID
+{
+    CheckListQuestionAnswers * thisAnswer = [self.checkListAnswers  answerToQuestionWithID:questionID];
+    if (!thisAnswer) {
+        thisAnswer = [self createNewAnswerForQuestion:questionID];
+    }
+    
+    return thisAnswer;
+}
+
+- (CheckListQuestionAnswers *)createNewAnswerForQuestion:(NSString *)questionID
+{
+    //add a new answer
+    CheckListQuestionAnswers *thisAnswer = [NSEntityDescription insertNewObjectForEntityForName:@"CheckListQuestionAnswers" inManagedObjectContext:self.managedObjectContext];
+    
+    thisAnswer.questionID = questionID;
+    thisAnswer.questionCheckList = self.checkListAnswers;
+    thisAnswer.answer = AnswerStateNotAnswered;
+    
+    [self doContextSave];
+    
+    return thisAnswer;
 }
 
 

@@ -92,7 +92,11 @@
     HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
     HICheckListQuestionModel * questionModel = [self.categoryModel getQuestionAtIndex:indexPath.row];
     detailViewController.managedObjectContext = self.managedObjectContext;
+    detailViewController.checkListAnswers = self.checkListAnswers;
+    detailViewController.categoryModel = self.categoryModel;
     detailViewController.questionModel = questionModel;
+    detailViewController.currentIndex = indexPath.row;
+    detailViewController.navStack = self.navigationController.viewControllers;
     
     CheckListQuestionAnswers * answer = [self getAnswerManagedObjectForQuestionID:questionModel.key];
     detailViewController.answer = answer;
