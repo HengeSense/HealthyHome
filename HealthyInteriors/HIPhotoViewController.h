@@ -7,11 +7,16 @@
 //
 
 #import "HIViewController.h"
+#import "HIQuestionDetailDelegate.h"
 
 @interface HIPhotoViewController : HIViewController
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
+@property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
+@property (nonatomic, strong) CheckListQuestionAnswers * answer;
+@property (nonatomic, strong) NSNumber * selectedIndex;
 
 - (IBAction)changePage:(id)sender;
 

@@ -30,6 +30,9 @@
 @property (strong, nonatomic) SVSegmentedControl *segmentControlAnswer;
 @property (strong, nonatomic) UIBarButtonItem * infoButton;
 @property (strong, nonatomic) CustomBadge * notesBadge;
+@property (strong, nonatomic) IBOutlet UILabel *labelQuestionTitle;
+@property (strong, nonatomic) IBOutlet UIButton *nextButton;
+@property (strong, nonatomic) IBOutlet UIButton *prevButton;
 
 - (void)infoClicked;
 - (IBAction)NotesClicked;

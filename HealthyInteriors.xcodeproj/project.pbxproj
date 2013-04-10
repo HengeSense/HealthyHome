@@ -19,6 +19,8 @@
 		4D13F464170C356F00CA5E8A /* textured_paper_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D13F463170C356E00CA5E8A /* textured_paper_@2X.png */; };
 		4D13F467170C36B400CA5E8A /* HIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D13F466170C36B400CA5E8A /* HIViewController.m */; };
 		4D13F46A170C3A1C00CA5E8A /* HealthyBabyZone.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4D13F469170C3A1C00CA5E8A /* HealthyBabyZone.xml */; };
+		4D37A88C17158CA2001825AE /* back_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D37A88B17158CA2001825AE /* back_48.png */; };
+		4D37A88E17158CAC001825AE /* next_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D37A88D17158CAC001825AE /* next_48.png */; };
 		4D38BF2C170AFB27006587BB /* HICategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38BF2B170AFB27006587BB /* HICategoriesTableViewController.m */; };
 		4D38BF2F170AFCFF006587BB /* HIReportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38BF2E170AFCFF006587BB /* HIReportsTableViewController.m */; };
 		4D38BF32170B0098006587BB /* HICheckListGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D38BF31170B0098006587BB /* HICheckListGenericTableViewController.m */; };
@@ -137,6 +139,8 @@
 		4D13F465170C36B400CA5E8A /* HIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIViewController.h; sourceTree = "<group>"; };
 		4D13F466170C36B400CA5E8A /* HIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIViewController.m; sourceTree = "<group>"; };
 		4D13F469170C3A1C00CA5E8A /* HealthyBabyZone.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = HealthyBabyZone.xml; sourceTree = "<group>"; };
+		4D37A88B17158CA2001825AE /* back_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_48.png; sourceTree = "<group>"; };
+		4D37A88D17158CAC001825AE /* next_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_48.png; sourceTree = "<group>"; };
 		4D38BF2A170AFB27006587BB /* HICategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICategoriesTableViewController.h; sourceTree = "<group>"; };
 		4D38BF2B170AFB27006587BB /* HICategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICategoriesTableViewController.m; sourceTree = "<group>"; };
 		4D38BF2D170AFCFF006587BB /* HIReportsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIReportsTableViewController.h; sourceTree = "<group>"; };
@@ -570,6 +574,8 @@
 			isa = PBXGroup;
 			children = (
 				4DADAEE916FC6F3E00BAA63F /* TabBarIcons */,
+				4D37A88B17158CA2001825AE /* back_48.png */,
+				4D37A88D17158CAC001825AE /* next_48.png */,
 				4DADAEF416FC72D400BAA63F /* healthy_interiors.png */,
 				4D6B4595170FBD8B007C41D7 /* home_in_hands_2.png */,
 				4DEE727016EDC998002ED288 /* lined_paper.png */,
@@ -871,6 +877,8 @@
 				4D6B4596170FBD8B007C41D7 /* home_in_hands_2.png in Resources */,
 				4D6B459D17102EFB007C41D7 /* cross_white_16.png in Resources */,
 				4D0321981712E57600D29881 /* HIPhotoViewController.xib in Resources */,
+				4D37A88C17158CA2001825AE /* back_48.png in Resources */,
+				4D37A88E17158CAC001825AE /* next_48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

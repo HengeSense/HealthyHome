@@ -89,6 +89,10 @@ static NSString *CellIdentifier = @"imageCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HIPhotoViewController * photo = [[HIPhotoViewController alloc] init];
+    photo.questionModel = self.questionModel;
+    photo.answer = self.answer;
+    photo.delegate = self.delegate;
+    photo.selectedIndex = [NSNumber numberWithInt:indexPath.row];
     [self.navigationController pushViewController:photo animated:YES];
 }
 

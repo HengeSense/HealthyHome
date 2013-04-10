@@ -33,9 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"Question";
+    //self.navigationItem.title = @"Question";
     
-    self.infoButton = [[UIBarButtonItem alloc] initWithTitle:@"Info" style:UIBarButtonItemStylePlain target:self action:@selector(infoClicked)];
+    self.infoButton = [[UIBarButtonItem alloc] initWithTitle:@"Healthy Info" style:UIBarButtonItemStylePlain target:self action:@selector(infoClicked)];
     self.navigationItem.rightBarButtonItem = self.infoButton;
     
     self.QuestionLabel.text = self.questionModel.text;
@@ -202,4 +202,10 @@
     
 }
 
+- (void)viewDidUnload {
+    [self setLabelQuestionTitle:nil];
+    [self setNextButton:nil];
+    [self setPrevButton:nil];
+    [super viewDidUnload];
+}
 @end

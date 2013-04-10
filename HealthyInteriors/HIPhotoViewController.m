@@ -7,9 +7,11 @@
 //
 
 #import "HIPhotoViewController.h"
+#import "CheckListAnswerImages.h"
 
 @interface HIPhotoViewController ()
 @property (nonatomic, assign) BOOL pageControlBeingUsed;
+@property (nonatomic, strong) NSArray * imagesArray;
 @end
 
 @implementation HIPhotoViewController
@@ -27,21 +29,30 @@
 {
     [super viewDidLoad];
     
-    NSArray *colors = [NSArray arrayWithObjects:[UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor yellowColor], nil];
-    for (int i = 0; i < colors.count; i++) {
+    self.imagesArray = [self.answer.answerImages allObjects];
+    for (int i = 0; i < self.imagesArray.count; i++) {
         CGRect frame;
         frame.origin.x = self.scrollView.frame.size.width * i;
         frame.origin.y = 0;
         frame.size = self.scrollView.frame.size;
         
-        UIView *subview = [[UIView alloc] initWithFrame:frame];
-        subview.backgroundColor = [colors objectAtIndex:i];
+        UIImageView *subview = [[UIImageView alloc] initWithFrame:frame];
+        CheckListAnswerImages *image = [self.imagesArray objectAtIndex:i];
+        NSString * path = image.thumbPathName;
+        subview.contentMode = UIViewContentModeScaleAspectFit;
+        subview.image = [UIImage imageWithContentsOfFile:path];
         [self.scrollView addSubview:subview];
         self.pageControlBeingUsed = NO;
-        self.pageControl.numberOfPages = colors.count;
+        self.pageControl.numberOfPages = self.imagesArray.count;
     }
     
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * colors.count, self.scrollView.frame.size.height);}
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * self.imagesArray.count, self.scrollView.frame.size.height);
+    self.pageControl.currentPage = [self.selectedIndex integerValue];
+    [self changePage:self.pageControl];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deletePhoto)];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,12 +76,22 @@
     [self.scrollView scrollRectToVisible:frame animated:YES];
     self.pageControlBeingUsed = YES;
 }
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.pageControlBeingUsed = NO;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.pageControlBeingUsed = NO;
+}
+
+-(void) deletePhoto
+{
+//    int currentIndex = self.pageControl.currentPage;
+//    //get the photo managed object
+//    NSManagedObject * mo = [self.imagesArray objectAtIndex:currentIndex];
+//    //delete it
+//    [self.answer removeAnswerImagesObject:mo];
 }
 
 - (void)viewDidUnload {
