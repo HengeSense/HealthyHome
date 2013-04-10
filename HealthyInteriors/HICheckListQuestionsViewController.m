@@ -118,6 +118,7 @@
          display an alert panel that instructs the user to quit the application by pressing the Home button.
          */
         
+        
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
