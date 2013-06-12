@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HealthyInteriors" type="AppleRunConfiguration" factoryName="Application" SCHEME_NAME="HealthyInteriors" PROJECT_NAME="HealthyInteriors" TARGET_NAME="HealthyInteriors" CONFIG_NAME="Debug" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" RUN_TARGET_PROJECT_NAME="HealthyInteriors" RUN_TARGET_NAME="HealthyInteriors" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <envs />
+    <RunnerSettings RunnerId="AppRunner" />
+    <RunnerSettings RunnerId="InstrumentsRunner" />
+    <ConfigurationWrapper RunnerId="AppRunner" />
+    <ConfigurationWrapper RunnerId="InstrumentsRunner" />
+    <method />
+  </configuration>
+</component>

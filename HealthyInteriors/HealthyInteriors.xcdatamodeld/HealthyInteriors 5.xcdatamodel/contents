@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0"
+       lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic"
+       iOSVersion="Automatic">
+    <entity name="CheckListAnswerImages" representedClassName="CheckListAnswerImages" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fullPathName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbPathName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="imageAnswer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="CheckListQuestionAnswers" inverseName="answerImages"
+                      inverseEntity="CheckListQuestionAnswers" syncable="YES"/>
+    </entity>
+    <entity name="CheckListAnswers" representedClassName="CheckListAnswers" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="checkListID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="checkListQuestions" optional="YES" toMany="YES" deletionRule="Cascade"
+                      destinationEntity="CheckListQuestionAnswers" inverseName="questionCheckList"
+                      inverseEntity="CheckListQuestionAnswers" syncable="YES"/>
+    </entity>
+    <entity name="CheckListQuestionAnswers" representedClassName="CheckListQuestionAnswers" syncable="YES">
+        <attribute name="answer" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="answerImages" optional="YES" toMany="YES" deletionRule="Cascade"
+                      destinationEntity="CheckListAnswerImages" inverseName="imageAnswer"
+                      inverseEntity="CheckListAnswerImages" syncable="YES"/>
+        <relationship name="questionCheckList" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="CheckListAnswers" inverseName="checkListQuestions"
+                      inverseEntity="CheckListAnswers" syncable="YES"/>
+    </entity>
+    <entity name="Favourites" representedClassName="Favourites" syncable="YES">
+        <attribute name="questionID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <fetchRequest name="FetchRequest" entity="CheckListAnswerImages"
+                  predicateString="questionID CONTAINS &quot;&quot;"/>
+    <elements>
+        <element name="CheckListAnswerImages" positionX="-189" positionY="108" width="198" height="105"/>
+        <element name="CheckListAnswers" positionX="-837" positionY="201" width="227" height="105"/>
+        <element name="CheckListQuestionAnswers" positionX="-488" positionY="207" width="218" height="120"/>
+        <element name="Favourites" positionX="160" positionY="192" width="128" height="60"/>
+    </elements>
+</model>

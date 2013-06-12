@@ -1,7 +1,6 @@
-
 <CheckLists>
-    <CheckList name="Healthy Home CheckList" id="EBF07194-6718-4EDC-B20B-C6C7B72BEF30" filename="HealthyHomeCheckList.xml"/>
+    <CheckList name="Healthy Home CheckList" id="EBF07194-6718-4EDC-B20B-C6C7B72BEF30" filename="HealthyHomeQuiz.xml"/>
     <CheckList name="Healthy Baby Zone" id="AB6582BE-F675-42B8-9A76-77B473A09ACC" filename="HealthyBabyZone.xml"/>
-    <CheckList name="Rent a Healthy Home" id="435BC06D-AAC9-4A41-99AE-9A12FCA79386" filename="RentaHealthyHome.xml"/>
-    <CheckList name="Build a Healthy Home" id="C9A8D8E9-9EBF-4890-8466-C17F45B7483D" filename="BuildaHealthyHome.xml"/>
+    <CheckList name="Rent a Healthy Home" id="435BC06D-AAC9-4A41-99AE-9A12FCA79386" filename="RentalHealthyHome.xml"/>
+    <CheckList name="Build a Healthy Home" id="C9A8D8E9-9EBF-4890-8466-C17F45B7483D" filename="BuildAHealthyHome.xml"/>
 </CheckLists>

@@ -2,7 +2,7 @@
 //  HITableViewController.m
 //  HealthyInteriors
 //
-//  Created by Mark O'Flynn on 3/04/13.
+//  Created by Mark O'Flynn on 23/05/13.
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
@@ -14,30 +14,26 @@
 
 @implementation HITableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    - (id)initWithStyle:(UITableViewStyle)style {
+        self = [super initWithStyle:style];
+        if (self) {
+            // Custom initialization
+        }
+        return self;
     }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    - (void)viewDidLoad {
+        [super viewDidLoad];
 
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"retina_wood"]];
-    [tempImageView setFrame:self.tableView.frame];
-    
-    self.tableView.backgroundView = tempImageView;
-    
-}
+    }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    - (void)viewDidAppear:(BOOL)animated {
+        [PXEngine applyStylesheets];
+    }
+
+    - (void)didReceiveMemoryWarning {
+        [super didReceiveMemoryWarning];
+        // Dispose of any resources that can be recreated.
+    }
 
 @end

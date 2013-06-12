@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HICollectionViewController.h"
 #import "HIQuestionDetailDelegate.h"
 #import "MBProgressHUD.h"
 
-@interface HIPhotosCollectionViewController : UICollectionViewController <UIActionSheetDelegate,
-                                                                          UIImagePickerControllerDelegate,
-                                                                          UICollectionViewDelegateFlowLayout,
-                                                                          MBProgressHUDDelegate>
+@interface HIPhotosCollectionViewController : HICollectionViewController <UIActionSheetDelegate,
+        UIImagePickerControllerDelegate,
+        UICollectionViewDelegateFlowLayout,
+        MBProgressHUDDelegate>
 
-@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
-@property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
-@property (nonatomic, strong) CheckListQuestionAnswers * answer;
+    @property(nonatomic, strong) HICheckListQuestionModel *questionModel;
+    @property(weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
+    @property(nonatomic, strong) CheckListQuestionAnswers *answer;
 
 @end

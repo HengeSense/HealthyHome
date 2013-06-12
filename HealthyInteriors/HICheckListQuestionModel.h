@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, AnswerType) {
 @property (nonatomic, assign) AnswerType answerType;
 @property (nonatomic, assign) BOOL yesIsBad;
 @property (nonatomic, strong) NSString * information;
+@property (nonatomic, strong) NSString * infoTitle;
 
 - (id) init;
 

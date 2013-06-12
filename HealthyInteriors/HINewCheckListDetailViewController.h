@@ -14,17 +14,16 @@
 
 @interface HINewCheckListDetailViewController : HIViewController <UITextFieldDelegate>
 
-@property (nonatomic, weak) id <NewCheckListDelegate> delegate;
-@property (nonatomic, strong) HICheckListModel * model;
-
-@property (strong, nonatomic) IBOutlet UILabel *checkListTitle;
-@property (strong, nonatomic) IBOutlet UILabel *checkListDescription;
-@property (strong, nonatomic) IBOutlet UITextField *addressField;
+    @property(nonatomic, weak) id <NewCheckListDelegate> delegate;
+    @property(nonatomic, strong) HICheckListModel *model;
+    @property(strong, nonatomic) IBOutlet UILabel *checkListTitle;
+    @property(strong, nonatomic) IBOutlet UILabel *checkListDescription;
+    @property(strong, nonatomic) IBOutlet UITextField *addressField;
 
 @end
 
 @protocol NewCheckListDelegate <NSObject>
 
-- (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address;
+    - (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address;
 
 @end

@@ -9,13 +9,19 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
 
-    #import "HIAppDelegate.h"
-    #import "HICheckListModel.h"
-    #import "CheckListAnswers+HIFunctions.h"
-    #import "CheckListQuestionAnswers+HIFunctions.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+#import "HIAppDelegate.h"
+#import "HICheckListModel.h"
+#import "CheckListAnswers+HIFunctions.h"
+#import "CheckListQuestionAnswers+HIFunctions.h"
+
+#define IS_WIDESCREEN ( [ [ UIScreen mainScreen ] bounds ].size.height == 568 )
+#define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )
+#define IS_IPHONE5 ( IS_IPHONE && IS_WIDESCREEN )
+#define IS_RETINA ( [[UIScreen mainScreen] scale] == 2.0 )
 
 #endif

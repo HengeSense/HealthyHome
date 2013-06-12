@@ -13,13 +13,19 @@
 
 @interface HICheckListCategoryModel : NSObject
 
-@property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSString * key;
-@property (nonatomic, strong) HICheckListModel * checkList;
+    @property(nonatomic, strong) NSString *name;
+    @property(nonatomic, strong) NSString *key;
+    @property(nonatomic, strong) HICheckListModel *checkList;
+    @property(nonatomic, strong) NSMutableArray *questions;
 
-- (id) init;
-- (HICheckListQuestionModel *)addQuestionWithText:(NSString *)questionText;
-- (HICheckListQuestionModel *)getQuestionAtIndex:(NSUInteger)index;
-- (NSUInteger)questionsCount;
+    - (id)init;
+
+    - (HICheckListQuestionModel *)addQuestionWithText:(NSString *)questionText;
+
+    - (HICheckListQuestionModel *)getQuestionAtIndex:(NSUInteger)index;
+
+    - (NSUInteger)questionsCount;
+
+    - (HICheckListQuestionModel *)findQuestionWithKey:(NSString *)key;
 
 @end

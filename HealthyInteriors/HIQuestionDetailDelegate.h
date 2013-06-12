@@ -9,10 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "CheckListAnswers+HIFunctions.h"
 
+@class CheckListAnswerImages;
+
 @protocol HIQuestionDetailDelegate <NSObject>
 
-- (void) setValueTo:(AnswerState)value;
-- (void) setNotesTo:(NSString *)text;
-- (void) addImageWithFullName:(NSString *)fullname andThumbnailName:(NSString *)thumbnailName;
+    - (void)setValueTo:(AnswerState)value;
+
+    - (void)setNotesTo:(NSString *)text;
+
+    - (void)addImageWithFullName:(NSString *)fullName andThumbnailName:(NSString *)thumbnailName;
+
+    - (BOOL)deleteImage:(CheckListAnswerImages *)image;
+
+    - (BOOL)addFavourite;
+
+    - (BOOL)removeFavourite;
+
+    - (BOOL)isFavourite;
 
 @end

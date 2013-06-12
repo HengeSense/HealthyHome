@@ -19,7 +19,22 @@
 {
     //get the category
     HICheckListCategoryModel * category = [self.checkListModel categoryAtIndex:indexPath.row];
+
+    //get the total number of questions in the category
+    int totalQuestions = [category questionsCount];
+
+    //determine how many questions have been answered
+    int answeredCount = 0;
+    for (HICheckListQuestionModel * question in category.questions) {
+
+        AnswerState thisAnswer = [self.checkListAnswers getAnswerStateForQuestion:question.key];
+        if (thisAnswer == AnswerStateYes || thisAnswer == AnswerStateNo ) {
+            answeredCount++;
+        }
+    }
+
     cell.textLabel.text = category.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d / %d", answeredCount, totalQuestions];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
 }
@@ -43,7 +58,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
     [self configureCategoryCell:cell atIndexPath:indexPath];

@@ -14,40 +14,42 @@
 
 @implementation HIQuestionNotesViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        if (self) {
+            // Custom initialization
+        }
+        return self;
     }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lined_paper.png"]];
-    [self.view setOpaque:NO];
-    self.navigationItem.title = @"Notes";
-    
-    self.notesView.text = self.answer.notes;
-}
+    - (void)viewDidLoad {
+        [super viewDidLoad];
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lined_paper.png"]];
+        [self.view setOpaque:NO];
+        self.navigationItem.title = @"Notes";
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.notesView becomeFirstResponder];
-}
+        self.notesView.text = self.answer.notes;
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(close)];
 
--  (void)textViewDidEndEditing:(UITextView *)textView
-{
-    [self.delegate setNotesTo:textView.text];
-}
+    }
+
+    - (void)viewWillAppear:(BOOL)animated {
+        [super viewWillAppear:animated];
+        [self.notesView becomeFirstResponder];
+    }
+
+    - (void)didReceiveMemoryWarning {
+        [super didReceiveMemoryWarning];
+        // Dispose of any resources that can be recreated.
+    }
+
+    - (void)textViewDidEndEditing:(UITextView *)textView {
+        [self.delegate setNotesTo:textView.text];
+    }
+
+    - (void)close {
+        [self dismissModalViewControllerAnimated:YES];
+    }
 
 @end

@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HIViewController.h"
 
-@interface HISecondViewController : UIViewController
+@interface HISecondViewController : HIViewController
+    - (IBAction)FabricClicked:(id)sender;
+
+    - (IBAction)WoodClicked:(id)sender;
 
 @end

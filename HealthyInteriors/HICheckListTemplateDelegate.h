@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class HICheckListModel;
 
 @protocol HICheckListTemplateDelegate <NSObject>
 
-- (int)getNumberOfTemplates;
-- (HICheckListModel *)checkListWithName:(NSString *)name;
-- (HICheckListModel *)checkListWithID:(NSString *)key;
-- (HICheckListModel *)checkListWithIndex:(NSUInteger)index;
+    - (int)getNumberOfTemplates;
+
+    - (HICheckListModel *)checkListWithName:(NSString *)name;
+
+    - (HICheckListModel *)checkListWithID:(NSString *)key;
+
+    - (HICheckListModel *)checkListWithIndex:(NSUInteger)index;
+
+    - (HICheckListQuestionModel *)findQuestionWithKey:(NSString *)key;
+
 @end

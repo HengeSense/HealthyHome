@@ -11,12 +11,13 @@
 #import "CheckListAnswers+HIFunctions.h"
 #import "HICheckListQuestionDetailViewController.h"
 #import "HITableViewController.h"
+#import "HIQuestionCell.h"
+#import "HIQuestionViewDataSource.h"
 
-@interface HICheckListQuestionsViewController : HITableViewController
+@interface HICheckListQuestionsViewController : HITableViewController <HIQuestionViewDataSource>
 
-@property (nonatomic, retain) HICheckListCategoryModel * categoryModel;
-@property (nonatomic, strong) CheckListAnswers * checkListAnswers;
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+    @property(nonatomic, retain) HICheckListCategoryModel *categoryModel;
+    @property(nonatomic, strong) CheckListAnswers *checkListAnswers;
+    @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

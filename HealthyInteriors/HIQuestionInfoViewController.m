@@ -9,38 +9,114 @@
 #import "HIQuestionInfoViewController.h"
 
 @interface HIQuestionInfoViewController ()
-
+    @property(nonatomic, assign) BOOL isFavourite;
+    @property(nonatomic, strong) UIBarButtonItem *favouriteButton;
 @end
 
 @implementation HIQuestionInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+        self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+        if (self) {
+            // Custom initialization
+        }
+        return self;
     }
-    return self;
-}
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    //http://kiefermat.com/2011/09/30/using-uiwebview-for-displaying-rich-text/
-    NSString* htmlContentString = [NSString stringWithFormat:
-                                   @"<html>"
-                                   "<body>"
-                                   "<p>%@</p>"
-                                   "</body></html>", self.questionModel.information];
-    
-    [self.infoView loadHTMLString:htmlContentString baseURL:nil];
-}
+    - (void)viewDidLoad {
+        [super viewDidLoad];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+        self.navigationItem.title = @"Healthy Info Tip";
 
+        self.favouriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"star-mini"] style:UIBarButtonItemStylePlain target:self action:@selector(favourite)];
+
+        self.navigationItem.rightBarButtonItem = self.favouriteButton;
+
+        self.infoTitleLabel.text = self.questionModel.infoTitle;
+
+        self.infoView.backgroundColor = [UIColor clearColor];
+        self.infoView.opaque = NO;
+
+        if (self.isModal) {
+
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(close)];
+
+        }
+
+        self.isFavourite = [self.delegate isFavourite];
+        if (self.isFavourite) {
+
+            self.favouriteButton.style = UIBarButtonItemStyleDone;
+            self.favouriteButton.image = [UIImage imageNamed:@"star-mini-white"];
+
+        }
+
+        self.infoView.delegate = self;
+
+        NSString *cssElement = @"<link href=\"default.css\" rel=\"stylesheet\" type=\"text/css\" />";
+        NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+
+        UIFont *font = [UIFont systemFontOfSize:21];
+
+        //http://kiefermat.com/2011/09/30/using-uiwebview-for-displaying-rich-text/
+        NSString *htmlContentString = [NSString stringWithFormat:
+                @"<html>"
+                        "<head>"
+                        "%@"
+                        "</head>"
+                        "<body>"
+                        "<p>%@</p>"
+                        "</body></html>", cssElement, self.questionModel.information];
+
+        NSString *myDescriptionHTML = [NSString stringWithFormat:@"<html> \n"
+                                                                         "<head> \n"
+                                                                         "<style type=\"text/css\"> \n"
+                                                                         "body {font-family: \"%@\"; font-size: %d; padding:5px 10px;}\n"
+                                                                         "</style> \n"
+                                                                         "</head> \n"
+                                                                         "<body>%@</body> \n"
+                                                                         "</html>", font.familyName, 18, self.questionModel.information];
+
+        [self.infoView loadHTMLString:myDescriptionHTML baseURL:baseURL];
+    }
+
+    - (void)close {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+
+    - (void)favourite {
+        if (self.isFavourite) {
+            if ([self.delegate removeFavourite]) {
+                self.favouriteButton.style = UIBarButtonItemStylePlain;
+                self.favouriteButton.image = [UIImage imageNamed:@"star-mini"];
+            }
+
+        } else {
+
+            if ([self.delegate addFavourite]) {
+                self.favouriteButton.style = UIBarButtonItemStyleDone;
+                self.favouriteButton.image = [UIImage imageNamed:@"star-mini-white"];
+            }
+        }
+        self.isFavourite = [self.delegate isFavourite];
+
+    }
+
+    - (void)didReceiveMemoryWarning {
+        [super didReceiveMemoryWarning];
+        // Dispose of any resources that can be recreated.
+    }
+
+    - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+        if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
+            [[UIApplication sharedApplication] openURL:[request URL]];
+            return NO;
+        }
+
+        return YES;    }
+
+- (void)viewDidUnload {
+    [self setInfoTitleLabel:nil];
+    [super viewDidUnload];
+}
 @end

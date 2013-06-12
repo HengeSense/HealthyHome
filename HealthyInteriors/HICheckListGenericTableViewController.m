@@ -10,10 +10,8 @@
 
 @implementation HICheckListGenericTableViewController
 
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return self.checkListModel.name;
-}
+    - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+        return self.checkListModel.name;
+    }
 
 @end

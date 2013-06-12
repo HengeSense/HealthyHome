@@ -8,19 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "HICheckListModel.h"
+#import "IASKAppSettingsViewController.h"
 
-@interface HIAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface HIAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, IASKSettingsDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+    @property(strong, nonatomic) UIWindow *window;
+    @property(strong, nonatomic) UITabBarController *tabBarController;
+    @property(readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+    @property(readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+    @property(readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
+    - (void)saveContext;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property  (strong, nonatomic) UIImage * backgroundImage;
-
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
+    - (NSURL *)applicationDocumentsDirectory;
 
 @end

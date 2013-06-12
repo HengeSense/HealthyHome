@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HIViewController.h"
 #import "HIQuestionDetailDelegate.h"
+#import "HIViewController.h"
 
-@interface HIQuestionInfoViewController : HIViewController
+@interface HIQuestionInfoViewController : HIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIWebView *infoView;
-
-@property (nonatomic, strong) HICheckListQuestionModel * questionModel;
-@property (weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
-@property (nonatomic, strong) CheckListQuestionAnswers * answer;
+    @property(strong, nonatomic) IBOutlet UIWebView *infoView;
+    @property(nonatomic, strong) HICheckListQuestionModel *questionModel;
+    @property(weak, nonatomic) id <HIQuestionDetailDelegate> delegate;
+    @property(nonatomic, strong) CheckListQuestionAnswers *answer;
+    @property(nonatomic, assign) BOOL isModal;
+    @property (strong, nonatomic) IBOutlet UILabel *infoTitleLabel;
 
 @end

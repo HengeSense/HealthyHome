@@ -1,0 +1,46 @@
+<CheckList>
+    <checkListShortInfo>How to achieve healthier spaces in your home</checkListShortInfo>
+    <checkListInfo>Take a walk around your home with this checklist to identify aspects of your home environment that
+        could be improved to achieve healthier spaces.
+    </checkListInfo>
+    <Categories>
+        <Category title="Outdoors" id="09C26530-2039-4E2F-806D-4B964FBE4745">
+            <Questions>
+                <Question type="boolean" id="3292CA29-2338-46EB-AAA8-9616CD639516" yesIsBad="true">
+                    <questionText>Is your home located next to a busy road or business where cars idle ?</questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+                <Question type="boolean" id="4053BF48-5EDD-4AA4-9A66-5E8C4D89142D" yesIsBad="true">
+                    <questionText>Do you use chemical fertilisers ?</questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+                <Question type="boolean" id="2BC00166-31D9-4E67-95F6-C010A9C7807F" yesIsBad="true">
+                    <questionText>Do you use chemical pesticides around the exterior of the house or garden ?
+                    </questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+            </Questions>
+        </Category>
+        <Category title="Kitchen" id="1F01A817-5A62-4D7B-88B2-C015F8254415">
+            <Questions>
+                <Question type="boolean" id="944E7F0D-DE0C-46CE-A0AD-9389313FE627" yesIsBad="false">
+                    <questionText>Do you have a good exhaust fan over the cooking area eg can it draw a piece of tissue
+                        towards it ?
+                    </questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+                <Question type="boolean" id="5D71B41D-362A-45FA-B4E9-33D7C5BCA412" yesIsBad="true">
+                    <questionText>Are there any signs of mold or mildew in the kitchen, including under the sink ?
+                    </questionText>
+                    <questionInfo></questionInfo>
+                </Question>
+                <Question type="boolean" id="48FD5A03-32C6-49D9-83EA-98CE73650774" yesIsBad="true">
+                    <questionText>Do you use non stick cooking items eg pots and pans ?</questionText>
+                    <questionInfo>Where possible avoid non stick cooking pots and pans, opt for cast iron, ceramic and
+                        stainless steel.
+                    </questionInfo>
+                </Question>
+            </Questions>
+        </Category>
+    </Categories>
+</CheckList>

@@ -12,19 +12,40 @@
 
 @interface HICheckListModel : NSObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * key;
-@property (nonatomic, retain) NSString * shortDescription;
-@property (nonatomic, retain) NSString * description;
-@property (nonatomic, retain) NSString * filename;
-@property (nonatomic, assign) BOOL isPurchased;
-@property (nonatomic, retain) UIColor *goodAnswerColour;
-@property (nonatomic, retain) UIColor *badAnswerColour;
+    @property(nonatomic, retain) NSString *name;
+    @property(nonatomic, retain) NSString *key;
+    @property(nonatomic, retain) NSString *shortDescription;
+    @property(nonatomic, retain) NSString *description;
+    @property(nonatomic, retain) NSString *filename;
+    @property(nonatomic, assign) BOOL isPurchased;
+    @property(nonatomic, retain) UIColor *goodAnswerTextColour;
+    @property(nonatomic, retain) UIColor *badAnswerTextColour;
+    @property(nonatomic, retain) UIColor *goodAnswerBackColour;
+    @property(nonatomic, retain) UIColor *badAnswerBackColour;
+    @property(nonatomic, readonly) NSUInteger totalNumberOfQuestions;
 
-- (id) init;
-- (HICheckListCategoryModel *)addCategroyWithName:(NSString *)categoryName;
-- (void) addCategory:(HICheckListCategoryModel *)category;
-- (HICheckListCategoryModel *)categoryAtIndex:(NSUInteger)index;
-- (NSUInteger)categoriesCount;
+    - (id)init;
+
+    - (HICheckListCategoryModel *)addCategoryWithName:(NSString *)categoryName;
+
+    - (void)addCategory:(HICheckListCategoryModel *)category;
+
+    - (HICheckListCategoryModel *)categoryAtIndex:(NSUInteger)index;
+
+    - (NSUInteger)indexForCategory:(HICheckListCategoryModel *)category;
+
+    - (NSUInteger)categoriesCount;
+
+    - (HICheckListQuestionModel *)findQuestionWithKey:(NSString *)key;
+
+    - (HICheckListQuestionModel *)questionAtIndex:(NSUInteger)index;
+
+    - (HICheckListQuestionModel *)getNextQuestion:(HICheckListQuestionModel *)question;
+
+    - (HICheckListQuestionModel *)getPrevQuestion:(HICheckListQuestionModel *)question;
+
+    - (NSUInteger)indexOfQuestion:(HICheckListQuestionModel *)question;
+
+    - (void)didFinishReadingFile;
 
 @end

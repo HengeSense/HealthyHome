@@ -10,5 +10,6 @@
 #import "HICheckListGenericTableViewController.h"
 
 @interface HIReportsTableViewController : HICheckListGenericTableViewController
+    @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
