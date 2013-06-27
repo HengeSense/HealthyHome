@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17261c6a-825e-404a-b32a-695ac24952cc" name="Default" comment="v0_3">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/InAppSettingsKit" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/Page3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/Page3@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/Page4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/Page4@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Healthy Home.xcodeproj/xcshareddata/xcschemes/Healthy Home.xcscheme" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/HealthyInteriors.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/HealthyInteriors.xml" />
-    </list>
+    <list default="true" id="17261c6a-825e-404a-b32a-695ac24952cc" name="Default" comment="v0_3" />
     <list id="eeccae2b-fb93-4460-b000-15a44a6fec6d" name="Default task" comment="" />
     <ignored path="HealthyInteriors.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372344165772" ignored="false" />
+    <file path="/Dummy.txt" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372346960672" ignored="false" />
     <file path="/HICheckListQuestionDetailViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371731167583" ignored="false" />
     <file path="/fragment.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371117105778" ignored="false" />
     <file path="/HICheckListQuestionDetailViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370691671489" ignored="false" />
@@ -92,45 +82,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Page1@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page1@2x.png">
+      <file leaf-file-name="Page6@2x.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page6@2x.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page2@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page2@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page3@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page3@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Localizable.strings" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Localizable.strings">
+      <file leaf-file-name="HealthyInteriorsChangeList.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriorsChangeList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="80" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
+            <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.5961723">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page4.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page4.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page5.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page5.png">
+      <file leaf-file-name="NavBar2.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/NavBar2.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -145,24 +114,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavBar2.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/NavBar2.png">
+      <file leaf-file-name="Page5.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page5.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HealthyInteriorsChangeList.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriorsChangeList.txt">
+      <file leaf-file-name="Page4.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page4.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Localizable.strings" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Localizable.strings">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.6105263">
+            <state line="8" column="80" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page6@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page6@2x.png">
+      <file leaf-file-name="Page3@2x.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page3@2x.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page2@2x.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page2@2x.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Page1@2x.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page1@2x.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -211,8 +201,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="173" />
-    <option name="y" value="98" />
+    <option name="x" value="102" />
+    <option name="y" value="38" />
     <option name="width" value="2254" />
     <option name="height" value="1167" />
   </component>
@@ -417,14 +407,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.sourceCode.Objective-C" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Healthy Home.xcodeproj" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MYIntroductionView.m" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="HealthyInteriors" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -490,13 +480,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="173" y="98" width="2254" height="1167" extended-state="0" />
-    <editor active="true" />
+    <frame x="102" y="38" width="2254" height="1167" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15670437" sideWeight="0.7092145" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19273868" sideWeight="0.79496735" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19273868" sideWeight="0.79496735" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2907855" sideWeight="0.5002019" order="8" side_tool="true" content_ui="tabs" />
@@ -545,7 +535,7 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
     <option name="LIMIT_HISTORY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
@@ -670,7 +660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HealthyInteriorsChangeList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.6105263">
+        <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.5961723">
           <folding />
         </state>
       </provider>
