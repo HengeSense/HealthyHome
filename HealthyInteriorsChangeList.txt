@@ -84,3 +84,4 @@
 - Changed: App name to Healthy Home
 - Reworded: text in intro screens
 - Changed: hide documents from iTunes
+
