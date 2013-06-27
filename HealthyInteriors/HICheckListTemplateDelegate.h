@@ -22,4 +22,8 @@
 
     - (HICheckListQuestionModel *)findQuestionWithKey:(NSString *)key;
 
+    - (NSArray *)searchQuestionsForText:(NSString *)text;
+
+    - (NSArray *)searchInfoForText:(NSString *)text;
+
 @end

@@ -11,9 +11,11 @@
 #import "FindInfoViewController.h"
 #import "IASKSettingsReader.h"
 #import "HIFavouritesTableViewController.h"
+#import "HIIntroViewController.h"
 
 @interface HIAppDelegate (/*private*/)
     @property(nonatomic, strong) HICheckListTemplateManager *templateManager;
+
 @end
 
 @implementation HIAppDelegate
@@ -29,6 +31,8 @@
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
         self.templateManager = [[HICheckListTemplateManager alloc] init];
+
+        [self setTheme];
 
         UINavigationController *checkListsTab;
         UINavigationController *settingsTab;
@@ -50,7 +54,9 @@
             //Find
 
             FindInfoViewController *findController = [[FindInfoViewController alloc] initWithNibName:@"FindInfoView" bundle:nil];
-            findController.title = @"Search";
+            findController.title = @"Search Tips";
+            findController.managedObjectContext = self.managedObjectContext;
+            findController.templateDelegate = self.templateManager;
 
             findTab = [[UINavigationController alloc] initWithRootViewController:findController];
             findTab.tabBarItem.image = [UIImage imageNamed:@"search"];
@@ -88,7 +94,19 @@
 
         [self.window makeKeyAndVisible];
 
-        [self setTheme];
+        //get the intro version lst displayed
+        NSString * introVersion = [HIAppDelegate retrieveFromUserDefaults:@"introVersion"];
+        int introVersionNum = [introVersion intValue];
+
+        NSString * bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+        int bundleVersionNum = [bundleVersion intValue];
+
+        if (bundleVersion > introVersion) {
+            HIIntroViewController * introViewController = [[HIIntroViewController alloc] init];
+            introViewController.displaySkipButton = YES;
+            [self.window.rootViewController presentViewController:introViewController animated:YES completion:nil];
+            [HIAppDelegate saveToUserDefaults:@"introVersion" value:bundleVersion];
+        }
 
         return YES;
     }
@@ -101,6 +119,9 @@
 
     - (void)setTheme {
         NSString *currentTheme = [HIAppDelegate retrieveFromUserDefaults:@"theme"];
+        if ([currentTheme isEqualToString:@"0"]) {
+            currentTheme = @"default";
+        }
 
         [PXEngine styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:currentTheme ofType:@"css"]
                               withOrigin:PXStylesheetOriginApplication];
@@ -120,6 +141,32 @@
     }
 
     - (void)settingsViewControllerDidEnd:(IASKAppSettingsViewController *)sender {
+
+    }
+
+    - (void)settingsViewController:(id)sender buttonTappedForKey:(NSString*)key
+    {
+
+        if ([key isEqualToString:@"tutorial"]) {
+
+            HIIntroViewController * introViewController = [[HIIntroViewController alloc] init];
+            introViewController.displaySkipButton = NO;
+             [((UIViewController *)sender).navigationController pushViewController:introViewController animated:YES];
+
+        }
+    }
+    - (NSString*) settingsViewController:(id<IASKViewController>)settingsViewController
+             mailComposeBodyForSpecifier:(IASKSpecifier*) specifier
+    {
+        NSLog(@"%@", [specifier.specifierDict objectForKey:@"tellafriend"]);
+
+
+
+        NSMutableString *returnString=[[NSMutableString alloc] init];
+        [returnString appendString:@"Check out this new Healthy Home App I found, it has some great tips.\n\n"];
+        [returnString appendString:@"<a href=\"https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&mt=8\" target=\"itunes_store\">Healthy Home App</a>"];
+
+        return returnString;
 
     }
 

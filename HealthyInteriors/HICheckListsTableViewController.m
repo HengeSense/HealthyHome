@@ -41,12 +41,20 @@
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
 
+    - (void)viewWillAppear:(BOOL)animated
+    {
+        [super viewWillAppear:animated];
+
+    }
+
     - (void)viewDidAppear:(BOOL)animated {
         [super viewDidAppear:animated];
         int sections = [[self.fetchedResultsController sections] count];
+/*
         if (sections == 0) {
             [self showPopTipView];
         }
+*/
 
     }
 
@@ -59,12 +67,22 @@
 
     - (void)showNewCheckList {
 
+        HICheckListModel *model = [self.templateDelegate checkListWithIndex:0];
+
+        HINewCheckListDetailViewController *detailViewController = [[HINewCheckListDetailViewController alloc] init];
+        detailViewController.delegate = self;
+        detailViewController.model = model;
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+        [self presentViewController:nc animated:YES completion:nil];
+
+/* temporary deletion until in app purchases are enabled
         HINewCheckListViewController *newc = [[HINewCheckListViewController alloc] initWithStyle:UITableViewStyleGrouped];
         UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:newc];
         newc.delegate = self;
         newc.templateManagerDelegate = self.templateDelegate;
 
         [self presentViewController:nc animated:YES completion:nil];
+*/
     }
 
 #pragma mark - Fetched results controller
@@ -255,7 +273,7 @@
     }
 
     - (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel withAddress:(NSString *)address {
-        [self dismissPopTipView];
+        //[self dismissPopTipView];
 
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
@@ -293,12 +311,13 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 
+/*
     - (void)showPopTipView {
-        NSString *message = @"Press + to create a checklist from one of the templates.";
+        NSString *message = @"Press + to create a new Healthy Home Checklist.";
         CMPopTipView *popTipView = [[CMPopTipView alloc] initWithMessage:message];
         popTipView.delegate = self;
         popTipView.dismissTapAnywhere = YES;
-        [popTipView autoDismissAnimated:YES atTimeInterval:5.0];
+        //[popTipView autoDismissAnimated:YES atTimeInterval:5.0];
         [popTipView presentPointingAtBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];
 
         self.hintPopup = popTipView;
@@ -311,10 +330,18 @@
         }
     }
 
-
 #pragma mark CMPopTipViewDelegate methods
     - (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView {
         self.hintPopup = nil;
+    }
+*/
+
+    - (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address {
+        HICheckListModel *model = ((HINewCheckListDetailViewController *) viewController).model;
+        [self dismissViewControllerAnimated:YES completion:^(void) {
+            [self requestCreationOfCheckList:model withAddress:(NSString *) address];
+        }];
+
     }
 
 @end

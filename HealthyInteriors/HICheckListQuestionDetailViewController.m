@@ -14,9 +14,7 @@
 #import "CheckListAnswerImages.h"
 #import "CustomBadge.h"
 #import "Favourites.h"
-
-#define assetTextColour [UIColor colorWithRed:0.099 green:0.356 blue:0.109 alpha:1.000]
-#define challengeTextColour [UIColor colorWithRed:0.570 green:0.111 blue:0.142 alpha:1.000]
+#import "UIColor-Expanded.h"
 
 @interface HICheckListQuestionDetailViewController (/*private*/)
     @property(nonatomic, assign) NSInteger currentIndex;
@@ -24,6 +22,7 @@
     @property(nonatomic, retain) HICheckListCategoryModel *categoryModel;
     @property(nonatomic, strong) HICheckListQuestionModel *questionModel;
     @property(nonatomic, strong) CheckListQuestionAnswers *answer;
+    @property(nonatomic, strong) NSString *backTitle;
     @property(nonatomic, assign) BOOL isReportPage;
     @property(strong, nonatomic) IBOutlet UILabel *currentQuestionLabel;
     @property(strong, nonatomic) IBOutlet UILabel *prevQuestionLabel;
@@ -242,6 +241,12 @@
         [self updateImagesBadge];
         [self updateBackColour:NO];
 
+        //hide camera button if not ios 6
+        NSString *version = [[UIDevice currentDevice] systemVersion];
+
+        BOOL isAtLeast6 = [version floatValue] >= 6.0;
+        self.cameraButton.hidden = !isAtLeast6;
+
     }
 
     - (void)updateQuestionNavButtons {
@@ -306,6 +311,7 @@
 
         id <HIQuestionDetailDelegate> questionsViewController = (id <HIQuestionDetailDelegate>) [self.dataSource parentDataSourceForQuestion:self.questionModel];
         self.dataSource = (id <HIQuestionViewDataSource>) questionsViewController;
+        self.backTitle = [self.dataSource getBackTitle];
 
         NSMutableArray *viewControllers = [NSMutableArray arrayWithArray:[[self navigationController] viewControllers]];
         [viewControllers removeLastObject];
@@ -325,6 +331,7 @@
 
         HIQuestionInfoViewController *vc = [[HIQuestionInfoViewController alloc] init];
         vc.questionModel = self.questionModel;
+        vc.managedObjectContext = self.managedObjectContext;
         vc.delegate = self;
         vc.isModal = YES;
 
@@ -418,7 +425,7 @@
 
     - (void)updateNavigationBar {
         self.navigationItem.title = [NSString stringWithFormat:@"%d / %d", self.currentIndex + 1, self.totalQuestions];
-        self.navigationItem.leftBarButtonItem.title = self.questionModel.categoryModel.name;
+        self.navigationItem.leftBarButtonItem.title = self.backTitle;
     }
 
     - (void)updateInfoButton {
@@ -482,25 +489,26 @@
     }
 
     - (void)updateBackColour:(BOOL)animated {
-        UIColor *newColor = [UIColor clearColor];
-        UIColor *newTextColor = [UIColor clearColor];
+        UIColor *newBackColor = [self.checkListAnswers backColourForAnswerToQuestion:self.questionModel.key forTemplateQuestion:self.questionModel];
+        UIColor *newTextColor = [self.checkListAnswers textColourForAnswerToQuestion:self.questionModel.key forTemplateQuestion:self.questionModel];
         NSString *result = @"";
         NSString *image = @"Question-mark";
 
+
         if ([self.checkListAnswers isAnswerToQuestionAChallenge:self.questionModel]) {
-            newColor = [UIColor redColor];
-            newTextColor = challengeTextColour;
             result = @"Healthy Challenge";
             image = @"ThumbsDn_150";
         } else if ([self.checkListAnswers isAnswerToQuestionAnAsset:self.questionModel]) {
-            newColor = [UIColor greenColor];
-            newTextColor = assetTextColour;
             result = @"Healthy Asset";
             image = @"ThumbsUp_150";
+        } else{
+            newBackColor = [UIColor clearColor];
+            newTextColor = [UIColor clearColor];
+
         }
 
         self.colourIndicator.alpha = 0.0;
-        self.colourIndicator.backgroundColor = newColor;
+        self.colourIndicator.backgroundColor = newBackColor;
 
         [UIView animateWithDuration:0.1
                               delay:0
@@ -515,7 +523,7 @@
                                  animations:^{
                                      self.ResultLabel.text = result;
                                      self.ResultLabel.alpha = 1.0;
-                                     self.colourIndicator.alpha = 0.1;
+                                     self.colourIndicator.alpha = 0.3;
                                  }];
             }
         }];

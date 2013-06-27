@@ -22,6 +22,8 @@
     @property(nonatomic, retain) UIColor *badAnswerTextColour;
     @property(nonatomic, retain) UIColor *goodAnswerBackColour;
     @property(nonatomic, retain) UIColor *badAnswerBackColour;
+    @property(nonatomic, retain) UIColor *noAnswerBackColour;
+    @property(nonatomic, retain) UIColor *noAnswerTextColour;
     @property(nonatomic, readonly) NSUInteger totalNumberOfQuestions;
 
     - (id)init;
@@ -47,5 +49,9 @@
     - (NSUInteger)indexOfQuestion:(HICheckListQuestionModel *)question;
 
     - (void)didFinishReadingFile;
+
+    - (NSArray *)searchQuestionsForText:(NSString *)text;
+
+    - (NSArray *)searchInfoForText:(NSString *)text;
 
 @end

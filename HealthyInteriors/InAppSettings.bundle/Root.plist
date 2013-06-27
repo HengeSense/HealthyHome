@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Feedback</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>IASKOpenURLSpecifier</string>
+			<key>Title</key>
+			<string>Like App in App Store</string>
+			<key>Key</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>IASKMailComposeSpecifier</string>
+			<key>Title</key>
+			<string>Send Feedback</string>
+			<key>IASKMailComposeSubject</key>
+			<string>Healthy Home App Feedback</string>
+			<key>IASKMailComposeToRecipents</key>
+			<array>
+				<string>healthyhomeapp@healthyinteriors.com.au</string>
+			</array>
+			<key>IASKMailComposeBody</key>
+			<string>
+
+
+
+                Here is some feedback for your Healthy Home App
+
+            </string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>http://www.healthyinteriors.com.au/forums/</string>
+			<key>Title</key>
+			<string>Support Site</string>
+			<key>Type</key>
+			<string>IASKOpenURLSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>IASKMailComposeSpecifier</string>
+			<key>Title</key>
+			<string>Tell A Friend</string>
+			<key>IASKMailComposeBodyIsHTML</key>
+			<string>YES</string>
+			<key>IASKMailComposeSubject</key>
+			<string>Healthy Home App - Great Find!</string>
+			<key>IASKMailComposeBody</key>
+			<string>Check out this new Healthy Home App I found, it has some great tips. &amp;lt;a href=&quot;https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&amp;mt=8&quot; target=&quot;itunes_store&quot;&amp;gt;Healthy Home App&amp;lt;/a&amp;gt;
+
+
+                
+                </string>
+			<key>IASKSpecifier</key>
+			<string>tellafriend</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Legal</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Copyright</string>
+			<key>File</key>
+			<string>Copyright</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Disclaimer</string>
+			<key>File</key>
+			<string>Disclaimer</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Help</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>IASKButtonSpecifier</string>
+			<key>Title</key>
+			<string>Tutorial</string>
+			<key>Key</key>
+			<string>tutorial</string>
+			<key>IASKTextAlignment</key>
+			<string>IASKUITextAlignmentLeft</string>
+		</dict>
+	</array>
+</dict>
+</plist>

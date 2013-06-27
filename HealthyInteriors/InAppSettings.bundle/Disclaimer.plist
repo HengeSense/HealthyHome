@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Healthy Interiors supplies this information as a guide only, home health and required action is subject to individual circumstances, conditions, location &amp; relevant laws and practices in your area. While care has been taken in researching this information Healthy Interiors and associates take no responsibility for the accuracy, inaccuracy or use of the information supplied.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

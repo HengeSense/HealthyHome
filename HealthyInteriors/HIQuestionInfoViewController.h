@@ -18,5 +18,6 @@
     @property(nonatomic, strong) CheckListQuestionAnswers *answer;
     @property(nonatomic, assign) BOOL isModal;
     @property (strong, nonatomic) IBOutlet UILabel *infoTitleLabel;
+    @property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
 
 @end

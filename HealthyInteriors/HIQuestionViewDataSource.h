@@ -20,4 +20,6 @@
 
     - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question;
 
+    - (NSString *)getBackTitle;
+
 @end

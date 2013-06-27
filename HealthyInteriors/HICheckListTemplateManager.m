@@ -201,4 +201,26 @@
         return nil;
     }
 
+    - (NSArray *)searchQuestionsForText:(NSString *)text {
+        NSMutableArray * results = [[NSMutableArray alloc] init];
+
+        for (HICheckListModel * checkList in self.checkLists) {
+
+            [results addObjectsFromArray:[checkList searchQuestionsForText:text]];
+        }
+
+        return [[NSArray alloc] initWithArray:results];
+    }
+
+    - (NSArray *)searchInfoForText:(NSString *)text {
+        NSMutableArray * results = [[NSMutableArray alloc] init];
+
+        for (HICheckListModel * checkList in self.checkLists) {
+
+            [results addObjectsFromArray:[checkList searchInfoForText:text]];
+        }
+
+        return [[NSArray alloc] initWithArray:results];
+    }
+
 @end

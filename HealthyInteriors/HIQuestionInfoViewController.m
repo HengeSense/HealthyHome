@@ -7,10 +7,13 @@
 //
 
 #import "HIQuestionInfoViewController.h"
+#import "Favourites.h"
 
 @interface HIQuestionInfoViewController ()
     @property(nonatomic, assign) BOOL isFavourite;
     @property(nonatomic, strong) UIBarButtonItem *favouriteButton;
+
+    - (void)updateFavouriteIcon;
 @end
 
 @implementation HIQuestionInfoViewController
@@ -43,13 +46,7 @@
 
         }
 
-        self.isFavourite = [self.delegate isFavourite];
-        if (self.isFavourite) {
-
-            self.favouriteButton.style = UIBarButtonItemStyleDone;
-            self.favouriteButton.image = [UIImage imageNamed:@"star-mini-white"];
-
-        }
+        [self updateFavouriteIcon];
 
         self.infoView.delegate = self;
 
@@ -78,9 +75,24 @@
                                                                          "</html>", font.familyName, 18, self.questionModel.information];
 
         [self.infoView loadHTMLString:myDescriptionHTML baseURL:baseURL];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:) name:NSManagedObjectContextObjectsDidChangeNotification object:self.managedObjectContext];
+
+    }
+
+    - (void)updateFavouriteIcon {
+        self.isFavourite = [self.delegate isFavourite];
+        if (self.isFavourite) {
+
+                self.favouriteButton.style = UIBarButtonItemStyleDone;
+                self.favouriteButton.image = [UIImage imageNamed:@"star-mini-white"];
+
+            }
     }
 
     - (void)close {
+
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
         [self dismissModalViewControllerAnimated:YES];
     }
 
@@ -119,4 +131,30 @@
     [self setInfoTitleLabel:nil];
     [super viewDidUnload];
 }
+
+    - (void)handleDataModelChange:(NSNotification *)note {
+//    NSSet *updatedObjects = [[note userInfo] objectForKey:NSUpdatedObjectsKey];
+    NSSet *deletedObjects = [[note userInfo] objectForKey:NSDeletedObjectsKey];
+//    NSSet *insertedObjects = [[note userInfo] objectForKey:NSInsertedObjectsKey];
+//    [self updateNotesBadge];
+//    [self updateImagesBadge];
+
+        // Do something in response to this
+
+//        if (deletedObjects.count > 0) {
+//
+//            for (id item in deletedObjects) {
+//
+//               if ([item isKindOfClass:[Favourites class]]);
+//
+//                Favourites * thisItem = item;
+//                if ([thisItem.questionID isEqualToString:self.questionModel.key]) {
+//                    self.favouriteButton.style = UIBarButtonItemStylePlain;
+//                    self.favouriteButton.image = [UIImage imageNamed:@"star-mini"];
+//                }
+//            }
+//
+//        }
+    }
+
 @end

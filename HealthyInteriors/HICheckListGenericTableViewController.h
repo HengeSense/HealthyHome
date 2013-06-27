@@ -16,4 +16,8 @@
 @property (nonatomic, strong) CheckListAnswers * checkListAnswers;
 @property (nonatomic, strong) UINavigationController * navController;
 
+    - (id)initWithCheckListAnswers:(CheckListAnswers *)checkListAnswers checkListModel:(HICheckListModel *)checkListModel;
+
+    + (id)controllerWithCheckListAnswers:(CheckListAnswers *)checkListAnswers checkListModel:(HICheckListModel *)checkListModel;
+
 @end

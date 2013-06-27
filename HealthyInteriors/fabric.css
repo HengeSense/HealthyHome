@@ -7,12 +7,3 @@
 table-view {
     background-image: url(bundle://45degreee_fabric_@2X.png);
 }
-
-navigation-bar {
-    background-color: linear-gradient(rgb(130, 130, 170), rgb(228, 228, 228));
-}
-
-#navButtonNext, #navButtonBack, #nextQuestionButton, #prevQuestionButton {
-    color: #ffffff;
-    background-color: linear-gradient(rgba(130, 130, 170, 0.5), rgba(228, 228, 228, 0.5));
-}

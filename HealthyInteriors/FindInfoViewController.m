@@ -11,9 +11,21 @@
 // http://www.raywenderlich.com/999/core-data-tutorial-how-to-use-nsfetchedresultscontroller
 //
 
+#import "HIViewController.h"
 #import "FindInfoViewController.h"
+#import "HIQuestionCell.h"
+#import "HISearchResultsCell.h"
+#import "NSString+HTML.h"
+#import "HIQuestionInfoViewController.h"
+#import "Favourites.h"
 
 @interface FindInfoViewController ()
+    @property(nonatomic, strong) NSArray *resultsQuestionsData;
+    @property(nonatomic, strong) NSArray *resultsTipsData;
+    @property(nonatomic, strong) IBOutlet UISearchBar *searchBar;
+    @property(nonatomic, strong) IBOutlet UITableView *tableView;
+    @property(nonatomic, strong) HICheckListQuestionModel *selectedQuestion;
+
     - (void)searchBar:(UISearchBar *)theSearchBar activate:(BOOL)active;
 
     - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -21,25 +33,27 @@
     - (void)searchTextDidChange:(NSString *)searchText;
 @end
 
-@implementation FindInfoViewController
+@implementation FindInfoViewController {
+
+}
     @synthesize searchBar;
     @synthesize tableView;
     @synthesize managedObjectContext;
-    @synthesize tableData = _tableData;
-    @synthesize cellNib;
+    @synthesize resultsQuestionsData = _resultsQuestionsData;
 
     - (id)initWithTabBar {
-        if ([self init]) {
+        if (self = [super init]) {
 
             NSLog(@"%s", __FUNCTION__);
 
-            self.title = @"Remember";
+            self.title = @"Search Tips";
 
             self.tabBarItem.image = [UIImage imageNamed:@"search.png"];
 
             self.navigationItem.title = self.title;
 
-            self.tableData = [[NSMutableArray alloc] init];
+            self.resultsQuestionsData = [[NSArray alloc] init];
+            self.resultsTipsData = [[NSArray alloc] init];
 
         }
 
@@ -67,11 +81,15 @@
     - (void)viewDidLoad {
         [super viewDidLoad];
         [self searchTextDidChange:@""];
+    }
 
+    - (void) viewWillDisappear:(BOOL)animated {
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+        [super viewWillDisappear:animated];
     }
 
     - (void)viewDidAppear:(BOOL)animated {
-        [self.searchBar becomeFirstResponder];
+        //[self.searchBar becomeFirstResponder];
         [super viewDidAppear:animated];
     }
 
@@ -91,18 +109,25 @@
     }
 
     - (void)searchTextDidChange:(NSString *)searchText {
-        NSPredicate *predicate = nil;
+        //NSPredicate *predicate = nil;
         NSString *sc = [NSString stringWithFormat:@"%@", searchText];
 
         if ([sc isEqualToString:@""]) {
-            //[self.fetchedResultsController.fetchRequest setPredicate:nil];
-        }
-        else {
-            predicate = [NSPredicate predicateWithFormat:@"(thought contains[cd] %@)", sc];
+
+            self.resultsQuestionsData = [self.templateDelegate searchQuestionsForText:sc];
+            self.resultsTipsData = [self.templateDelegate searchInfoForText:sc];
+            [self.tableView reloadData];
+
+        } else {
+
+            self.resultsQuestionsData = [self.templateDelegate searchQuestionsForText:sc];
+            self.resultsTipsData = [self.templateDelegate searchInfoForText:sc];
+            [self.tableView reloadData];
+            //predicate = [NSPredicate predicateWithFormat:@"(thought contains[cd] %@)", sc];
             //[self.fetchedResultsController.fetchRequest setPredicate:predicate];
         }
 
-        NSError *error = nil;
+        //NSError *error = nil;
         //[NSFetchedResultsController deleteCacheWithName:nil];
 
 //    if (![[self fetchedResultsController] performFetch:&error]) {
@@ -154,53 +179,160 @@
         [theSearchBar setShowsCancelButton:active animated:YES];
     }
 
-//- (void)configureCell:(FindThoughtResultCellView *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    Thought *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    [cell configureCellWithThought:info];
-//}
+    - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+//        HICheckListQuestionModel *question = [self.resultsQuestionsData objectAtIndex:indexPath.row];
+//        cell.textLabel.text = question.text;
+//        return cell;
+
+    }
 
     - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath; {
-        return 45.0;
+        return 100.0;
+    }
+
+/*
+    - (NSString *)tableView:(UITableView *)tableView1 titleForHeaderInSection:(NSInteger)section {
+        //return (section == 0) ? @"Tips" : @"Questions";
+    }
+*/
+
+
+
+    - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+        return 1;
     }
 
     - (NSInteger)tableView:(UITableView *)thisTableView numberOfRowsInSection:(NSInteger)section {
-        //id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-        return 0;//[sectionInfo numberOfObjects];
+        return (section == 0) ? self.resultsTipsData.count : self.resultsQuestionsData.count;
     }
 
     - (UITableViewCell *)tableView:(UITableView *)thisTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-//    FindThoughtResultCellView *cell = [FindThoughtResultCellView cellForTableView:tableView fromNib:self.cellNib];
-//    [self configureCell:cell atIndexPath:indexPath];
-//    
-//    return cell;
+        static NSString *CellIdentifier = @"Cell";
+        HISearchResultsCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+        if (cell == nil) {
+            cell = [[HISearchResultsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+
+        if (indexPath.section == 0) {
+            HICheckListQuestionModel *question = [self.resultsTipsData objectAtIndex:indexPath.row];
+            cell.titleLabel.text = question.infoTitle;
+            cell.descriptionLabel.text =  [[[question.information stringByStrippingTags] stringByRemovingNewLinesAndWhitespace] stringByDecodingHTMLEntities];
+        } else {
+            HICheckListQuestionModel *question = [self.resultsQuestionsData objectAtIndex:indexPath.row];
+            cell.titleLabel.text = question.categoryModel.name;
+            cell.descriptionLabel.text = question.text;
+        }
+
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        return cell;
 
     }
 
     - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    DisplayThoughtViewController *detailViewController = [[DisplayThoughtViewController alloc] init];
-//    Thought *info = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    [detailViewController configureViewWithThought:info];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-    }
 
-#pragma mark - TableView Editing
+        if (indexPath.section == 0) {
+            HIQuestionInfoViewController *vc = [[HIQuestionInfoViewController alloc] init];
+            self.selectedQuestion = [self.resultsTipsData objectAtIndex:indexPath.row];
 
-    - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-        return UITableViewCellEditingStyleDelete;
-    }
+            vc.questionModel = self.selectedQuestion;
+            vc.delegate = self;
+            vc.isModal = YES;
 
-    - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-        return YES;
-    }
+            //[self.navigationController pushViewController:vc animated:YES];
+            UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self presentViewController:nc animated:YES completion:nil];
 
-#pragma mark - Accessors
-
-    - (UINib *)cellNib {
-        if (cellNib == nil) {
-            //self.cellNib = [FindThoughtResultCellView nib];
         }
-        return cellNib;
+    }
+
+    - (void)scrollViewWillBeginDragging:(UIScrollView *)activeScrollView {
+
+        [self dismissKeyboard];
+
+    }
+
+    - (void)dismissKeyboard {
+
+        NSLog(@"dismissKeyboard");
+
+        [self.searchBar setShowsCancelButton:NO animated:YES];
+        [self.searchBar resignFirstResponder];
+        self.tableView.allowsSelection = YES;
+        self.tableView.scrollEnabled = YES;
+
+    }
+
+    - (BOOL)doContextSave {
+
+        BOOL result = YES;
+        NSError *error = nil;
+        if (![self.managedObjectContext save:&error]) {
+
+            /*
+             Replace this implementation with code to handle the error appropriately.
+
+             abort() causes the application to generate a crash log and terminate.
+             You should not use this function in a shipping application, although it may be useful during development.
+             If it is not possible to recover from the error,
+             display an alert panel that instructs the user to quit the application by pressing the Home button.
+             */
+
+
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            result = NO;
+        }
+
+        [self.tableView reloadData];
+        return result;
+
+    }
+
+    - (BOOL)addFavourite {
+        Favourites *favourite = [NSEntityDescription insertNewObjectForEntityForName:@"Favourites" inManagedObjectContext:self.managedObjectContext];
+        favourite.questionID = self.selectedQuestion.key;
+        BOOL itemAdded = [self doContextSave];
+        return itemAdded;
+    }
+
+    - (BOOL)removeFavourite {
+
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Favourites" inManagedObjectContext:self.managedObjectContext];
+        [request setEntity:entity];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionID = %@", self.selectedQuestion.key];
+        [request setPredicate:predicate];
+
+        //get the object
+        NSError *error = nil;
+        NSArray *records = [self.managedObjectContext executeFetchRequest:request error:&error];
+        BOOL itemRemoved = NO;
+        for (Favourites *item in records) {
+            [self.managedObjectContext deleteObject:item];
+            itemRemoved = YES;
+        }
+
+        return itemRemoved;
+
+    }
+
+    - (BOOL)isFavourite {
+
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Favourites" inManagedObjectContext:self.managedObjectContext];
+        [request setEntity:entity];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionID = %@", self.selectedQuestion.key];
+        [request setPredicate:predicate];
+
+        NSError *error = nil;
+        NSUInteger count = 0;
+        count = [self.managedObjectContext countForFetchRequest:request error:&error];
+
+        return count > 0;
+
     }
 
 @end

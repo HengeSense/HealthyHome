@@ -8,38 +8,74 @@
 
 #import "HIReportsTableViewController.h"
 #import "HICompletionReportTableViewController.h"
-#import "HIAssestsReportTableViewController.h"
+#import "HIAssetsReportTableViewController.h"
 #import "HIChallengesReportTableViewController.h"
+#import "HIReportTypeCell.h"
+#import "UIColor-Expanded.h"
 
 @interface HIReportsTableViewController ()
     @property(nonatomic, strong) NSArray *reportNames;
     @property(nonatomic, strong) NSArray *reportDetails;
     @property(nonatomic, strong) NSArray *reportViews;
+    @property(nonatomic, strong) NSArray *reportBackColours;
+    @property(nonatomic, strong) NSArray *reportTextColours;
 
     - (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation HIReportsTableViewController
+    - (id)initWithCheckListAnswers:(CheckListAnswers *)checkListAnswers checkListModel:(HICheckListModel *)checkListModel {
+        self = [super initWithCheckListAnswers:checkListAnswers checkListModel:checkListModel];
+        if (self) {
 
-    - (id)init {
-        if (self = [super init]) {
+            self.reportNames = [[NSArray alloc] initWithObjects:
+                    @"Assets Results",
+                    @"Challenge Results",
+                    @"Incomplete Questions",
+                    nil];
 
-            self.reportNames = [[NSArray alloc] initWithObjects:@"Assets Report", @"Challenges Report", @"Completion Report", nil];
-            self.reportDetails = [[NSArray alloc] initWithObjects:@"This report shows all the areas that are healthy assets",
-                                                                  @"This report shows all the areas that are health challenges",
-                                                                  @"This report shows all the questions that have not been answered yet", nil];
+            self.reportDetails = [[NSArray alloc] initWithObjects:
+                    @"This list shows all the areas that are healthy assets",
+                    @"This list shows all the areas that are potential health challenges",
+                    @"This list shows all the questions that have not yet been answered",
+                    nil];
+
             self.reportViews = [[NSArray alloc] initWithObjects:
-                    [[HIAssestsReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
+                    [[HIAssetsReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     [[HIChallengesReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     [[HICompletionReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     nil];
+            self.reportBackColours = [[NSArray alloc] initWithObjects:
+                    [self.checkListModel.goodAnswerBackColour colorByChangingAlphaTo:0.5],
+                    [self.checkListModel.badAnswerBackColour colorByChangingAlphaTo:0.5],
+                    [self.checkListModel.noAnswerBackColour colorByChangingAlphaTo:0.5],
+                    nil];
+
+            self.reportTextColours = [[NSArray alloc] initWithObjects:
+                    self.checkListModel.goodAnswerTextColour,
+                    self.checkListModel.badAnswerTextColour,
+                    self.checkListModel.noAnswerTextColour,
+                    nil];
+
         }
+
         return self;
     }
 
-    - (void)configureReportCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-        cell.textLabel.text = [self.reportNames objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [self.reportDetails objectAtIndex:indexPath.row];
+    + (id)controllerWithCheckListAnswers:(CheckListAnswers *)checkListAnswers checkListModel:(HICheckListModel *)checkListModel {
+        return [super controllerWithCheckListAnswers:checkListAnswers checkListModel:checkListModel];
+    }
+
+//] checkList:self.checkListModel checkListAnswers:self.checkListAnswers managedObjectContext:self.managedObjectContext],
+
+    - (void)configureReportCell:(HIReportTypeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+        cell.titleLabel.text = [self.reportNames objectAtIndex:indexPath.row];
+        cell.descriptionLabel.text = [self.reportDetails objectAtIndex:indexPath.row];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        HIReportTableViewController *report = [self.reportViews objectAtIndex:indexPath.row];
+        cell.countLabel.text = @""; // [NSString stringWithFormat:@"%d", [report countOfRowsForTemplate:self.checkListModel withAnswers:self.checkListAnswers]];
+
     }
 
 #pragma mark - Table view data source
@@ -56,18 +92,30 @@
         return self.checkListModel.name;
     }
 
+    - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+        return 100;
+    }
+
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *CellIdentifier = @"ReportCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        HIReportTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+            cell = [[HIReportTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
 
         [self configureReportCell:cell atIndexPath:indexPath];
         return cell;
     }
 
+    - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+        cell.textLabel.textColor = [self.reportTextColours objectAtIndex:indexPath.row];
+        UIColor *backColour = [self.reportBackColours objectAtIndex:indexPath.row];
+        cell.backgroundColor = backColour;
+        for (UIView *view in cell.contentView.subviews) {
+            view.backgroundColor = [UIColor clearColor];
+        }
+    }
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,9 +159,9 @@
 
     - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         HIReportTableViewController *vc = [self.reportViews objectAtIndex:indexPath.row];
+        vc.managedObjectContext = self.managedObjectContext;
         vc.checkList = self.checkListModel;
         vc.checkListAnswers = self.checkListAnswers;
-        vc.managedObjectContext = self.managedObjectContext;
         [vc requery];
         [self.navController pushViewController:vc animated:YES];
 

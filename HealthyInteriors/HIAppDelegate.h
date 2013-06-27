@@ -18,6 +18,10 @@
     @property(readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
     @property(readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+    + (void)saveToUserDefaults:(NSString *)key value:(NSString *)valueString;
+
+    + (NSString *)retrieveFromUserDefaults:(NSString *)key;
+
     - (void)saveContext;
 
     - (NSURL *)applicationDocumentsDirectory;

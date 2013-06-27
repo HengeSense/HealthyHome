@@ -218,4 +218,28 @@
         return answer.answerImages.count > 0;
     }
 
+    - (NSUInteger)numberOfAssets:(HICheckListQuestionModel *)templateModel {
+        int count = 0;
+        for (CheckListQuestionAnswers *answer in self.checkListQuestions) {
+            if ([self isAnswerToQuestionAnAsset:templateModel]) {
+                count++;
+            }
+        }
+        return (NSUInteger) count;
+    }
+
+    - (NSUInteger)numberOfChallenges:(HICheckListQuestionModel *)templateModel {
+        int count = 0;
+        for (CheckListQuestionAnswers *answer in self.checkListQuestions) {
+            if ([self isAnswerToQuestionAChallenge:templateModel]) {
+                count++;
+            }
+        }
+        return (NSUInteger) count;
+    }
+
+    - (NSUInteger)numberNotCompleted:(HICheckListQuestionModel *)templateModel {
+        return self.checkListQuestions.count - [self numberOfAssets:templateModel] - [self numberOfChallenges:templateModel];
+    }
+
 @end

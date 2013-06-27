@@ -8,6 +8,8 @@
 
 #import "HIReportTableViewController.h"
 #import "HICheckListQuestionDetailViewController.h"
+#import "UIColor-Expanded.h"
+#import "HIQuestionCell.h"
 
 @interface HIReportTableViewController ()
 
@@ -18,6 +20,7 @@
     - (CheckListQuestionAnswers *)getAnswerManagedObjectForQuestionID:(NSString *)questionID;
 
     - (CheckListQuestionAnswers *)createNewAnswerForQuestion:(NSString *)questionID;
+
 @end
 
 @implementation HIReportTableViewController
@@ -27,6 +30,18 @@
         if (self) {
             self.questions = [[NSMutableArray alloc] init];
         }
+        return self;
+    }
+
+    - (id)initWithStyle:(UITableViewStyle)style checkList:(HICheckListModel *)checkList checkListAnswers:(CheckListAnswers *)checkListAnswers managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+        self = [super initWithStyle:style];
+        if (self) {
+            self.checkList = checkList;
+            self.checkListAnswers = checkListAnswers;
+            self.managedObjectContext = managedObjectContext;
+           // [self requery];
+        }
+
         return self;
     }
 
@@ -41,6 +56,7 @@
     }
 
     - (void)viewWillAppear:(BOOL)animated {
+        self.navigationController.navigationBar.topItem.title = @"Checklist";
         [self requery];
     }
 
@@ -68,6 +84,10 @@
     }
 
     - (BOOL)isAnswerToQuestionEligibleForDisplay:(HICheckListQuestionModel *)question {
+        return NO;
+    }
+
+    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
         return NO;
     }
 
@@ -123,36 +143,52 @@
 
     - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
         // Return the number of sections.
-        return 1;
+        return self.questions.count;
     }
 
     - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return self.questions.count;
+        return 1;
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
         static NSString *CellIdentifier = @"Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        HIQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
-            cell.textLabel.numberOfLines = 0;
-            cell.textLabel.font = [UIFont systemFontOfSize:17.0];
-            [cell.textLabel sizeToFit];
+            cell = [[HIQuestionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
 
         //get the category
-        HICheckListQuestionModel *question = [self.questions objectAtIndex:indexPath.row];
-        cell.textLabel.text = question.text;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        HICheckListQuestionModel *question = [self.questions objectAtIndex:(NSUInteger) indexPath.section];
+        [cell setQuestion:question andAnswer:self.checkListAnswers];
+        [cell isFavourite:[self infoIsFavouriteForQuestionWIthKey:question.key]];
 
         return cell;
     }
 
     - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-        //HICheckListQuestionModel * question = [self.categoryModel getQuestionAtIndex:indexPath.row];
-        //cell.textLabel.textColor = [self.checkListAnswers colourForAnswerToQuestion:question.key forTemplateQuestion:question];
+        HICheckListQuestionModel *question = [self.questions objectAtIndex:indexPath.row];
+        cell.textLabel.textColor = [self.checkListAnswers textColourForAnswerToQuestion:question.key forTemplateQuestion:question];
+        UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.2];
+        cell.backgroundColor = backColour;
+        for (UIView *view in cell.contentView.subviews) {
+            view.backgroundColor = [UIColor clearColor];
+        }
+    }
+    - (BOOL)infoIsFavouriteForQuestionWIthKey:(NSString *)key {
+
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Favourites" inManagedObjectContext:self.managedObjectContext];
+        [request setEntity:entity];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"questionID = %@", key];
+        [request setPredicate:predicate];
+
+        NSError *error = nil;
+        NSUInteger count = 0;
+        count = [self.managedObjectContext countForFetchRequest:request error:&error];
+
+        return count > 0;
+
     }
 
 #pragma mark - Table view delegate
@@ -205,11 +241,34 @@
         HICheckListQuestionDetailViewController *detailViewController = [[HICheckListQuestionDetailViewController alloc] init];
         detailViewController.managedObjectContext = self.managedObjectContext;
         detailViewController.checkListAnswers = self.checkListAnswers;
+        detailViewController.dataSource = self;
+        detailViewController.currentQuestion = indexPath.section;
+
         //detailViewController.isReportPage = YES;
 
-        //[detailViewController setQuestion:[self.questions objectAtIndex:indexPath.row]];
-
         [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+
+    - (NSInteger)totalNumberOfQuestions {
+        //[self requery];
+        return self.questions.count;
+    }
+
+    - (HICheckListQuestionModel *)questionAtIndex:(NSInteger)index {
+        return [self.questions objectAtIndex:index];
+    }
+
+    - (NSString *)getBackTitle {
+        return self.backTitle;
+    }
+
+    - (CheckListQuestionAnswers *)getAnswerForQuestion:(NSString *)questionID {
+        CheckListQuestionAnswers *thisAnswer = [self.checkListAnswers answerToQuestionWithID:questionID];
+        if (!thisAnswer) {
+            thisAnswer = [self createNewAnswerForQuestion:questionID];
+        }
+
+        return thisAnswer;
     }
 
 @end

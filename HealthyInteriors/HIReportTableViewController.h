@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HIQuestionViewDataSource.h"
+#import "HITableViewController.h"
 
-@interface HIReportTableViewController : UITableViewController
+@interface HIReportTableViewController : HITableViewController <HIQuestionViewDataSource>
 
     @property(nonatomic, strong) HICheckListModel *checkList;
     @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -18,4 +20,9 @@
     - (void)requery;
 
     - (BOOL)isAnswerToQuestionEligibleForDisplay:(HICheckListQuestionModel *)question;
+
+    //- (id)initWithStyle:(UITableViewStyle)style checkList:(HICheckListModel *)checkList checkListAnswers:(CheckListAnswers *)checkListAnswers managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers;
+
 @end

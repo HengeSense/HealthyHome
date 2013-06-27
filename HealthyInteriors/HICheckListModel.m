@@ -6,10 +6,12 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#define assetTextColour [UIColor colorWithRed:0.099 green:0.356 blue:0.109 alpha:1.000]
-#define challengeTextColour [UIColor colorWithRed:0.570 green:0.111 blue:0.142 alpha:1.000]
-#define assetBackColour [UIColor greenColor]
-#define challengeBackColour [UIColor redColor]
+#define assetTextColour [UIColor colorWithRed:0.229 green:0.298 blue:0.128 alpha:1.000]
+#define assetBackColour [UIColor colorWithRed:0.620 green:0.753 blue:0.424 alpha:1.000]
+#define challengeTextColour [UIColor colorWithRed:0.372 green:0.311 blue:0.254 alpha:1.000]
+#define challengeBackColour [UIColor colorWithRed:0.722 green:0.655 blue:0.592 alpha:1.000]
+#define noneTextColour [UIColor blackColor]
+#define noneBackColour [UIColor whiteColor]
 
 @interface HICheckListModel (/*private*/)
     @property(nonatomic, strong) NSMutableArray *categories;
@@ -29,6 +31,8 @@
             self.badAnswerTextColour = challengeTextColour;
             self.goodAnswerBackColour = assetBackColour;
             self.badAnswerBackColour = challengeBackColour;
+            self.noAnswerBackColour = noneBackColour;
+            self.noAnswerTextColour = noneTextColour;
         }
         return self;
     }
@@ -117,6 +121,26 @@
 
         }
 
+    }
+
+    - (NSArray *)searchQuestionsForText:(NSString *)text {
+        NSMutableArray * results = [[NSMutableArray alloc] init];
+        for (HICheckListQuestionModel * question in self.questions) {
+            if ([[question.text lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound) {
+                [results addObject:question];
+            }
+        }
+        return [NSArray arrayWithArray:results];
+    }
+
+    - (NSArray *)searchInfoForText:(NSString *)text {
+        NSMutableArray * results = [[NSMutableArray alloc] init];
+        for (HICheckListQuestionModel * question in self.questions) {
+            if ([[question.information lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound || [[question.infoTitle lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound) {
+                [results addObject:question];
+            }
+        }
+        return [NSArray arrayWithArray:results];
     }
 
 @end

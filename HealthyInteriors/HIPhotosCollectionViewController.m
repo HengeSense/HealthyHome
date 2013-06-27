@@ -97,16 +97,6 @@ static NSString *CellIdentifier = @"imageCell";
         [self.navigationController pushViewController:photo animated:YES];
     }
 
-    - (void)cameraAction {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Add Image"
-                                                                 delegate:self
-                                                        cancelButtonTitle:@"Cancel"
-                                                   destructiveButtonTitle:nil
-                                                        otherButtonTitles:@"Take Photo", @"Select from Library", nil];
-        actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-        [actionSheet showInView:self.view];
-    }
-
     - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
         CGRect screenBounds = [[UIScreen mainScreen] bounds];
         int size = (screenBounds.size.width - 4 * 5) / 3;
@@ -123,6 +113,29 @@ static NSString *CellIdentifier = @"imageCell";
 
     - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
         return 5.0;
+    }
+
+    - (void)cameraAction {
+        BOOL isCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+        UIActionSheet *actionSheet;
+        if (isCamera) {
+
+            actionSheet = [[UIActionSheet alloc] initWithTitle:@"Add Image"
+                                                      delegate:self
+                                             cancelButtonTitle:@"Cancel"
+                                        destructiveButtonTitle:nil
+                                             otherButtonTitles:@"Take Photo", @"Select from Library", nil];
+        } else {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:@"Add Image"
+                                                      delegate:self
+                                             cancelButtonTitle:@"Cancel"
+                                        destructiveButtonTitle:nil
+                                             otherButtonTitles:@"Select from Library", nil];
+
+        }
+
+        actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+        [actionSheet showInView:self.view];
     }
 
 #pragma mark -

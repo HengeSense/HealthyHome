@@ -7,18 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HICheckListTemplateDelegate.h"
+#import "HIQuestionDetailDelegate.h"
 
-@interface FindInfoViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-
-    NSMutableArray *_tableData;
-
-}
+@interface FindInfoViewController : HIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, HIQuestionDetailDelegate>
 
     @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-    @property(nonatomic, strong) NSMutableArray *tableData;
-    @property(nonatomic, strong) IBOutlet UISearchBar *searchBar;
-    @property(nonatomic, strong) IBOutlet UITableView *tableView;
-    @property(nonatomic, strong) UINib *cellNib;
+    @property (nonatomic, weak) id <HICheckListTemplateDelegate> templateDelegate;
 
     - (id)initWithTabBar;
 

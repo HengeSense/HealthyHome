@@ -11,7 +11,9 @@
 #import "CheckListAnswers.h"
 #import "HITableViewController.h"
 
-@interface HICheckListCategoriesViewController : HITableViewController
+@protocol CMPopTipView;
+
+@interface HICheckListCategoriesViewController : HITableViewController <CMPopTipViewDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
 @property (nonatomic, strong) HICheckListModel * checkListModel;

@@ -42,4 +42,11 @@ typedef NS_ENUM(NSInteger, AnswerState) {
     - (BOOL)questionHasNotes:(HICheckListQuestionModel *)templateModel;
 
     - (BOOL)questionHasImages:(HICheckListQuestionModel *)templateModel;
+
+    - (NSUInteger)numberOfAssets:(HICheckListQuestionModel *)templateModel;
+
+    - (NSUInteger)numberOfChallenges:(HICheckListQuestionModel *)templateModel;
+
+    - (NSUInteger)numberNotCompleted:(HICheckListQuestionModel *)templateModel;
+
 @end

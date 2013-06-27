@@ -25,8 +25,9 @@
     - (void)viewDidLoad {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
-        self.navigationItem.title = @"Completion Report";
-        self.backTitle = @"Completion";
+        self.navigationItem.title = @"Incomplete Questions";
+        self.title = @"Incomplete";
+        self.backTitle = @"Incomplete";
 
     }
 
@@ -39,6 +40,14 @@
 
         AnswerState answer = [self.checkListAnswers getAnswerStateForQuestion:question.key];
         return answer == AnswerStateNotAnswered;
+    }
+
+    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
+        return [checkListAnswers numberNotCompleted:question];
+    }
+
+    - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question {
+        return self;
     }
 
 @end

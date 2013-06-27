@@ -24,7 +24,6 @@
 
     - (void)viewDidLoad {
         [super viewDidLoad];
-
     }
 
     - (void)viewDidAppear:(BOOL)animated {
@@ -35,5 +34,14 @@
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.
     }
+
+//    - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//    {
+//
+//        UIView *transparentView=[[UIView alloc]initWithFrame:CGRectMake(0,0,320,10)];
+//        transparentView.backgroundColor = [UIColor clearColor];
+//        return transparentView;
+//
+//    }
 
 @end

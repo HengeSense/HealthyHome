@@ -42,8 +42,9 @@
 
     - (void)viewDidLoad {
         [super viewDidLoad];
-        // Do any additional setup after loading the view.
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
+
 #pragma mark - Fetched results controller
 
     - (NSFetchedResultsController *)fetchedResultsController {
@@ -189,10 +190,12 @@
         self.selectedQuestion = [self.templateDelegate findQuestionWithKey:favourite.questionID];
 
         vc.questionModel = self.selectedQuestion;
+        vc.managedObjectContext = self.managedObjectContext;
         vc.delegate = self;
-        vc.isModal = NO;
+        vc.isModal = YES;
 
-        [self.navigationController pushViewController:vc animated:YES];
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:nc animated:YES completion:nil];
 
 //        CheckListAnswers *answers = [[self fetchedResultsController] objectAtIndexPath:indexPath];
 //        [self pushDetailView:[self.templateDelegate checkListWithID:answers.checkListID] answers:answers];

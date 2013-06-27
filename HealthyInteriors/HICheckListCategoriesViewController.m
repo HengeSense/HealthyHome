@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
+#import "CMPopTipView.h"
 #import "HICheckListCategoriesViewController.h"
 #import "HICategoriesTableViewController.h"
 #import "HIReportsTableViewController.h"
@@ -31,14 +32,12 @@
         [super viewDidLoad];
 
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.tableTypeSegmentedControl];
-        self.categories = [[HICategoriesTableViewController alloc] init];
+
+        self.categories = [[HICategoriesTableViewController alloc] initWithCheckListAnswers:self.checkListAnswers checkListModel:self.checkListModel];
         self.categories.managedObjectContext = self.managedObjectContext;
-        self.categories.checkListModel = self.checkListModel;
-        self.categories.checkListAnswers = self.checkListAnswers;
         self.categories.navController = self.navigationController;
-        self.reports = [[HIReportsTableViewController alloc] init];
-        self.reports.checkListModel = self.checkListModel;
-        self.reports.checkListAnswers = self.checkListAnswers;
+
+        self.reports = [[HIReportsTableViewController alloc] initWithCheckListAnswers:self.checkListAnswers checkListModel:self.checkListModel];
         self.reports.managedObjectContext = self.managedObjectContext;
         self.reports.navController = self.navigationController;
 
@@ -60,7 +59,7 @@
 
     - (UISegmentedControl *)tableTypeSegmentedControl {
         if (!_tableTypeSegmentedControl) {
-            _tableTypeSegmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Questions", @"Reports", nil]];
+            _tableTypeSegmentedControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Questions", @"Results", nil]];
             [_tableTypeSegmentedControl addTarget:self action:@selector(tableTypeControlPressed:) forControlEvents:UIControlEventValueChanged];
             _tableTypeSegmentedControl.selectedSegmentIndex = 0;
             _tableTypeSegmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -79,6 +78,7 @@
         self.tableView.delegate = self.currentTableDelegate;
         self.tableView.dataSource = self.currentTableDelegate;
 
+
         [UIView transitionWithView:self.tableView
                           duration:0.35f
                            options:UIViewAnimationOptionTransitionCrossDissolve
@@ -88,6 +88,31 @@
                         completion:^(BOOL isFinished) {
                         }];
 
+        [self showPopTipView];
+    }
+
+    - (void)showPopTipView {
+        NSString *message = @"Press + to create a checklist from one of the templates.";
+        CMPopTipView *popTipView = [[CMPopTipView alloc] initWithMessage:message];
+        popTipView.delegate = self;
+        popTipView.dismissTapAnywhere = YES;
+        [popTipView autoDismissAnimated:YES atTimeInterval:5.0];
+        [popTipView presentPointingAtView:self.tableView inView:self.view animated:YES];
+
+        //self.hintPopup = popTipView;
+    }
+
+    - (void)dismissPopTipView {
+//    if (self.hintPopup != nil) {
+//        [self.hintPopup dismissAnimated:NO];
+//        self.hintPopup = nil;
+//    }
+    }
+
+
+#pragma mark CMPopTipViewDelegate methods
+    - (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView {
+//    self.hintPopup = nil;
     }
 
 @end

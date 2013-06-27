@@ -31,7 +31,7 @@
         self.managedObjectContext = self.checkListAnswers.managedObjectContext;
 
         self.navigationController.navigationBar.topItem.title = @"Checklist";
-
+        
     }
 
     - (void)viewWillAppear:(BOOL)animated {
@@ -71,7 +71,7 @@
     - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
         HICheckListQuestionModel *question = [self.categoryModel getQuestionAtIndex:indexPath.section];
         cell.textLabel.textColor = [self.checkListAnswers textColourForAnswerToQuestion:question.key forTemplateQuestion:question];
-        UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.2];
+        UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.5];
         cell.backgroundColor = backColour;
         for (UIView *view in cell.contentView.subviews) {
             view.backgroundColor = [UIColor clearColor];
@@ -156,6 +156,10 @@
         questionsViewController.checkListAnswers = self.checkListAnswers;
 
         return (id) questionsViewController;
+    }
+
+    - (NSString *)getBackTitle {
+        return self.categoryModel.name;
     }
 
     - (CheckListQuestionAnswers *)createNewAnswerForQuestion:(NSString *)questionID {

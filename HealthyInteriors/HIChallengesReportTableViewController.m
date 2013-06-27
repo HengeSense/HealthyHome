@@ -25,7 +25,8 @@
     - (void)viewDidLoad {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
-        self.navigationItem.title = @"Challenges Report";
+        self.navigationItem.title = @"Challenge Results";
+        self.title = @"Challenges";
         self.backTitle = @"Challenges";
 
     }
@@ -37,6 +38,14 @@
 
     - (BOOL)isAnswerToQuestionEligibleForDisplay:(HICheckListQuestionModel *)question {
         return [self.checkListAnswers isAnswerToQuestionAChallenge:question];
+    }
+
+    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
+        return [checkListAnswers numberOfChallenges:question];
+    }
+
+    - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question {
+        return self;
     }
 
 @end

@@ -12,7 +12,7 @@
 #import "CMPopTipView.h"
 #import "HITableViewController.h"
 
-@interface HICheckListsTableViewController : HITableViewController <NewCheckListCreationDelegate, NSFetchedResultsControllerDelegate, CMPopTipViewDelegate>
+@interface HICheckListsTableViewController : HITableViewController <NewCheckListCreationDelegate, NSFetchedResultsControllerDelegate, CMPopTipViewDelegate, NewCheckListDelegate>
 
 @property (nonatomic, weak) id <HICheckListTemplateDelegate> templateDelegate;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
