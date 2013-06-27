@@ -8,7 +8,6 @@
 
 #import "HICategoriesTableViewController.h"
 #import "HICheckListQuestionsViewController.h"
-#import "CMPopTipView.h"
 
 @interface HICategoriesTableViewController ()
 - (void)configureCategoryCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;

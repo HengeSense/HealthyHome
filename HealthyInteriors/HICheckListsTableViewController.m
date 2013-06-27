@@ -11,7 +11,6 @@
 
 @interface HICheckListsTableViewController ()
     @property(nonatomic, strong) UIBarButtonItem *createListButton;
-    @property(nonatomic, strong) CMPopTipView *hintPopup;
 
     - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

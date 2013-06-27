@@ -13,7 +13,7 @@
 
 @protocol CMPopTipView;
 
-@interface HICheckListCategoriesViewController : HITableViewController <CMPopTipViewDelegate>
+@interface HICheckListCategoriesViewController : HITableViewController
 
 @property (nonatomic, strong) NSManagedObjectContext * managedObjectContext;
 @property (nonatomic, strong) HICheckListModel * checkListModel;

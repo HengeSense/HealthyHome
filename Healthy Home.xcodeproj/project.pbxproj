@@ -145,7 +145,6 @@
 		4DBE9BD3175388A200EEEB9D /* HIPurchaseCheckListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DBE9BD0175388A000EEEB9D /* HIPurchaseCheckListViewController.h */; };
 		4DBE9BD4175388A200EEEB9D /* HIPurchaseCheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DBE9BD1175388A000EEEB9D /* HIPurchaseCheckListViewController.m */; };
 		4DBE9BD5175388A200EEEB9D /* HIPurchaseCheckListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBE9BD2175388A100EEEB9D /* HIPurchaseCheckListViewController.xib */; };
-		4DC2E47D170877BA00D12F56 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2E47C170877BA00D12F56 /* CMPopTipView.m */; };
 		4DC2E49917092C0800D12F56 /* HealthyInteriors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DC2E49617092C0800D12F56 /* HealthyInteriors.xcdatamodeld */; };
 		4DC480BA1751A10600BA8F34 /* UIView+Bounce.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DC480B81751A10600BA8F34 /* UIView+Bounce.h */; };
 		4DC480BB1751A10600BA8F34 /* UIView+Bounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC480B91751A10600BA8F34 /* UIView+Bounce.m */; };
@@ -387,8 +386,6 @@
 		4DBE9BD0175388A000EEEB9D /* HIPurchaseCheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIPurchaseCheckListViewController.h; sourceTree = "<group>"; };
 		4DBE9BD1175388A000EEEB9D /* HIPurchaseCheckListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIPurchaseCheckListViewController.m; sourceTree = "<group>"; };
 		4DBE9BD2175388A100EEEB9D /* HIPurchaseCheckListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIPurchaseCheckListViewController.xib; sourceTree = "<group>"; };
-		4DC2E47B170877BA00D12F56 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
-		4DC2E47C170877BA00D12F56 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
 		4DC2E49717092C0800D12F56 /* HealthyInteriors 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HealthyInteriors 2.xcdatamodel"; sourceTree = "<group>"; };
 		4DC2E49817092C0800D12F56 /* HealthyInteriors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthyInteriors.xcdatamodel; sourceTree = "<group>"; };
 		4DC480B81751A10600BA8F34 /* UIView+Bounce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Bounce.h"; sourceTree = "<group>"; };
@@ -746,7 +743,6 @@
 				4DC681BD175E47360053E548 /* CoolButton */,
 				4D0321891711416600D29881 /* MBProgressHUD */,
 				4D6B459E171031A7007C41D7 /* SVSegmentedControl */,
-				4DC2E4701708550E00D12F56 /* CMPopTipView */,
 				4DADAF1F17071A0000BAA63F /* MAConfirmButton */,
 				4DADAF111705B80B00BAA63F /* Smart Nib Cell */,
 				4D8BE49E16F4B4D3008CF993 /* Custom Badge */,
@@ -1008,15 +1004,6 @@
 				4DB2AD50176B5974008C59AD /* HISearchResultsCell.xib */,
 			);
 			name = SearchResultsCell;
-			sourceTree = "<group>";
-		};
-		4DC2E4701708550E00D12F56 /* CMPopTipView */ = {
-			isa = PBXGroup;
-			children = (
-				4DC2E47B170877BA00D12F56 /* CMPopTipView.h */,
-				4DC2E47C170877BA00D12F56 /* CMPopTipView.m */,
-			);
-			name = CMPopTipView;
 			sourceTree = "<group>";
 		};
 		4DC480B71751A0CB00BA8F34 /* Categories */ = {
@@ -1404,7 +1391,6 @@
 				4DADAF101705B7FB00BAA63F /* PRPNibBasedTableViewCell.m in Sources */,
 				4DADAF1D170719E300BAA63F /* MAConfirmButton.m in Sources */,
 				4DADAF1E170719E300BAA63F /* UIColor-Expanded.m in Sources */,
-				4DC2E47D170877BA00D12F56 /* CMPopTipView.m in Sources */,
 				4DC2E49917092C0800D12F56 /* HealthyInteriors.xcdatamodeld in Sources */,
 				4D38BF2C170AFB27006587BB /* HICategoriesTableViewController.m in Sources */,
 				4D38BF2F170AFCFF006587BB /* HIReportsTableViewController.m in Sources */,

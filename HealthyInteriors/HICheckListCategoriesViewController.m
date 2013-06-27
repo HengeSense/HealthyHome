@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#import "CMPopTipView.h"
 #import "HICheckListCategoriesViewController.h"
 #import "HICategoriesTableViewController.h"
 #import "HIReportsTableViewController.h"
@@ -88,31 +87,6 @@
                         completion:^(BOOL isFinished) {
                         }];
 
-        [self showPopTipView];
-    }
-
-    - (void)showPopTipView {
-        NSString *message = @"Press + to create a checklist from one of the templates.";
-        CMPopTipView *popTipView = [[CMPopTipView alloc] initWithMessage:message];
-        popTipView.delegate = self;
-        popTipView.dismissTapAnywhere = YES;
-        [popTipView autoDismissAnimated:YES atTimeInterval:5.0];
-        [popTipView presentPointingAtView:self.tableView inView:self.view animated:YES];
-
-        //self.hintPopup = popTipView;
-    }
-
-    - (void)dismissPopTipView {
-//    if (self.hintPopup != nil) {
-//        [self.hintPopup dismissAnimated:NO];
-//        self.hintPopup = nil;
-//    }
-    }
-
-
-#pragma mark CMPopTipViewDelegate methods
-    - (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView {
-//    self.hintPopup = nil;
     }
 
 @end
