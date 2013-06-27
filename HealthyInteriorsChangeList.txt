@@ -1,0 +1,86 @@
+12 Jun 2013: v0_3
+-------------------
+- Added: Delete Photo
+- Fixed: Question Details View rotates all subviews correctly
+- Refactored: Question Details View to get list of questions from delegate rather than from coredata direct.  Will enable reports to use the same view
+- Fixed: My Checklists table view correctly lists the check lists in the right sections
+- Added: Favourites
+    > Tag favourite tips in the healthy tips view
+    > Favourite Tips Tab shows those tips tagged as Favourite
+    > Remove Favourites by toggling star in healthy tips view or swiping entry in Favourites Tab
+    > Healthy Tip button in question view shows star if tagged as favourite.
+
+12 Jun 2013 v0_4
+-------------------
+- Changed: Button colour of Healthy Tip button in Question view
+- Changed: Favourite icon (star) colour to white when displayed on Healthy Tip button in Question view
+- Fixed: Background of Healthy Tips Info view now reads the theme
+- Added: added simple css style to text in Info view to make it the same text style as the rest of the app
+- Fixed: Info hyperlinks open in safari rather than in the app
+- Added: Tip title now shown in Favourites Tab
+- Added: Title banner to Info View showing tip title
+- Added: Padding to html text in info view
+- Added: Completed counter to Categories cell in Check list categories view
+- Added: Favourite icon in Question list table view
+- Added: Swipe to navigate through questions
+
+13 Jun 2013 v0_5
+-------------------
+- Fixed: Back button now appears correctly in the questions view after viewing a report
+- Changed: Icons in Question cell content view now right align rather than displayed at predefined positions
+- Changed: Questions table view from reports now the same as from categories
+- Changed: Reports Table view now shows lager cells with report description
+- Changed: Report questions uses the same question cells as for categories
+
+15 Jun 2013 v0_6
+-------------------
+- Changed: dismiss keyboard when scrolling in Search tab
+- Added: Selecting tip on Search tab shows the tip details
+
+17 Jun 2013 v0_7
+-------------------
+- Fixed: Search Tab now releases cell highlight when showing tip
+- Changed: Search tab only searches tips
+- Changed: Search Tab renamed to Search Tips
+- Changed: Tips now show as model views so there is no issue with concurrency of tagging as favourite
+- Changed: Adding new checklist displays Healthy homes immediately as there are no other options for now
+- Added: Title to new checklist modal view
+- Added: Disclosure indicator to Search cells
+- Added: Tip title in search criteria
+- Added: Limit of 50 characters for new checklist name
+- Fixed: Default theme not set on first install
+- Fixed: Check that the device has a camera before allowing the user to take a photo
+- Changed: Check that the device has ios 6 installed as there is a dependency on this os.  If not, disable the camera button
+
+19 Jun 2013 v0_8
+-------------------
+- Added: Edit button to favourites tab
+- Changed: Reports title to Results
+- Changed: Reworded the reports for Assets, Challenges and Incomplete Questions
+- Added: Copyright and Disclaimer to settings tab
+- Added: refer a friend to settings tab
+- Changed: Only available in Landscape
+- Added: Launch images
+- Changed: Background image
+- Removed: Themes from settings
+
+20 Jun 2013 v0_9
+-------------------
+- Changed: Colours for assets and challenges
+- Changed: Set background image for search view in search tab
+- Added: Colours for reports table view
+- Changed: Launch image
+
+24 Jun 2013 V0_10
+-------------------
+- Updated: Intro pages
+- Added: Intro pages only displayed on new version
+- Added: Introduction row to settings table
+- Updated: App icons
+
+25 Jun 2013 V0_11
+-------------------
+- Added: Link to app in Tell A Friend in settings
+- Changed: App name to Healthy Home
+- Reworded: text in intro screens
+- Changed: hide documents from iTunes
