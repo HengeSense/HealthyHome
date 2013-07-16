@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A70450ED4079F62918702A2 /* HITabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A704A759020AD4350409840 /* HITabBarController.h */; };
+		1A70456BB79EB0B9E063AE85 /* HITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7043B3321B8302D02F9B70 /* HITabBarController.m */; };
 		247AE06139D07DA6E512E80D /* NSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = 247AE9ACE3E0C4057C2FEB20 /* NSString+HTML.h */; };
 		247AE0D143A2E5F9EC212BCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 247AEE82A7283211A0166F4E /* Localizable.strings */; };
 		247AE0DF8DD69E891656FA7C /* IASKPSTitleValueSpecifierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247AEB49C2E185184943FC90 /* IASKPSTitleValueSpecifierViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -112,7 +114,7 @@
 		4D8B055B16E9DC0E007328B1 /* HICheckListQuestionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B055A16E9DC0E007328B1 /* HICheckListQuestionModel.m */; };
 		4D8B055E16E9FD99007328B1 /* HICheckListQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B055D16E9FD99007328B1 /* HICheckListQuestionsViewController.m */; };
 		4D8B057816EA209E007328B1 /* HICheckListXMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8B057716EA209E007328B1 /* HICheckListXMLReader.m */; };
-		4D8B057D16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib */; };
+		4D8B057D16EAF653007328B1 /* HICheckListQuestionDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController_iPhone.xib */; };
 		4D8BE4A116F4B4E8008CF993 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BE49F16F4B4E8008CF993 /* CustomBadge.m */; };
 		4DA3A98216E8B9AE00D8CE62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA3A98116E8B9AE00D8CE62 /* UIKit.framework */; };
 		4DA3A98416E8B9AE00D8CE62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA3A98316E8B9AE00D8CE62 /* Foundation.framework */; };
@@ -121,9 +123,7 @@
 		4DA3A98E16E8B9AE00D8CE62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A98D16E8B9AE00D8CE62 /* main.m */; };
 		4DA3A99216E8B9AE00D8CE62 /* HIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A99116E8B9AE00D8CE62 /* HIAppDelegate.m */; };
 		4DA3A9A216E8B9AE00D8CE62 /* HISecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9A116E8B9AE00D8CE62 /* HISecondViewController.m */; };
-		4DA3A9AC16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */; };
 		4DA3A9AF16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9AD16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib */; };
-		4DA3A9B216E8B9AF00D8CE62 /* HISecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */; };
 		4DA3A9BD16E8BF3200D8CE62 /* HICheckListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9BC16E8BF3200D8CE62 /* HICheckListsTableViewController.m */; };
 		4DA3A9C116E8C2E400D8CE62 /* HINewCheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9C016E8C2E400D8CE62 /* HINewCheckListViewController.m */; };
 		4DADAEE816FC67DF00BAA63F /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DADAEE716FC67DF00BAA63F /* library@2x.png */; };
@@ -210,9 +210,16 @@
 		4DEE726F16EDC66E002ED288 /* HIQuestionNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE726D16EDC66E002ED288 /* HIQuestionNotesViewController.xib */; };
 		4DEE727116EDC999002ED288 /* lined_paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DEE727016EDC998002ED288 /* lined_paper.png */; };
 		848C812D1717F8DB00850432 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848C812C1717F8DB00850432 /* CoreImage.framework */; };
+		D9062C60179184E8004C4D26 /* MasterViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D9062C5C179184E8004C4D26 /* MasterViewController.h */; };
+		D9062C61179184E8004C4D26 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9062C5D179184E8004C4D26 /* MasterViewController.m */; };
+		D9062C62179184E8004C4D26 /* DetailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D9062C5E179184E8004C4D26 /* DetailViewController.h */; };
+		D9062C63179184E8004C4D26 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9062C5F179184E8004C4D26 /* DetailViewController.m */; };
+		D9062C651792D20D004C4D26 /* HICheckListQuestionDetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9062C641792D20D004C4D26 /* HICheckListQuestionDetailViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A7043B3321B8302D02F9B70 /* HITabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HITabBarController.m; sourceTree = "<group>"; };
+		1A704A759020AD4350409840 /* HITabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HITabBarController.h; sourceTree = "<group>"; };
 		247AE00E9E34FAA1DE427365 /* IASKSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IASKSwitch.h; sourceTree = "<group>"; };
 		247AE014D9932D8F7C798EA4 /* HealthyInteriorsChangeList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HealthyInteriorsChangeList.txt; sourceTree = SOURCE_ROOT; };
 		247AE09BD9A07AFE63068B16 /* HIQuestionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIQuestionViewDataSource.h; sourceTree = "<group>"; };
@@ -339,7 +346,7 @@
 		4D8B055D16E9FD99007328B1 /* HICheckListQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICheckListQuestionsViewController.m; sourceTree = "<group>"; };
 		4D8B057616EA209E007328B1 /* HICheckListXMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICheckListXMLReader.h; sourceTree = "<group>"; };
 		4D8B057716EA209E007328B1 /* HICheckListXMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICheckListXMLReader.m; sourceTree = "<group>"; };
-		4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICheckListQuestionDetailViewController.xib; sourceTree = "<group>"; };
+		4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICheckListQuestionDetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		4D8BE49F16F4B4E8008CF993 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBadge.m; sourceTree = "<group>"; };
 		4D8BE4A016F4B4E8008CF993 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
 		4DA3A97E16E8B9AE00D8CE62 /* Healthy Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Healthy Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,9 +361,7 @@
 		4DA3A99116E8B9AE00D8CE62 /* HIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIAppDelegate.m; sourceTree = "<group>"; };
 		4DA3A9A016E8B9AE00D8CE62 /* HISecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HISecondViewController.h; sourceTree = "<group>"; };
 		4DA3A9A116E8B9AE00D8CE62 /* HISecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HISecondViewController.m; sourceTree = "<group>"; };
-		4DA3A9AB16E8B9AE00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIFirstViewController_iPad.xib; sourceTree = "<group>"; };
 		4DA3A9AE16E8B9AE00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISecondViewController_iPhone.xib; sourceTree = "<group>"; };
-		4DA3A9B116E8B9AF00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISecondViewController_iPad.xib; sourceTree = "<group>"; };
 		4DA3A9BB16E8BF3200D8CE62 /* HICheckListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICheckListsTableViewController.h; sourceTree = "<group>"; };
 		4DA3A9BC16E8BF3200D8CE62 /* HICheckListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICheckListsTableViewController.m; sourceTree = "<group>"; };
 		4DA3A9BF16E8C2E400D8CE62 /* HINewCheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINewCheckListViewController.h; sourceTree = "<group>"; };
@@ -461,6 +466,11 @@
 		4DEE726D16EDC66E002ED288 /* HIQuestionNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HIQuestionNotesViewController.xib; sourceTree = "<group>"; };
 		4DEE727016EDC998002ED288 /* lined_paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lined_paper.png; sourceTree = "<group>"; };
 		848C812C1717F8DB00850432 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		D9062C5C179184E8004C4D26 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		D9062C5D179184E8004C4D26 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		D9062C5E179184E8004C4D26 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D9062C5F179184E8004C4D26 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D9062C641792D20D004C4D26 /* HICheckListQuestionDetailViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HICheckListQuestionDetailViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -835,6 +845,8 @@
 				4DA3A9BA16E8BB1300D8CE62 /* iPhone */,
 				4DA3A9B916E8BB0900D8CE62 /* iPad */,
 				4DA3A98816E8B9AE00D8CE62 /* Supporting Files */,
+				1A7043B3321B8302D02F9B70 /* HITabBarController.m */,
+				1A704A759020AD4350409840 /* HITabBarController.h */,
 			);
 			path = HealthyInteriors;
 			sourceTree = "<group>";
@@ -891,8 +903,10 @@
 		4DA3A9B916E8BB0900D8CE62 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */,
-				4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */,
+				D9062C5C179184E8004C4D26 /* MasterViewController.h */,
+				D9062C5D179184E8004C4D26 /* MasterViewController.m */,
+				D9062C5E179184E8004C4D26 /* DetailViewController.h */,
+				D9062C5F179184E8004C4D26 /* DetailViewController.m */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -1158,7 +1172,8 @@
 			children = (
 				4DCEF5A7175CAEB200E72B54 /* HICheckListQuestionDetailViewController.h */,
 				4DCEF5A8175CAEB200E72B54 /* HICheckListQuestionDetailViewController.m */,
-				4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib */,
+				4D8B057B16EAF653007328B1 /* HICheckListQuestionDetailViewController_iPhone.xib */,
+				D9062C641792D20D004C4D26 /* HICheckListQuestionDetailViewController_iPad.xib */,
 			);
 			name = AnswerView;
 			sourceTree = "<group>";
@@ -1221,6 +1236,9 @@
 				247AE6CECE4BF8CDEBACDD4D /* IASKAppSettingsViewController.h in Headers */,
 				247AEEA26879E1AF2381A995 /* IASKAppSettingsWebViewController.h in Headers */,
 				247AE2A78A4C6BBBDB0208F3 /* IASKSpecifierValuesViewController.h in Headers */,
+				D9062C60179184E8004C4D26 /* MasterViewController.h in Headers */,
+				D9062C62179184E8004C4D26 /* DetailViewController.h in Headers */,
+				1A70450ED4079F62918702A2 /* HITabBarController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,11 +1299,9 @@
 			files = (
 				4DADAF161705C5DB00BAA63F /* HiNewCheckListCellView.xib in Resources */,
 				4DA3A98C16E8B9AE00D8CE62 /* InfoPlist.strings in Resources */,
-				4DA3A9AC16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib in Resources */,
 				4DA3A9AF16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib in Resources */,
-				4DA3A9B216E8B9AF00D8CE62 /* HISecondViewController_iPad.xib in Resources */,
 				4D8B054A16E98A4D007328B1 /* HINewCheckListDetailViewController.xib in Resources */,
-				4D8B057D16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib in Resources */,
+				4D8B057D16EAF653007328B1 /* HICheckListQuestionDetailViewController_iPhone.xib in Resources */,
 				4DEE71B516EC311A002ED288 /* question_24.png in Resources */,
 				4DEE71B716EC315E002ED288 /* question_16.png in Resources */,
 				4DEE724616ECBE79002ED288 /* thumb_up_24.png in Resources */,
@@ -1357,6 +1373,7 @@
 				247AEDA7A0D389E27FEA90D7 /* Page5@2x.png in Resources */,
 				247AE8D0CD5650DFEA1CF694 /* Page6@2x.png in Resources */,
 				247AE31EAB7C4E30A9555AD3 /* Page6.png in Resources */,
+				D9062C651792D20D004C4D26 /* HICheckListQuestionDetailViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1443,6 +1460,9 @@
 				247AE2ABAA2D81459A6B6BC6 /* IASKAppSettingsViewController.m in Sources */,
 				247AE51FA053174242CDAE66 /* IASKAppSettingsWebViewController.m in Sources */,
 				247AE5C6C6757342182DA925 /* IASKSpecifierValuesViewController.m in Sources */,
+				D9062C61179184E8004C4D26 /* MasterViewController.m in Sources */,
+				D9062C63179184E8004C4D26 /* DetailViewController.m in Sources */,
+				1A70456BB79EB0B9E063AE85 /* HITabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1457,28 +1477,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3A9AB16E8B9AE00D8CE62 /* en */,
-			);
-			name = HIFirstViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 		4DA3A9AD16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4DA3A9AE16E8B9AE00D8CE62 /* en */,
 			);
 			name = HISecondViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3A9B116E8B9AF00D8CE62 /* en */,
-			);
-			name = HISecondViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1562,7 +1566,7 @@
 				PRODUCT_NAME = "Healthy Home";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1583,7 +1587,7 @@
 				PRODUCT_NAME = "Healthy Home";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

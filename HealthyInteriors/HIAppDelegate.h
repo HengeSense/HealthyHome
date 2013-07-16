@@ -10,20 +10,23 @@
 #import "HICheckListModel.h"
 #import "IASKAppSettingsViewController.h"
 
+@class HITabBarController;
+
 @interface HIAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, IASKSettingsDelegate>
 
-    @property(strong, nonatomic) UIWindow *window;
-    @property(strong, nonatomic) UITabBarController *tabBarController;
-    @property(readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-    @property(readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-    @property(readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) HITabBarController *tabBarController;
+@property(readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property(readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property(readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property(readonly, strong, nonatomic) UISplitViewController *splitViewController;
 
-    + (void)saveToUserDefaults:(NSString *)key value:(NSString *)valueString;
++ (void)saveToUserDefaults:(NSString *)key value:(NSString *)valueString;
 
-    + (NSString *)retrieveFromUserDefaults:(NSString *)key;
++ (NSString *)retrieveFromUserDefaults:(NSString *)key;
 
-    - (void)saveContext;
+- (void)saveContext;
 
-    - (NSURL *)applicationDocumentsDirectory;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end
