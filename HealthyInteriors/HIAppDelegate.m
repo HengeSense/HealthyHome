@@ -12,7 +12,6 @@
 #import "IASKSettingsReader.h"
 #import "HIFavouritesTableViewController.h"
 #import "HIIntroViewController.h"
-
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "HITabBarController.h"
@@ -173,12 +172,16 @@
 
 - (NSString *)settingsViewController:(id <IASKViewController>)settingsViewController
          mailComposeBodyForSpecifier:(IASKSpecifier *)specifier {
-    NSLog(@"%@", [specifier.specifierDict objectForKey:@"tellafriend"]);
 
-
+    NSString *title = [specifier.specifierDict objectForKey:@"Title"];
     NSMutableString *returnString = [[NSMutableString alloc] init];
-    [returnString appendString:@"Check out this new Healthy Home App I found, it has some great tips.\n\n"];
-    [returnString appendString:@"<a href=\"https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&mt=8\" target=\"itunes_store\">Healthy Home App</a>"];
+
+    if ([title isEqualToString:@"Send Feedback"]) {
+        [returnString appendString:@"Enter any feedback you would like to pass on to the developers.\n\n"];
+    } else if ([title isEqualToString:@"Tell A Friend"]) {
+        [returnString appendString:@"Check out this new Healthy Home App I found, it has some great tips.\n\n"];
+        [returnString appendString:@"<a href=\"https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&mt=8\" target=\"itunes_store\">Healthy Home App</a>"];
+    }
 
     return returnString;
 

@@ -106,7 +106,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         detailViewController = ((HITabBarController *) self.tabBarController).detailViewController;
     } else {
-        detailViewController = [[HICheckListQuestionDetailViewController alloc] initWithNibName:@"HICheckListQuestionDetailViewController_iPad" bundle:nil];
+        detailViewController = [[HICheckListQuestionDetailViewController alloc] initWithNibName:@"HICheckListQuestionDetailViewController_iPhone" bundle:nil];
     }
 
     detailViewController.dataSource = self;

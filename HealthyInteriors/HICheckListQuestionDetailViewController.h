@@ -18,11 +18,11 @@
 @protocol HIQuestionDetailDelegate;
 @protocol HIQuestionViewDataSource;
 
-@interface HICheckListQuestionDetailViewController : HIViewController <HIQuestionDetailDelegate, UIImagePickerControllerDelegate>
+@interface HICheckListQuestionDetailViewController : HIViewController <HIQuestionDetailDelegate, UIImagePickerControllerDelegate, UIWebViewDelegate, UISplitViewControllerDelegate>
 
-    @property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-    @property(nonatomic, strong) CheckListAnswers *checkListAnswers;
-    @property(nonatomic, weak) id <HIQuestionViewDataSource> dataSource;
-    @property(nonatomic, assign) NSUInteger currentQuestion;
+@property(nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property(nonatomic, strong) CheckListAnswers *checkListAnswers;
+@property(nonatomic, weak) id <HIQuestionViewDataSource> dataSource;
+@property(nonatomic, assign) NSUInteger currentQuestion;
 
 @end

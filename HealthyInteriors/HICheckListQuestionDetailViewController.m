@@ -16,6 +16,7 @@
 #import "Favourites.h"
 
 @interface HICheckListQuestionDetailViewController (/*private*/)
+@property(strong, nonatomic) UIPopoverController *masterPopoverController;
 @property(nonatomic, assign) NSInteger currentIndex;
 @property(nonatomic, assign) NSInteger totalQuestions;
 @property(strong, nonatomic) HICheckListCategoryModel *categoryModel;
@@ -35,6 +36,9 @@
 @property(strong, nonatomic) CustomBadge *notesBadge;
 @property(strong, nonatomic) CustomBadge *imagesBadge;
 @property(strong, nonatomic) UISegmentedControl *questionNavSegmentedControl;
+@property(strong, nonatomic) IBOutlet UIWebView *infoView;
+@property(strong, nonatomic) IBOutlet UIWebView *prevInfoView;
+@property(assign, nonatomic) BOOL questionIsLoaded;
 
 - (BOOL)infoIsFavourite;
 
@@ -64,6 +68,8 @@
 
 - (void)prevButtonPressed;
 
+- (BOOL)isIPad;
+
 - (IBAction)infoButtonPressed;
 
 - (IBAction)NotesClicked;
@@ -73,6 +79,8 @@
 - (void)pushQuestion;
 
 - (void)popQuestion;
+
+- (void)updateTipInfo;
 
 - (CheckListQuestionAnswers *)getAnswerManagedObjectForQuestionID:(NSString *)questionID;
 
@@ -116,6 +124,12 @@
 
         self.prevQuestionLabel.alpha = 0.0f;
 
+        self.infoView.backgroundColor = [UIColor clearColor];
+        self.infoView.opaque = NO;
+        self.infoView.delegate = self;
+
+        self.questionIsLoaded = NO;
+
     }
     return self;
 }
@@ -127,6 +141,17 @@
     if (self.managedObjectContext) {
         [self updateFavouriteTip];
     }
+
+}
+
+- (void)ShowOrHideElements {
+    self.questionNavSegmentedControl.hidden = !self.isQuestionLoaded;
+    self.progressView.hidden = !self.isQuestionLoaded;
+
+    self.currentQuestionLabel.hidden = !self.isQuestionLoaded;
+    self.prevQuestionLabel.hidden = !self.isQuestionLoaded;
+    self.segmentControlAnswer.hidden = !self.isQuestionLoaded;
+    self.toolBar.hidden = !self.isQuestionLoaded;
 }
 
 - (void)viewDidLoad {
@@ -143,6 +168,11 @@
     self.segmentControlAnswer.center = CGPointMake(self.screenBounds.size.width / 2, segTop);
     self.segmentControlAnswer.hidden = NO;
 
+    int infoTop = self.segmentControlAnswer.frame.origin.y + self.segmentControlAnswer.frame.size.height + 30;
+    int infoHeight = self.toolBar.frame.origin.y - 20 - infoTop;
+
+    self.infoView.frame = CGRectMake(10, infoTop, self.screenBounds.size.width - 20, infoHeight);
+
     self.progressView.frame = CGRectMake(0, 0, self.screenBounds.size.width, 10);
     self.progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
@@ -155,6 +185,8 @@
     centreY = self.cameraButton.frame.origin.y;
     if (self.imagesBadge)
         [self.imagesBadge setCenter:CGPointMake(centreX, centreY)];
+
+    [self ShowOrHideElements];
 
 }
 
@@ -210,11 +242,17 @@
     return _questionNavSegmentedControl;
 }
 
+- (BOOL)isQuestionLoaded {
+    return self.questionIsLoaded;
+}
+
 - (NSUInteger)currentQuestion {
     return self.currentIndex;
 }
 
 - (void)setCurrentQuestion:(NSUInteger)currentQuestion {
+
+    self.questionIsLoaded = YES;
 
     int prevIndex = self.currentIndex;
     self.currentIndex = currentQuestion;
@@ -239,12 +277,15 @@
     [self updateNotesBadge];
     [self updateImagesBadge];
     [self updateBackColour:NO];
+    [self updateTipInfo];
 
     //hide camera button if not ios 6
     NSString *version = [[UIDevice currentDevice] systemVersion];
 
     BOOL isAtLeast6 = [version floatValue] >= 6.0;
     self.cameraButton.hidden = !isAtLeast6;
+
+    [self ShowOrHideElements];
 
 }
 
@@ -320,6 +361,12 @@
     [viewControllers addObject:self];
     [self.navigationController setViewControllers:viewControllers animated:NO];
 
+    [self.navigationItem setHidesBackButton:[self isIPad] animated:NO];
+
+}
+
+- (BOOL)isIPad {
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 - (IBAction)backButtonClicked {
@@ -391,10 +438,10 @@
     self.prevQuestionLabel.alpha = 1.0f;
     self.prevQuestionLabel.adjustsFontSizeToFitWidth = YES;
 
-    CGRect currentFrame = self.currentQuestionLabel.frame;
+    CGRect currentQuestionFrame = self.currentQuestionLabel.frame;
 
-    self.prevQuestionLabel.frame = currentFrame;
-    self.currentQuestionLabel.frame = CGRectMake(currentFrame.origin.x + self.screenBounds.size.width, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height);
+    self.prevQuestionLabel.frame = currentQuestionFrame;
+    self.currentQuestionLabel.frame = CGRectMake(currentQuestionFrame.origin.x + self.screenBounds.size.width, currentQuestionFrame.origin.y, currentQuestionFrame.size.width, currentQuestionFrame.size.height);
     self.currentQuestionLabel.text = self.questionModel.text;
     self.currentQuestionLabel.adjustsFontSizeToFitWidth = YES;
 
@@ -402,8 +449,8 @@
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut
             animations:^{
-                self.currentQuestionLabel.frame = currentFrame;
-                self.prevQuestionLabel.frame = CGRectMake(currentFrame.origin.x - self.screenBounds.size.width, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height);
+                self.currentQuestionLabel.frame = currentQuestionFrame;
+                self.prevQuestionLabel.frame = CGRectMake(currentQuestionFrame.origin.x - self.screenBounds.size.width, currentQuestionFrame.origin.y, currentQuestionFrame.size.width, currentQuestionFrame.size.height);
                 self.prevQuestionLabel.alpha = 0.0f;
             } completion:nil];
 
@@ -422,10 +469,10 @@
     self.prevQuestionLabel.alpha = 1.0f;
     self.prevQuestionLabel.adjustsFontSizeToFitWidth = YES;
 
-    CGRect currentFrame = self.currentQuestionLabel.frame;
+    CGRect currentQuestionFrame = self.currentQuestionLabel.frame;
 
-    self.prevQuestionLabel.frame = currentFrame;
-    self.currentQuestionLabel.frame = CGRectMake(currentFrame.origin.x - self.screenBounds.size.width, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height);
+    self.prevQuestionLabel.frame = currentQuestionFrame;
+    self.currentQuestionLabel.frame = CGRectMake(currentQuestionFrame.origin.x - self.screenBounds.size.width, currentQuestionFrame.origin.y, currentQuestionFrame.size.width, currentQuestionFrame.size.height);
     self.currentQuestionLabel.text = self.questionModel.text;
     self.currentQuestionLabel.adjustsFontSizeToFitWidth = YES;
 
@@ -433,8 +480,8 @@
                           delay:0
                         options:UIViewAnimationOptionCurveEaseInOut
             animations:^{
-                self.currentQuestionLabel.frame = currentFrame;
-                self.prevQuestionLabel.frame = CGRectMake(currentFrame.origin.x + self.screenBounds.size.width, currentFrame.origin.y, currentFrame.size.width, currentFrame.size.height);
+                self.currentQuestionLabel.frame = currentQuestionFrame;
+                self.prevQuestionLabel.frame = CGRectMake(currentQuestionFrame.origin.x + self.screenBounds.size.width, currentQuestionFrame.origin.y, currentQuestionFrame.size.width, currentQuestionFrame.size.height);
             } completion:nil];
 
     [UIView animateWithDuration:0.5
@@ -564,6 +611,38 @@
 //        self.ResultLabel.text = @"Healthy Asset";
 //        self.ResultLabel.textColor = assetTextColour;
 //    }
+
+}
+
+- (void)updateTipInfo {
+
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+
+    UIFont *font = [UIFont systemFontOfSize:21];
+
+    NSString *myDescriptionHTML = [NSString stringWithFormat:@"<html> \n"
+                                                                     "<head> \n"
+                                                                     "<style type=\"text/css\"> \n"
+                                                                     "body {font-family: \"%@\"; font-size: %d; padding:5px 10px;}\n"
+                                                                     "</style> \n"
+                                                                     "</head> \n"
+                                                                     "<body>%@</body> \n"
+                                                                     "</html>", font.familyName, 18, self.questionModel.information];
+    [UIView animateWithDuration:0.1
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+            animations:^{
+                self.infoView.alpha = 0.0;
+            } completion:^(BOOL finished) {
+        if (finished) {
+            [self.infoView loadHTMLString:myDescriptionHTML baseURL:baseURL];
+            [UIView animateWithDuration:0.5
+                             animations:^{
+                                 self.infoView.alpha = 1.0;
+                             }];
+        }
+    }];
+
 
 }
 
@@ -769,10 +848,26 @@
     [UIView commitAnimations];
 }
 
+#pragma mark - Split view
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
+    barButtonItem.title = NSLocalizedString(@"CheckLists", @"CheckLists");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
 - (void)viewDidUnload {
     [self setColourIndicator:nil];
     [self setToolBar:nil];
     [self setPrevQuestionLabel:nil];
+    [self setInfoView:nil];
+    [self setPrevInfoView:nil];
     [super viewDidUnload];
 }
 
