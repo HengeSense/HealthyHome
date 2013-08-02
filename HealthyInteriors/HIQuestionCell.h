@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HITableViewCell.h"
 
-@interface HIQuestionCell : UITableViewCell
+@interface HIQuestionCell : HITableViewCell
 
     - (void)isFavourite:(BOOL)value;
 

@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17261c6a-825e-404a-b32a-695ac24952cc" name="Default" comment="" />
+    <list default="true" id="17261c6a-825e-404a-b32a-695ac24952cc" name="Default" comment="Results Graph and Cell Rendering">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HICategoryCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HICategoryCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HICategoryCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HITabBarController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HITabBarController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HITableViewCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HealthyInteriors/HITableViewCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSAnnotatedGauge.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSAnnotatedGauge.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSArcLayer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSArcLayer.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSArcLayerSubclass.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSGradientArcLayer.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSGradientArcLayer.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSNeedleView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSNeedleView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSSimpleGauge.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSSimpleGauge.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSimpleGauge/MSSimpleGaugeSubclass.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UACellBackgroundView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UACellBackgroundView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/CheckListAnswers+HIFunctions.h" afterPath="$PROJECT_DIR$/HealthyInteriors/CheckListAnswers+HIFunctions.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/CheckListAnswers+HIFunctions.m" afterPath="$PROJECT_DIR$/HealthyInteriors/CheckListAnswers+HIFunctions.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIAssetsReportTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIAssetsReportTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HICategoriesTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HICategoriesTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIChallengesReportTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIChallengesReportTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HICheckListModel.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HICheckListModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HICheckListsTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HICheckListsTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HICompletionReportTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HICompletionReportTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.h" afterPath="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.h" afterPath="$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.h" afterPath="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HIReportsTableViewController.m" afterPath="$PROJECT_DIR$/HealthyInteriors/HIReportsTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/Healthy Home-Info.plist" afterPath="$PROJECT_DIR$/HealthyInteriors/Healthy Home-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriors/HealthyHomeQuiz.xml" afterPath="$PROJECT_DIR$/HealthyInteriors/HealthyHomeQuiz.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HealthyInteriorsChangeList.txt" afterPath="$PROJECT_DIR$/HealthyInteriorsChangeList.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Healthy Home.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Healthy Home.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <list id="eeccae2b-fb93-4460-b000-15a44a6fec6d" name="Default task" comment="" />
     <ignored path="HealthyInteriors.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372348503152" ignored="false" />
+    <file path="/Dummy.txt" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375436913385" ignored="false" />
     <file path="/HICheckListQuestionDetailViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371731167583" ignored="false" />
     <file path="/fragment.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371117105778" ignored="false" />
     <file path="/HICheckListQuestionDetailViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370691671489" ignored="false" />
-    <file path="/HICheckListQuestionsViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371102723646" ignored="false" />
-    <file path="/HIReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371132511041" ignored="false" />
+    <file path="/HICheckListQuestionsViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375366477966" ignored="false" />
+    <file path="/HIReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375357950295" ignored="false" />
     <file path="/a.mm" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370746597048" ignored="false" />
     <file path="/a.html" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370701534004" ignored="false" />
     <file path="/a.js" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370612628175" ignored="false" />
@@ -21,19 +65,19 @@
     <file path="/HICheckListQuestionsViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370681114281" ignored="false" />
     <file path="/HICheckListModel.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371732163906" ignored="false" />
     <file path="/HICheckListModel.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371732243426" ignored="false" />
-    <file path="/a.dummy" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370700706463" ignored="false" />
-    <file path="/HIQuestionCell.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370702801082" ignored="false" />
+    <file path="/a.dummy" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375104838913" ignored="false" />
+    <file path="/HIQuestionCell.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375365119046" ignored="false" />
     <file path="/HIQuestionCell.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371213699418" ignored="false" />
-    <file path="/CheckListAnswers+HIFunctions.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371129051040" ignored="false" />
-    <file path="/CheckListAnswers+HIFunctions.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371130335384" ignored="false" />
+    <file path="/CheckListAnswers+HIFunctions.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375108649654" ignored="false" />
+    <file path="/CheckListAnswers+HIFunctions.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375108803733" ignored="false" />
     <file path="/HIPhotosCollectionViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371479173965" ignored="false" />
     <file path="/HIQuestionDetailDelegate.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370832137458" ignored="false" />
     <file path="/HIPhotoViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370783357949" ignored="false" />
-    <file path="/HICheckListsTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371973492017" ignored="false" />
+    <file path="/HICheckListsTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375192672454" ignored="false" />
     <file path="/HIQuestionInfoViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371471266803" ignored="false" />
     <file path="/HIQuestionInfoViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371395087751" ignored="false" />
     <file path="/HIFavouritesTableViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1370958734079" ignored="false" />
-    <file path="/HIAppDelegate.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372159114515" ignored="false" />
+    <file path="/HIAppDelegate.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375019675065" ignored="false" />
     <file path="/HIFavouritesTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371472416559" ignored="false" />
     <file path="/HICheckListTemplateDelegate.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371205009021" ignored="false" />
     <file path="/HICheckListTemplateManager.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371210285071" ignored="false" />
@@ -43,13 +87,13 @@
     <file path="/HealthyHomeQuiz.xml" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371044475091" ignored="false" />
     <file path="/HICheckListQuestionModel.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371044624605" ignored="false" />
     <file path="/HICheckListXMLReader.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371045000240" ignored="false" />
-    <file path="/HICategoriesTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371784008093" ignored="false" />
+    <file path="/HICategoriesTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375169311375" ignored="false" />
     <file path="/HICheckListCategoriesViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371784661784" ignored="false" />
-    <file path="/HIReportTableViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371131868663" ignored="false" />
-    <file path="/HIAssetsReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371132330619" ignored="false" />
-    <file path="/HIReportsTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371734105110" ignored="false" />
-    <file path="/HIChallengesReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371132312396" ignored="false" />
-    <file path="/HICompletionReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371132464564" ignored="false" />
+    <file path="/HIReportTableViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375105291003" ignored="false" />
+    <file path="/HIAssetsReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375105444205" ignored="false" />
+    <file path="/HIReportsTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375364335793" ignored="false" />
+    <file path="/HIChallengesReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375105413030" ignored="false" />
+    <file path="/HICompletionReportTableViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375194106979" ignored="false" />
     <file path="/FindInfoViewController.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371212313363" ignored="false" />
     <file path="/FindInfoViewController.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371474769463" ignored="false" />
     <file path="/HISearchResultsCell.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1371218563211" ignored="false" />
@@ -63,6 +107,13 @@
     <file path="/Localizable.strings" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372161257374" ignored="false" />
     <file path="/MYIntroductionView.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372077227576" ignored="false" />
     <file path="/MYIntroductionView.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1372085319685" ignored="false" />
+    <file path="/HICategoryCell.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375109940442" ignored="false" />
+    <file path="/HICategoryCell.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375184521871" ignored="false" />
+    <file path="/UACellBackgroundView.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375364286824" ignored="false" />
+    <file path="/UACellBackgroundView.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375364217543" ignored="false" />
+    <file path="/HIReportTypeCell.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375364399381" ignored="false" />
+    <file path="/HIReportTypeCell.h" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375365384554" ignored="false" />
+    <file path="/HITableViewCell.m" changelist="17261c6a-825e-404a-b32a-695ac24952cc" time="1375366125360" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,37 +127,25 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_IPHONE_a152b0e6fa8ae5fa32152ff3f3270f0ab39c7b60" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_UNIVERSAL" />
   <component name="FavoritesManager">
     <favorites_list name="HealthyInteriors" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Page6@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page6@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HealthyInteriorsChangeList.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriorsChangeList.txt">
+      <file leaf-file-name="HIReportsTableViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportsTableViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.5961723">
-              <folding />
+            <state line="178" column="0" selection-start="7322" selection-end="7392" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#164#204#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavBar2.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/NavBar2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/default.css">
+      <file leaf-file-name="HICheckListQuestionsViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.h">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -114,47 +153,89 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page5.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page5.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page4.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page4.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Localizable.strings" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Localizable.strings">
+      <file leaf-file-name="HICheckListQuestionsViewController.m" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="80" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
+            <state line="80" column="5" selection-start="2923" selection-end="2923" vertical-scroll-proportion="1.2182741">
+              <folding>
+                <element signature="e#170#216#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HIQuestionCell.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="12" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page3@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page3@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="HIQuestionCell.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#150#173#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page2@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page2@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="HICategoryCell.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICategoryCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="44" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#147#173#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page1@2x.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page1@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="HITableViewCell.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HITableViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#177#203#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HITableViewCell.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HITableViewCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#177#210#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HIReportTypeCell.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="19" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#150#173#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HIReportTypeCell.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1375365404000" expanded="true" signature="334:820" placeholder="..." />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -172,6 +253,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GitLogSettings">
     <option name="myDateState">
@@ -181,30 +267,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/HealthyInteriors/HICompletionReportTableViewController.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.m" />
+        <option value="$PROJECT_DIR$/UACellBackgroundView.h" />
+        <option value="$PROJECT_DIR$/UACellBackgroundView.m" />
         <option value="$PROJECT_DIR$/HealthyInteriors/HIReportsTableViewController.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListModel.m" />
         <option value="$PROJECT_DIR$/HealthyInteriors/HICategoriesTableViewController.m" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListGenericTableViewController.h" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListCategoriesViewController.h" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListCategoriesViewController.m" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListsTableViewController.h" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListsTableViewController.m" />
-        <option value="$PROJECT_DIR$/MYIntroductionView.h" />
-        <option value="$PROJECT_DIR$/MYIntroductionView.m" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/InAppSettings.bundle/Root.plist" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.h" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HIIntroViewController.m" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HIIntroViewController.h" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.m" />
-        <option value="$PROJECT_DIR$/HealthyInteriors/Localizable.strings" />
-        <option value="$PROJECT_DIR$/HealthyInteriorsChangeList.txt" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HICategoryCell.h" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.h" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HICategoryCell.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.h" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HITableViewCell.m" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HITableViewCell.h" />
+        <option value="$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.m" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="121" />
-    <option name="y" value="234" />
-    <option name="width" value="2254" />
-    <option name="height" value="1167" />
+    <option name="x" value="157" />
+    <option name="y" value="42" />
+    <option name="width" value="2123" />
+    <option name="height" value="1326" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -251,40 +337,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="DirectoryView.Xcode">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HealthyInteriors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,7 +359,11 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Products" />
+              <option name="myItemId" value="Other Sources" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UACellBackgroundCell" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,7 +409,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemId" value="Templates" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -371,11 +427,11 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemId" value="iPhone" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Styles" />
+              <option name="myItemId" value="ThemedClasses" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,12 +449,274 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Supporting Files" />
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Backgrounds" />
+              <option name="myItemId" value="iPhone" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reports" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reports" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ReportTypeCell" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklist" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Questions" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklist" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QuestionCell" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklist" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Question Detail" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklist" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Categories" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Healthy Home" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iPhone" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklists" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Checklist" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Categories" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CategoryCell" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="DirectoryView.Xcode">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HealthyInteriors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -485,23 +803,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="234" width="2254" height="1167" extended-state="0" />
-    <editor active="false" />
+    <frame x="157" y="42" width="2123" height="1326" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35414726" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16314936" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15670437" sideWeight="0.7092145" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19273868" sideWeight="0.79496735" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27335376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15643209" sideWeight="0.7092145" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29285714" sideWeight="0.82224023" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4586039" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2907855" sideWeight="0.5002019" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20503262" sideWeight="0.49979815" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17775974" sideWeight="0.49979815" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2735849" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39954683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -569,105 +887,139 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="50" />
+      <option name="time" value="58" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HITableViewController.m">
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="69" selection-start="2210" selection-end="2210" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UACellBackgroundView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UACellBackgroundView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#340#372#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICheckListModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="48" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICategoriesTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1375364712000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICategoryCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICategoryCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="44" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#147#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="19" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#150#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportTypeCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1375365404000" expanded="true" signature="334:820" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="12" selection-start="1259" selection-end="1259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIReportsTableViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="178" column="0" selection-start="7322" selection-end="7392" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#164#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIQuestionCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="35" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#150#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIIntroViewController.m">
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HITableViewCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="30" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="8" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#177#203#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIIntroViewController.h">
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HITableViewCell.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="10" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#177#210#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InAppSettingsKit/Controllers/IASKAppSettingsViewController.h">
+    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HICheckListQuestionsViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1715" selection-end="1864" vertical-scroll-proportion="0.6242424">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="99" selection-start="344" selection-end="344" vertical-scroll-proportion="0.18181819">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/HIAppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="5" selection-start="6928" selection-end="6928" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page1@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page2@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page3@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page5.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Page6@2x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/NavBar2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriors/Localizable.strings">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="80" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HealthyInteriorsChangeList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="49" selection-start="3757" selection-end="3757" vertical-scroll-proportion="0.5961723">
-          <folding />
+        <state line="80" column="5" selection-start="2923" selection-end="2923" vertical-scroll-proportion="1.2182741">
+          <folding>
+            <element signature="e#170#216#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

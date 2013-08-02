@@ -1,1156 +1,1249 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CheckList name="Healthy Home Quiz" id="38674ab6-5202-4f5e-9f95-3fe747ed02de">
-    <checkListInfo>Use the Healthy Home Quiz to check the health of your home, identify assets and challenges. Use the Tips to minimize indoor pollutants and create a home that promotes wellbeing.</checkListInfo>
+<CheckList name="Healthy Home Quiz" id="0321bc09-05ea-4736-b03b-1276a6ad8ccf">
+    <checkListInfo>Use the Healthy Home Quiz to check the health of your home, identify assets and challenges. Use the
+        Tips to minimize indoor pollutants and create a home that promotes wellbeing.
+    </checkListInfo>
+    <Category title="General" id="c345370e-251b-49a8-9b4b-5541d71d3ca8">
+        <Question id="925ddefa-d1ad-47d2-8972-cf3654822d6f" yesIsBad="false">
+            <questionText>Do you think the quality of the air you breathe is important?</questionText>
+            <questionInfo title="What we breathe">&lt;p&gt;
+                We often forget to consider the impacts that products we buy may have on
+                the air that we breathe within our home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                What we build our homes with, what we fill them with and our lifestyle
+                practices all culminate to create the quality of the air we breathe
+                indoors.
+                &lt;/p&gt;
+                &lt;p&gt;
+                As people around the world are sealing their homes to create energy
+                efficient houses to reduce costs it is vital to remember that the air we
+                are sealing within our homes is what we are breathing. Studies confirm
+                that indoor air within homes is being polluted by building materials,
+                furnishings and lifestyle practices and can impact on occupant health.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Learn more about the health concerns linked to indoor air quality here - &lt;a href=&quot;http://www.epa.gov/iaq/ia-intro.html#Sources&quot;
+                target=&quot;_blank&quot; title=&quot;Pollutant Sources&quot;&gt;http://www.epa.gov/iaq/ia-intro.html#Sources&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
+        </Question>
+        <Question id="3cabd504-6868-4f43-80ed-05843c439826" yesIsBad="true">
+            <questionText>Do you think that all products sold in shops have been tested as being safe?</questionText>
+            <questionInfo title="Product safety">&lt;p&gt;
+                All products sold are not tested first to ensure they are safe for human
+                health. The global sale of cigarettes is a great example of this as they
+                are still sold despite an understanding cigarettes cause cancer.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Many products for the home are being sold that use chemicals that have
+                not been tested and deemed safe for human health. Products are often
+                recalled from sale after a health problem has been identified. Therefore
+                consumers need to be informed and ask what products are made from and
+                how they are made before buying them to ascertain if we really want to
+                live with a product.
+                &lt;/p&gt;</questionInfo>
+        </Question>
+        <Question id="d41366bd-c957-4368-8a78-de24fe442d89" yesIsBad="false">
+            <questionText>Do you know that household dust can contain chemicals from furnishings and lifestyle
+                practices?
+            </questionText>
+            <questionInfo title="">&lt;p&gt;
+                Chemicals used to create products that we buy can in some instances
+                migrate into household dust.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Flame retardant chemicals and phthalate chemicals (plastic softeners),
+                among others have been found in household dust studies. Flame retardants
+                can be found in foams, textiles, lighting, building materials and
+                electrical goods.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Dust within a home is airborne as people move around the house and can
+                be circulated by heating and cooling systems, resulting in inhalation or
+                ingestion of pollutants. Dust can be a trigger for asthma, allergies and
+                respiratory conditions.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more about hazardous dust and health concerns at &lt;a href=&quot;www.ewg.org&quot; target=&quot;_blank&quot;
+                title=&quot;Environmental Working Group&quot;&gt;www.ewg.org&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
+        </Question>
+    </Category>
     <Category title="Outdoors" id="834d7d56-6535-4c12-8b51-3d031eaa18e0">
         <Question id="9d481fc4-8c87-4597-9101-c4b3a91d675f" yesIsBad="true">
             <questionText>Is your home located next to a busy road or business where cars idle?</questionText>
             <questionInfo title="Traffic">&lt;p&gt;
-      If you live on a busy road or where cars idle you are likely to be 
-      subjected to higher levels of motor vehicle pollutants.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Motor vehicles emit exhaust gases into the air such as carbon monoxide, 
-      oxides of nitrogen, hydrocarbons and particulates, along with 
-      evaporative emission otherwise known as fuel vapours.
-    &lt;/p&gt;
-    &lt;p&gt;
-      An Australian EPA (Environmental Protection Agency) study (EPA 
-      Publication 789) found a link between high levels of fine particles, 
-      ozone, nitrogen dioxide and carbon monoxide and an increase in the 
-      number of hospital admissions for respiratory and cardiovascular disease.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If opening your windows subjects you to these fumes you may like to opt 
-      for an air purifier to assist you to keep your indoor air clean.
-    &lt;/p&gt;</questionInfo>
+                If you live on a busy road or where cars idle you are likely to be
+                subjected to higher levels of motor vehicle pollutants.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Motor vehicles emit exhaust gases into the air such as carbon monoxide,
+                oxides of nitrogen, hydrocarbons and particulates, along with
+                evaporative emission otherwise known as fuel vapours.
+                &lt;/p&gt;
+                &lt;p&gt;
+                An Australian EPA (Environmental Protection Agency) study (EPA
+                Publication 789) found a link between high levels of fine particles,
+                ozone, nitrogen dioxide and carbon monoxide and an increase in the
+                number of hospital admissions for respiratory and cardiovascular disease.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If opening your windows subjects you to these fumes you may like to opt
+                for an air purifier to assist you to keep your indoor air clean.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="da87b847-efcd-460d-8926-d468bc5e0163" yesIsBad="true">
             <questionText>Do you use chemical pesticides around the exterior of the house or garden?</questionText>
             <questionInfo title="Outdoor pesticides">&lt;p&gt;
-      Let's state the obvious - pesticides are designed to kill pests!
-    &lt;/p&gt;
-    &lt;p&gt;
-      Many pesticides can also pose a risk to human health. In some instances 
-      you will not find ingredients listed on the product label as the 
-      manufacturer may be protecting their secret formula. But this means you 
-      don't really know what chemicals you are using in your home. Just 
-      because a product is being sold does not mean it is safe.
-    &lt;/p&gt;
-    &lt;p&gt;
-      In many countries products such as these are not tested for human health.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Children are more susceptible to pesticides given their size and there 
-      is much documented about the connection between pesticides and health 
-      issues.
-    &lt;/p&gt;
-    &lt;p&gt;
-      We like the work of Pesticides.org - &lt;a href=&quot;http://www.pesticides.org/docs/website-home-use.pdf&quot; target=&quot;_blank&quot;&gt;http://www.pesticides.org/docs/website-home-use.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Let's state the obvious - pesticides are designed to kill pests!
+                &lt;/p&gt;
+                &lt;p&gt;
+                Many pesticides can also pose a risk to human health. In some instances
+                you will not find ingredients listed on the product label as the
+                manufacturer may be protecting their secret formula. But this means you
+                don't really know what chemicals you are using in your home. Just
+                because a product is being sold does not mean it is safe.
+                &lt;/p&gt;
+                &lt;p&gt;
+                In many countries products such as these are not tested for human health.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Children are more susceptible to pesticides given their size and there
+                is much documented about the connection between pesticides and health
+                issues.
+                &lt;/p&gt;
+                &lt;p&gt;
+                We like the work of Pesticides.org - &lt;a href=&quot;http://www.pesticides.org/docs/website-home-use.pdf&quot;
+                target=&quot;_blank&quot;&gt;http://www.pesticides.org/docs/website-home-use.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="aae015d9-face-43cc-8cd5-e9993df79fee" yesIsBad="true">
-            <questionText>Do you have any asbestos around the home - exterior cladding, interior cladding, interior tiles, eaves, in heaters, on your shed or garage?</questionText>
+            <questionText>Do you have any asbestos around the home - exterior cladding, interior cladding, interior
+                tiles, eaves, in heaters, on your shed or garage?
+            </questionText>
             <questionInfo title="Asbestos">&lt;p&gt;
-      If you are unsure whether your home contains asbestos - we strongly 
-      suggest you contact a local licensed asbestos assessor to provide a 
-      report of asbestos located on your property.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Avoid disturbing asbestos where possible. If removal is necessary, we 
-      recommend using a licensed asbestos contractor who will remove and 
-      dispose of it safely to avoid harming others.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Asbestos exposure can be fatal years after exposure. Asbestos has been 
-      named a carcinogen in many countries.
-    &lt;/p&gt;
-    &lt;p&gt;
-      For more information relevant to your area contact your local building 
-      authority.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Some general information can be found at &lt;a href=&quot;http://www.asbestos.act.gov.au/about_asbestos&quot; target=&quot;_blank&quot;&gt;http://www.asbestos.act.gov.au/about_asbestos&lt;/a&gt;.
-    &lt;/p&gt;</questionInfo>
+                If you are unsure whether your home contains asbestos - we strongly
+                suggest you contact a local licensed asbestos assessor to provide a
+                report of asbestos located on your property.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Avoid disturbing asbestos where possible. If removal is necessary, we
+                recommend using a licensed asbestos contractor who will remove and
+                dispose of it safely to avoid harming others.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Asbestos exposure can be fatal years after exposure. Asbestos has been
+                named a carcinogen in many countries.
+                &lt;/p&gt;
+                &lt;p&gt;
+                For more information relevant to your area contact your local building
+                authority.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Some general information can be found at &lt;a href=&quot;http://www.asbestos.act.gov.au/about_asbestos&quot;
+                target=&quot;_blank&quot;&gt;http://www.asbestos.act.gov.au/about_asbestos&lt;/a&gt;.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="57a25955-e411-42fe-ad4f-78fc468ece8c" yesIsBad="true">
             <questionText>Is there evidence of mould around the outside of the house?</questionText>
             <questionInfo title="Exterior mould">&lt;p&gt;
-      Mould around the exterior of the house can impact on the interior 
-      materials and quality of air inside the home.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Check that land drainage is adequate, that spouting and down pipes are 
-      in good working order and there are no cracks or holes in the roof or 
-      wall structures. Excess moisture around the home can lead to mould 
-      growth and material deterioration.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Preventing problems early will save you money and prevent mould growth 
-      that may impact on your health.
-    &lt;/p&gt;</questionInfo>
+                Mould around the exterior of the house can impact on the interior
+                materials and quality of air inside the home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Check that land drainage is adequate, that spouting and down pipes are
+                in good working order and there are no cracks or holes in the roof or
+                wall structures. Excess moisture around the home can lead to mould
+                growth and material deterioration.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Preventing problems early will save you money and prevent mould growth
+                that may impact on your health.
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Interior general" id="f125d392-6456-4eee-a4a5-ef0af4243865">
         <Question id="7c4e7df5-15c9-4190-a042-c1604633f375" yesIsBad="true">
             <questionText>Has your home been freshly painted within the last 2 years?</questionText>
             <questionInfo title="Freshly painted">&lt;p&gt;
-      Freshly painted surfaces are higher in VOCs in the period of time 
-      directly after painting. The level of VOCs emitted from paintwork in the 
-      home will depend on the type of paint.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Consider opting for low VOC or No VOC brands when choosing paint. You 
-      can choose from plant based paints or petroleum based paints. If 
-      choosing a petroleum based paint, water based paints are healthier 
-      options rather than solvent based paints.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If starting a painting project it's a good idea to keep children out of 
-      freshly painted areas for the first few weeks while the space is aired 
-      out and until the highest levels of VOCs have dissipated.
-    &lt;/p&gt;</questionInfo>
+                Freshly painted surfaces are higher in VOCs in the period of time
+                directly after painting. The level of VOCs emitted from paintwork in the
+                home will depend on the type of paint.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Consider opting for low VOC or No VOC brands when choosing paint. You
+                can choose from plant based paints or petroleum based paints. If
+                choosing a petroleum based paint, water based paints are healthier
+                options rather than solvent based paints.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If starting a painting project it's a good idea to keep children out of
+                freshly painted areas for the first few weeks while the space is aired
+                out and until the highest levels of VOCs have dissipated.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="81ef01d1-3520-47db-ae17-c41ed33cc42e" yesIsBad="true">
             <questionText>Do you have any plasticised wall paper on your walls?</questionText>
             <questionInfo title="Wallpaper">&lt;p&gt;
-      Plasticised wallpapers may contain PVC that contains volatile organic 
-      compounds (VOCs) that off-gas. PVC also contains phthalate chemicals 
-      that are found in plastics. Some phthalate chemicals have been found to 
-      migrate into household dust and have been linked to asthma.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for paper based wallpaper or fabrics such as linen, silk, sisal, or 
-      jute with a water based low VOC adhesive.
-    &lt;/p&gt;</questionInfo>
+                Plasticised wallpapers may contain PVC that contains volatile organic
+                compounds (VOCs) that off-gas. PVC also contains phthalate chemicals
+                that are found in plastics. Some phthalate chemicals have been found to
+                migrate into household dust and have been linked to asthma.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for paper based wallpaper or fabrics such as linen, silk, sisal, or
+                jute with a water based low VOC adhesive.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="1ecebae2-ef38-4d33-8d1f-f1b2cf084fce" yesIsBad="true">
             <questionText>Are any of your walls made from asbestos sheeting?</questionText>
             <questionInfo title="Asbestos walls">&lt;p&gt;
-      Asbestos is known to cause serious health problems. Asbestos was used to 
-      create various products used in housing prior to the mid 1980's and may 
-      still be used in some countries. Asbestos sheeting was used for many 
-      purposes, often for wet area surfaces hidden behind tiles, for walls, or 
-      eaves around a house.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Asbestos contains small particles that if disturbed can cause serious 
-      health problems. Have an asbestos audit done on your home and ensure 
-      that asbestos is safely removed by a specialist.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Asbestos was also used for many other products and should be avoided or 
-      treated with caution.
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;http://en.wikipedia.org/wiki/Asbestos&quot; target=&quot;_blank&quot;&gt;http://en.wikipedia.org/wiki/Asbestos&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;http://www.asbestosadvisor.net/What_does_asbestos_look_like.aspx&quot; target=&quot;_blank&quot;&gt;http://www.asbestosadvisor.net/What_does_asbestos_look_like.aspx&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Asbestos is known to cause serious health problems. Asbestos was used to
+                create various products used in housing prior to the mid 1980's and may
+                still be used in some countries. Asbestos sheeting was used for many
+                purposes, often for wet area surfaces hidden behind tiles, for walls, or
+                eaves around a house.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Asbestos contains small particles that if disturbed can cause serious
+                health problems. Have an asbestos audit done on your home and ensure
+                that asbestos is safely removed by a specialist.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Asbestos was also used for many other products and should be avoided or
+                treated with caution.
+                &lt;/p&gt;
+                &lt;p&gt;
+                &lt;a href=&quot;http://en.wikipedia.org/wiki/Asbestos&quot; target=&quot;_blank&quot;&gt;http://en.wikipedia.org/wiki/Asbestos&lt;/a&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                &lt;a href=&quot;http://www.asbestosadvisor.net/What_does_asbestos_look_like.aspx&quot; target=&quot;_blank&quot;&gt;http://www.asbestosadvisor.net/What_does_asbestos_look_like.aspx&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="a2084319-12c7-4543-9144-93aa3810cec8" yesIsBad="true">
             <questionText>Is there cracked and peeling paint on any of the walls?</questionText>
             <questionInfo title="Peeling paintwork">&lt;p&gt;
-      Houses painted before 1970 in Australia may have been painted with paint 
-      containing high levels of lead. Modern household paints contain less 
-      than 1% lead, however renovating or repairing old paint surfaces can 
-      expose lead from old paint and can contaminate surfaces and cause lead 
-      poisoning.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Small amounts of lead can cause serious health problems particularly for 
-      children. Lead has been associated with a wide range of health issues 
-      such as behavioural, growth and cognitive issues in children and nervous 
-      system, cardiovascular and kidney health issues among others for adults.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Purchase a lead test kit from the local hardware store and test if your 
-      old paintwork contains lead before you disturb it. Lead is only a danger 
-      once disturbed. Consider repainting the substrate without disturbing the 
-      original surface or replace the substrate or hire a professional to 
-      remove the lead paint safely.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Refer to the 6 step guide to painting your home - &lt;a href=&quot;http://www.environment.gov.au/atmosphere/airquality/publications/leadpaint.html&quot; target=&quot;_blank&quot;&gt;http://www.environment.gov.au/atmosphere/airquality/publications/leadpaint.html&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Houses painted before 1970 in Australia may have been painted with paint
+                containing high levels of lead. Modern household paints contain less
+                than 1% lead, however renovating or repairing old paint surfaces can
+                expose lead from old paint and can contaminate surfaces and cause lead
+                poisoning.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Small amounts of lead can cause serious health problems particularly for
+                children. Lead has been associated with a wide range of health issues
+                such as behavioural, growth and cognitive issues in children and nervous
+                system, cardiovascular and kidney health issues among others for adults.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Purchase a lead test kit from the local hardware store and test if your
+                old paintwork contains lead before you disturb it. Lead is only a danger
+                once disturbed. Consider repainting the substrate without disturbing the
+                original surface or replace the substrate or hire a professional to
+                remove the lead paint safely.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Refer to the 6 step guide to painting your home - &lt;a href=&quot;http://www.environment.gov.au/atmosphere/airquality/publications/leadpaint.html&quot;
+                target=&quot;_blank&quot;&gt;http://www.environment.gov.au/atmosphere/airquality/publications/leadpaint.html&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="3bb1126a-5d13-4210-abc8-17ee19bc1b6f" yesIsBad="true">
             <questionText>Do you have vinyl floor coverings that are in poor condition?</questionText>
             <questionInfo title="Vinyl floor coverings">&lt;p&gt;
-      A study of phthalates in indoor dust and their association with building 
-      characteristics by Gustaf Bornehag and others published by Environment 
-      Health Perspectives found a dose response relationship between 
-      concentrations of phthalates (plastic softeners) in bedroom dust and the 
-      likelihood of being diagnosed with asthma, rhinitis or eczema.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Studies suggest that plastic softeners can find their way into household 
-      dust and be inadvertently inhaled.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opting for products free from plastics is a safer alternative for people 
-      and the environment.
-    &lt;/p&gt;
-    &lt;p&gt;
-      For more information on asthma see - &lt;a href=&quot;http://www.asthma.org.au/Resources.aspx&quot; target=&quot;_blank&quot;&gt;http://www.asthma.org.au/Resources.aspx&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                A study of phthalates in indoor dust and their association with building
+                characteristics by Gustaf Bornehag and others published by Environment
+                Health Perspectives found a dose response relationship between
+                concentrations of phthalates (plastic softeners) in bedroom dust and the
+                likelihood of being diagnosed with asthma, rhinitis or eczema.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Studies suggest that plastic softeners can find their way into household
+                dust and be inadvertently inhaled.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opting for products free from plastics is a safer alternative for people
+                and the environment.
+                &lt;/p&gt;
+                &lt;p&gt;
+                For more information on asthma see - &lt;a href=&quot;http://www.asthma.org.au/Resources.aspx&quot;
+                target=&quot;_blank&quot;&gt;http://www.asthma.org.au/Resources.aspx&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="d91146b3-18c4-4721-bdb9-bdd81e6bd8af" yesIsBad="true">
             <questionText>Can you see any mould on any of the walls or ceiling in your home?</questionText>
             <questionInfo title="Mould on walls">&lt;p&gt;
-      Mould can cause a range of health issues such as fatigue, weakened 
-      immune system and contribute to allergy symptoms.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Mould in the home indicates a problem with moisture and could be a 
-      result of a structural problem such as leaks, poor drainage, flooding, 
-      rising damp, condensation or humidity. Removing and preventing mould 
-      will assist with minimising maintenance expenses but importantly will 
-      prevent mould spores from growing and impacting on indoor air quality 
-      and your health.
-    &lt;/p&gt;
-    &lt;p&gt;
-      When moulds are disturbed they release spores into the air, so while 
-      cleaning mould ensure you wear a suitable face mask. To clean mould use 
-      an 80% naturally fermented white vinegar to 20% water solution.
-    &lt;/p&gt;
-    &lt;p&gt;
-      &lt;a href=&quot;http://www.mould.com.au/mythsaboutmould.htm&quot; target=&quot;_blank&quot;&gt;http://www.mould.com.au/mythsaboutmould.htm&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Mould can cause a range of health issues such as fatigue, weakened
+                immune system and contribute to allergy symptoms.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Mould in the home indicates a problem with moisture and could be a
+                result of a structural problem such as leaks, poor drainage, flooding,
+                rising damp, condensation or humidity. Removing and preventing mould
+                will assist with minimising maintenance expenses but importantly will
+                prevent mould spores from growing and impacting on indoor air quality
+                and your health.
+                &lt;/p&gt;
+                &lt;p&gt;
+                When moulds are disturbed they release spores into the air, so while
+                cleaning mould ensure you wear a suitable face mask. To clean mould use
+                an 80% naturally fermented white vinegar to 20% water solution.
+                &lt;/p&gt;
+                &lt;p&gt;
+                &lt;a href=&quot;http://www.mould.com.au/mythsaboutmould.htm&quot; target=&quot;_blank&quot;&gt;http://www.mould.com.au/mythsaboutmould.htm&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="3f04114d-f538-47f4-a740-46e6b2160d0d" yesIsBad="false">
             <questionText>Do your windows open and close properly?</questionText>
             <questionInfo title="Windows">&lt;p&gt;
-      Opening windows can assist with reducing indoor air pollution that has 
-      accumulated from building materials and finishes, furniture, household 
-      items and lifestyle practices.
-    &lt;/p&gt;
-    &lt;p&gt;
-      According to a 2012 report by leading global interdisciplinary design 
-      firm Perkins+Will, 374 substances that may be found in the home 
-      environment were highlighted as known or suspected asthmagens.
-    &lt;/p&gt;</questionInfo>
+                Opening windows can assist with reducing indoor air pollution that has
+                accumulated from building materials and finishes, furniture, household
+                items and lifestyle practices.
+                &lt;/p&gt;
+                &lt;p&gt;
+                According to a 2012 report by leading global interdisciplinary design
+                firm Perkins+Will, 374 substances that may be found in the home
+                environment were highlighted as known or suspected asthmagens.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="af13f2ed-f13a-47a2-8ba3-481d9c4d7747" yesIsBad="false">
             <questionText>Are window and door screens in good repair?</questionText>
             <questionInfo title="Screens">&lt;p&gt;
-      Opening doors and windows regularly helps with ventilation, pushing 
-      stale and often polluted indoor air out.
-    &lt;/p&gt;</questionInfo>
+                Opening doors and windows regularly helps with ventilation, pushing
+                stale and often polluted indoor air out.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="fc9123d2-c0fc-456c-9f8f-7c261c73d6bb" yesIsBad="true">
             <questionText>Is there cracked or peeling paint around the windows?</questionText>
             <questionInfo title="Paintwork dust">&lt;p&gt;
-      Old houses may have been painted with paint containing lead. If 
-      paintwork is deteriorated chemicals from paintwork are more likely to 
-      find their way into household dust that may inadvertently be inhaled or 
-      ingested.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Buy a lead test kit from the hardware store before undertaking any DIY 
-      repair work as lead paintwork needs to be repaired using protection.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Use a HEPA filter vacuum regularly to minimise the spread of dust 
-      throughout the house.
-    &lt;/p&gt;</questionInfo>
+                Old houses may have been painted with paint containing lead. If
+                paintwork is deteriorated chemicals from paintwork are more likely to
+                find their way into household dust that may inadvertently be inhaled or
+                ingested.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Buy a lead test kit from the hardware store before undertaking any DIY
+                repair work as lead paintwork needs to be repaired using protection.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Use a HEPA filter vacuum regularly to minimise the spread of dust
+                throughout the house.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="80b19ff2-e577-4b41-a2f9-06fae1db221f" yesIsBad="true">
             <questionText>When raining, does water enter windows when they are closed?</questionText>
             <questionInfo title="Leaking windows">&lt;p&gt;
-      Mould needs moisture to start growing - prompt maintenance to repair the 
-      water leaks is needed now!
-    &lt;/p&gt;</questionInfo>
+                Mould needs moisture to start growing - prompt maintenance to repair the
+                water leaks is needed now!
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="20db97f2-baa6-411c-b57e-77c4b2a8e288" yesIsBad="true">
             <questionText>Do you have plasticised window coverings such as blinds or curtains?</questionText>
             <questionInfo title="Plasticised window coverings">&lt;p&gt;
-      When heated plastics release VOCs (volatile organic compounds), better 
-      known as gases or fumes.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Plasticised window coverings receive direct sunlight and heat up in the 
-      window and contribute to poor indoor air quality. Some plasticised 
-      fabrics can contain phthalate chemicals (plastic softeners) that have 
-      been found to migrate into household dust and linked with health 
-      concerns.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for window furnishings free from plastics. Natural fibres or 
-      naturally treated timber are a great option.
-    &lt;/p&gt;</questionInfo>
+                Plastics when heated release VOCs (Volatile Organic Compounds), better
+                known as gases or fumes.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Plasticised window coverings receive direct sunlight and heat up in the
+                window and contribute to poor indoor air quality. Some plasticised
+                fabrics can contain phthalate chemicals (plastic softeners) that have
+                been found to migrate into household dust and linked with health
+                concerns.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for window furnishings free from plastics. Natural fibres or
+                naturally treated timber are a great option.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="d28b4f96-db17-4e06-aebd-31306c19eb88" yesIsBad="false">
             <questionText>Do you use a HEPA vacuum cleaner to remove dust from your house?</questionText>
             <questionInfo title="HEPA vacuum">&lt;p&gt;
-      HEPA stands for High-Efficiency Particulate Air. A HEPA filter is a type 
-      of mechanical air filter that works by forcing air through a fine mesh 
-      filter that traps harmful particles.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A HEPA filter vacuum used to clean the home minimises the spread of 
-      household dust that may be polluted with chemicals that have migrated 
-      from household products, as well as eliminating pollens, pet dander and 
-      dust mites.
-    &lt;/p&gt;</questionInfo>
+                HEPA stands for High-Efficiency Particulate Air. A HEPA filter is a type
+                of mechanical air filter that works by forcing air through a fine mesh
+                filter that traps harmful particles.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A HEPA filter vacuum used to clean the home minimises the spread of
+                household dust that may be polluted with chemicals that have migrated
+                from household products, as well as eliminating pollens, pet dander and
+                dust mites.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="8bfbbc27-cd75-4797-aaca-ae77604ebe39" yesIsBad="true">
             <questionText>Do you have fluorescent lighting in your home?</questionText>
             <questionInfo title="Fluorescent lighting">&lt;p&gt;
-      Compact fluorescent lighting generally contains mercury. When 
-      fluorescent lighting is broken, mercury vapour is released into the air 
-      and has been linked to health concerns.
-    &lt;/p&gt;
-    &lt;p&gt;
-      The long life and low power consumption of these lamps tends to make 
-      them a popular choice for homeowners.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for maximising natural lighting within a home through the use of 
-      windows strategically placed to gain maximum sunlight or installation of 
-      skylights (roof windows). LED lighting is an energy efficient option for 
-      those seeking an alternative energy efficient lighting alternative.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If you break a fluorescent lamp within the home, this should be disposed 
-      of with care. You can find more information here - &lt;a target=&quot;_blank&quot; href=&quot;http://www2.epa.gov/cfl/cleaning-broken-cfl/&quot;&gt;http://www2.epa.gov/cfl/cleaning-broken-cfl&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Compact fluorescent lighting generally contains mercury. When
+                fluorescent lighting is broken, mercury vapour is released into the air
+                and has been linked to health concerns.
+                &lt;/p&gt;
+                &lt;p&gt;
+                The long life and low power consumption of these lamps tends to make
+                them a popular choice for homeowners.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for maximising natural lighting within a home through the use of
+                windows strategically placed to gain maximum sunlight or installation of
+                skylights (roof windows). LED lighting is an energy efficient option for
+                those seeking an alternative energy efficient lighting alternative.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If you break a fluorescent lamp within the home, this should be disposed
+                of with care. You can find more information here - &lt;a target=&quot;_blank&quot; href=&quot;http://www2.epa.gov/cfl/cleaning-broken-cfl/&quot;&gt;http://www2.epa.gov/cfl/cleaning-broken-cfl&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="ba3705af-a2f0-49a8-965f-41c00834a80b" yesIsBad="false">
             <questionText>Have you investigated Radon levels in your home?</questionText>
             <questionInfo title="Radon">&lt;p&gt;
-      Radon is a colorless, odorless, radioactive gas. It forms naturally from 
-      the decay of radioactive elements, such as uranium, which can be found 
-      at different levels in soil and rock throughout the world.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Radon gas in the soil and rock can move into the air and into homes and 
-      has been associated with lung cancer. Different locations around the 
-      world have differing levels of Radon.
-    &lt;/p&gt;
-    &lt;p&gt;
-      You can check radon levels in your home to determine if you need to take 
-      action. Do-it-yourself radon detection kits can be ordered through the 
-      mail or purchased in some hardware stores. The kits are placed in the 
-      home for a period of time and then mailed to a lab for analysis.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more about Radon and health concerns - &lt;a target=&quot;_blank&quot; href=&quot;http://www.who.int/ionizing_radiation/env/radon/en/&quot;&gt;http://www.who.int/ionizing_radiation/env/radon/en/&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      World Health Organisations Handbook on indoor Radon - &lt;a target=&quot;_blank&quot; href=&quot;http://whqlibdoc.who.int/publications/2009/9789241547673_eng.pdf&quot;&gt;http://whqlibdoc.who.int/publications/2009/9789241547673_eng.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Radon is a colorless, odorless, radioactive gas. It forms naturally from
+                the decay of radioactive elements, such as uranium, which can be found
+                at different levels in soil and rock throughout the world.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Radon gas in the soil and rock can move into the air and into homes and
+                has been associated with lung cancer. Different locations around the
+                world have differing levels of Radon.
+                &lt;/p&gt;
+                &lt;p&gt;
+                You can check radon levels in your home to determine if you need to take
+                action. Do-it-yourself radon detection kits can be ordered through the
+                mail or purchased in some hardware stores. The kits are placed in the
+                home for a period of time and then mailed to a lab for analysis.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more about Radon and health concerns - &lt;a target=&quot;_blank&quot; href=&quot;http://www.who.int/ionizing_radiation/env/radon/en/&quot;&gt;http://www.who.int/ionizing_radiation/env/radon/en/&lt;/a&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                World Health Organisations Handbook on indoor Radon - &lt;a target=&quot;_blank&quot; href=&quot;http://whqlibdoc.who.int/publications/2009/9789241547673_eng.pdf&quot;&gt;http://whqlibdoc.who.int/publications/2009/9789241547673_eng.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Entry" id="d1f70979-b5e1-4502-a019-562951fc3cd2">
         <Question id="d6d1f60d-d52e-40d5-b874-0a107bef74b2" yesIsBad="false">
             <questionText>Do you have a door mat?</questionText>
             <questionInfo title="Door mat">&lt;p&gt;
-      Door mats assist to trap unwanted particles from entering the home and 
-      accumulating in household dust.
-    &lt;/p&gt;
-    &lt;p&gt;
-      The dust within our homes gets circulated by movement of occupants, 
-      heating and cooling systems.
-    &lt;/p&gt;
-    &lt;p&gt;
-      What is even better than a door mat? Have shoes taken off at the front 
-      door!
-    &lt;/p&gt;</questionInfo>
+                Door mats assist to trap unwanted particles from entering the home and
+                accumulating in household dust.
+                &lt;/p&gt;
+                &lt;p&gt;
+                The dust within our homes gets circulated by movement of occupants,
+                heating and cooling systems.
+                &lt;/p&gt;
+                &lt;p&gt;
+                What is even better than a door mat? Have shoes taken off at the front
+                door!
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="3a4f093a-8b79-4eae-9b3e-a55ad2ca8b3b" yesIsBad="false">
             <questionText>Do you take your shoes off when entering the house?</questionText>
             <questionInfo title="Shoes">&lt;p&gt;
-      Taking shoes off at the front door prevents germs, bacteria, chemical 
-      residues and heavy metals from being walked into the home.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Young children have lots of hand to mouth action and pollutants can be 
-      easily ingested from surfaces.
-    &lt;/p&gt;</questionInfo>
+                Taking shoes off at the front door prevents germs, bacteria, chemical
+                residues and heavy metals from being walked into the home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Young children have lots of hand to mouth action and pollutants can be
+                easily ingested from surfaces.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="7d4c5197-b80b-4fc1-87b5-9db29a4e4899" yesIsBad="true">
-            <questionText>Upon entering the house do you smell fragrances, eg. air fresheners, incense or candles?</questionText>
+            <questionText>Upon entering the house do you smell fragrances, eg. air fresheners, incense or candles?
+            </questionText>
             <questionInfo title="Fragrances">&lt;p&gt;
-      Avoid air fresheners, petro chemically produced candles and incense - 
-      opt for natural essential oils, plants or flowers.
-    &lt;/p&gt;</questionInfo>
+                Avoid air fresheners, petro chemically produced candles and incense -
+                opt for natural essential oils, plants or flowers.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="18a19b7b-2737-4c93-bcd6-aa62e9ab1dbc" yesIsBad="true">
             <questionText>Do you smell a musty, damp mould smell?</questionText>
             <questionInfo title="Musty odour">&lt;p&gt;
-      A damp, musty smell indicates that moisture is accumulating somewhere it 
-      should not be.
-    &lt;/p&gt;</questionInfo>
+                A damp, musty smell indicates that moisture is accumulating somewhere it
+                should not be.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="534f71d7-ed5e-4f37-8000-fd17ea188641" yesIsBad="true">
-            <questionText>While walking around the house can you smell cleaning products? </questionText>
+            <questionText>While walking around the house can you smell cleaning products?</questionText>
             <questionInfo title="Clean smell">&lt;p&gt;
-      Many cleaning products do not list all their ingredients on the label 
-      and can contain chemicals that are considered toxic.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Cleaning products leave residues on surfaces around the home creating 
-      opportunities for chemicals to be absorbed through the skin, inhaled or 
-      ingested.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A clean odour can have &amp;quot;no&amp;quot; odour.
-    &lt;/p&gt;</questionInfo>
+                Many cleaning products do not list all their ingredients on the label
+                and can contain chemicals that are considered toxic.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Cleaning products leave residues on surfaces around the home creating
+                opportunities for chemicals to be absorbed through the skin, inhaled or
+                ingested.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A clean odour can have &amp;quot;no&amp;quot; odour.
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Bedrooms" id="93c3ee6a-6bbb-4b0d-91fc-e6b3f246f2d2">
         <Question id="046f87ad-254b-4ef0-b56a-0a9b3f7069dc" yesIsBad="true">
-            <questionText>Do you have plastic in or around your bed, eg. plasticised fabric on the bed frame or plasticised mattress protector?</questionText>
+            <questionText>Do you have plastic in or around your bed, eg. plasticised fabric on the bed frame or
+                plasticised mattress protector?
+            </questionText>
             <questionInfo title="Beds and plastics">&lt;p&gt;
-      
-    &lt;/p&gt;
-    &lt;p&gt;
-      In addition to releasing VOCs, plastics can contain phthalates, 
-      otherwise known as plastic softeners. Some phthalates have been found to 
-      migrate into household dust and been linked to endocrine altering health 
-      issues and allergies.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A Study by Bornehag CG etal titled &amp;quot;The Association between Asthma and 
-      Allergic Symptoms in Children and Phthalates in House Dust&amp;quot; showed that 
-      &amp;quot;phthalates, within the range of what is normally found in indoor 
-      environments, are associated with allergic symptoms in children&amp;quot;.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for natural fibre fabrics such as hemp, cotton, linen and wool. 
-      Mattress protectors made from organic cotton or wool are great options.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/15471731&quot; target=&quot;_blank&quot;&gt;http://www.ncbi.nlm.nih.gov/pubmed/15471731&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+
+                &lt;/p&gt;
+                &lt;p&gt;
+                In addition to releasing VOCs, plastics can contain phthalates,
+                otherwise known as plastic softeners. Some phthalates have been found to
+                migrate into household dust and been linked to endocrine altering health
+                issues and allergies.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A Study by Bornehag CG etal titled &amp;quot;The Association between Asthma and
+                Allergic Symptoms in Children and Phthalates in House Dust&amp;quot; showed that
+                &amp;quot;phthalates, within the range of what is normally found in indoor
+                environments, are associated with allergic symptoms in children&amp;quot;.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for natural fibre fabrics such as hemp, cotton, linen and wool.
+                Mattress protectors made from organic cotton or wool are great options.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/15471731&quot; target=&quot;_blank&quot;&gt;http://www.ncbi.nlm.nih.gov/pubmed/15471731&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="e245103e-77b6-4b1e-b3cb-a6701b78b94e" yesIsBad="true">
             <questionText>Do you have a mattress that has been treated with a chemical flame retardant?</questionText>
             <questionInfo title="Flame retardants">&lt;p&gt;
-      Some flame retardant chemicals have been found to migrate into household 
-      dust and have been linked to a host of health concerns relating to 
-      nervous system health, hormonal and thyroid function health among others.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more :&lt;br&gt;&lt;a href=&quot;http://www.ewg.org/release/new-research-finds-highly-toxic-flame-retardants-widespread-homes-furniture&quot; target=&quot;_blank&quot;&gt;http://www.ewg.org/release/new-research-finds-highly-toxic-flame-retardants-widespread-homes-furniture&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Flame_retardant&quot; target=&quot;_blank&quot;&gt;http://en.wikipedia.org/wiki/Flame_retardant&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Some flame retardant chemicals have been found to migrate into household
+                dust and have been linked to a host of health concerns relating to
+                nervous system health, hormonal and thyroid function health among others.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more :&lt;br&gt;&lt;a href=&quot;http://www.ewg.org/release/new-research-finds-highly-toxic-flame-retardants-widespread-homes-furniture&quot;
+                target=&quot;_blank&quot;&gt;http://www.ewg.org/release/new-research-finds-highly-toxic-flame-retardants-widespread-homes-furniture&lt;/a&gt;&lt;br&gt;&lt;a
+                href=&quot;http://en.wikipedia.org/wiki/Flame_retardant&quot; target=&quot;_blank&quot;&gt;http://en.wikipedia.org/wiki/Flame_retardant&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="bebe45a8-91e3-479b-85be-d4a2e567f8ca" yesIsBad="true">
-            <questionText>Do you have a mattress that has been treated with a chemical stain guard treatment?</questionText>
+            <questionText>Do you have a mattress that has been treated with a chemical stain guard treatment?
+            </questionText>
             <questionInfo title="Stain treatments">&lt;p&gt;
-      Perfluorinated chemicals (PFCs) are widely-used water, grease and stain 
-      repellents. PFCs have been associated with health concerns such as 
-      immune suppression, reproductive problems and hormonal disorders.
-    &lt;/p&gt;
-    &lt;p&gt;
-      PFCs can be found in carpets and furnishings as well as non-stick food 
-      packaging.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for products that have not been chemically treated.
-    &lt;/p&gt;</questionInfo>
+                Perfluorinated chemicals (PFCs) are widely-used water, grease and stain
+                repellents. PFCs have been associated with health concerns such as
+                immune suppression, reproductive problems and hormonal disorders.
+                &lt;/p&gt;
+                &lt;p&gt;
+                PFCs can be found in carpets and furnishings as well as non-stick food
+                packaging.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for products that have not been chemically treated.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="da77a2e7-fb7f-4710-9954-41355c39bdf6" yesIsBad="true">
             <questionText>Are you sleeping on a foam mattress?</questionText>
             <questionInfo title="Mattress">&lt;p&gt;
-      Foams are made from petrochemicals that can offgass into the air that 
-      you breathe while sleeping, and many foams contain flame retardant 
-      chemicals.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Choose a mattress made from untreated, non-toxic natural materials 
-      containing no synthetic chemicals or fire retardants. Opt for a mattress 
-      made from natural fibres with NO chemical treatments.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If a new mattress is not an option buy a wool and organic cotton 
-      mattress topper.
-    &lt;/p&gt;</questionInfo>
+                Foams are made from petrochemicals that can offgass into the air that
+                you breathe while sleeping, and many foams contain flame retardant
+                chemicals.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Choose a mattress made from untreated, non-toxic natural materials
+                containing no synthetic chemicals or fire retardants. Opt for a mattress
+                made from natural fibres with NO chemical treatments.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If a new mattress is not an option buy a wool and organic cotton
+                mattress topper.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="840e8344-c962-4ee2-b61b-ed12e678c431" yesIsBad="true">
             <questionText>Do you have unsealed particle board or MDF furniture in your bedroom?</questionText>
             <questionInfo title="Fibre board products">&lt;p&gt;
-      The adhesives used to make particle board and MDF (medium density 
-      fibreboard) often contain urea formaldehyde.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Formaldehyde can offgass into indoor air. Formaldehyde has been 
-      documented to contribute to eye, nose, and throat irritation; wheezing 
-      and coughing; fatigue, skin rashes among other more serious health 
-      conditions.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for solid timber, metal or glass furniture.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a target=&quot;_blank&quot; href=&quot;http://www.epa.gov/iaq/formaldehyde.html&quot;&gt;http://www.epa.gov/iaq/formaldehyde.html&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                The adhesives used to make particle board and MDF (medium density
+                fibreboard) often contain urea formaldehyde.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Formaldehyde can offgass into indoor air. Formaldehyde has been
+                documented to contribute to eye, nose, and throat irritation; wheezing
+                and coughing; fatigue, skin rashes among other more serious health
+                conditions.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for solid timber, metal or glass furniture.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a target=&quot;_blank&quot; href=&quot;http://www.epa.gov/iaq/formaldehyde.html&quot;&gt;http://www.epa.gov/iaq/formaldehyde.html&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="df8ec237-bcd0-4250-9043-a466cdd504cf" yesIsBad="true">
             <questionText>Do you have synthetic carpets in your bedroom?</questionText>
             <questionInfo title="Carpet">&lt;p&gt;
-      Toxic chemicals can be found in fibre bonding materials, backing glues, 
-      fire retardants, dyes, fungicides and stain resistant treatments.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for carpets made from natural fibres such as wool, sisal, coir or 
-      seagrass to minimise VOCs. Avoid chemical treatments such as stain 
-      resistance, mothproofing and fungicides. Carpets with woven or jute 
-      backing are preferable to rubberised options.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a href=&quot;http://www.epa.gov/iaq/voc.html&quot; target=&quot;_blank&quot;&gt;http://www.epa.gov/iaq/voc.html&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Toxic chemicals can be found in fibre bonding materials, backing glues,
+                fire retardants, dyes, fungicides and stain resistant treatments.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for carpets made from natural fibres such as wool, sisal, coir or
+                seagrass to minimise VOCs. Avoid chemical treatments such as stain
+                resistance, mothproofing and fungicides. Carpets with woven or jute
+                backing are preferable to rubberised options.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a href=&quot;http://www.epa.gov/iaq/voc.html&quot; target=&quot;_blank&quot;&gt;http://www.epa.gov/iaq/voc.html&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="f5de96df-ceb6-4f79-bc1c-d1241f2f87df" yesIsBad="false">
             <questionText>Do you use organic bed sheets?</questionText>
             <questionInfo title="Organic linen">&lt;p&gt;
-      Opt for organic bedding that is produced in accordance with Global 
-      Organic Textile Standards where possible. If this is not possible try to 
-      buy bed sheets that are Okeo-Tex Certified.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Avoid textiles that have been chemically treated such as stain 
-      resistant, crease free and antibacterial chemical treatments.
-    &lt;/p&gt;</questionInfo>
+                Opt for organic bedding that is produced in accordance with Global
+                Organic Textile Standards where possible. If this is not possible try to
+                buy bed sheets that are Okeo-Tex Certified.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Avoid textiles that have been chemically treated such as stain
+                resistant, crease free and antibacterial chemical treatments.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="e485123e-54e4-4d8a-a273-b5978b23e9e9" yesIsBad="true">
             <questionText>Do you dry clean your clothes, blankets or other items?</questionText>
             <questionInfo title="Dry cleaning">&lt;p&gt;
-      Tetrachloroethene is a toxic chemical that is widely used in the 
-      dry-cleaning of fabrics. Other names for tetrachloroethene include PERC, 
-      tetrachloroethylene, perchloroethylene or PCE.
-    &lt;/p&gt;
-    &lt;p&gt;
-      PERC can contribute to poor indoor air quality and for those with skin 
-      sensitivities can contribute to allergy symptoms.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for PERC free cleaning methods such as steam cleaning or hand 
-      washing of items. If dry cleaning is necessary, hang the item outdoors 
-      until the odour is gone.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a href=&quot;http://www.atsdr.cdc.gov/tfacts18.pdf&quot; target=&quot;_blank&quot;&gt;http://www.atsdr.cdc.gov/tfacts18.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Tetrachloroethene is a toxic chemical that is widely used in the
+                dry-cleaning of fabrics. Other names for tetrachloroethene include PERC,
+                tetrachloroethylene, perchloroethylene or PCE.
+                &lt;/p&gt;
+                &lt;p&gt;
+                PERC can contribute to poor indoor air quality and for those with skin
+                sensitivities can contribute to allergy symptoms.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for PERC free cleaning methods such as steam cleaning or hand
+                washing of items. If dry cleaning is necessary, hang the item outdoors
+                until the odour is gone.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a href=&quot;http://www.atsdr.cdc.gov/tfacts18.pdf&quot; target=&quot;_blank&quot;&gt;http://www.atsdr.cdc.gov/tfacts18.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="673c84b3-87fb-4679-9dc9-717d37fa6694" yesIsBad="false">
             <questionText>Is there air flow under your mattress / bed?</questionText>
             <questionInfo title="Bed airflow">&lt;p&gt;
-      Unobstructed space under a mattress encourages air flow circulation and 
-      discourages moisture build up in the mattress.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A bed design with slatted timber supports works well as long as the 
-      space under the mattress is free from clutter.
-    &lt;/p&gt;</questionInfo>
+                Unobstructed space under a mattress encourages air flow circulation and
+                discourages moisture build up in the mattress.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A bed design with slatted timber supports works well as long as the
+                space under the mattress is free from clutter.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="19c1dcf7-58b9-4226-8c61-d5c09ec46604" yesIsBad="false">
             <questionText>Do you have sufficient concealed storage in your bedroom?</questionText>
             <questionInfo title="Storage">&lt;p&gt;
-      Minimising dust in the bedroom helps to promote good indoor air quality 
-      for optimal health, as dust can circulate with movement, heating and 
-      cooling. Dust can contribute to allergies and asthma.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Creating storage that is concealed prevents surface dust from collecting 
-      on items over time. Opt for shelving with doors, storage boxes with lids 
-      and minimise clutter.
-    &lt;/p&gt;</questionInfo>
+                Minimising dust in the bedroom helps to promote good indoor air quality
+                for optimal health, as dust can circulate with movement, heating and
+                cooling. Dust can contribute to allergies and asthma.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Creating storage that is concealed prevents surface dust from collecting
+                on items over time. Opt for shelving with doors, storage boxes with lids
+                and minimise clutter.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="6e69e98a-dc89-4b2a-8026-66958e505ce7" yesIsBad="false">
             <questionText>Do you open the window in your bedroom weekly?</questionText>
             <questionInfo title="Open windows">&lt;p&gt;
-      Research has shown that air inside the home is often many times more 
-      polluted than the air outside the home.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opening windows regularly will assist to flush out the build-up of VOCs 
-      that have accumulated in the indoor air. Even in cooler months a quick 
-      burst of outdoor air can help to maintain healthier indoor air for our 
-      lungs.
-    &lt;/p&gt;</questionInfo>
+                Research has shown that air inside the home is often many times more
+                polluted than the air outside the home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opening windows regularly will assist to flush out the build-up of VOCs
+                that have accumulated in the indoor air. Even in cooler months a quick
+                burst of outdoor air can help to maintain healthier indoor air for our
+                lungs.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="486ba758-bb29-4d99-b47d-ea52d42651a3" yesIsBad="true">
-            <questionText>Do you sleep next to a clock radio or have any other electrical device turned on nearby, eg. electric blanket?</questionText>
+            <questionText>Do you sleep next to a clock radio or have any other electrical device turned on nearby, eg.
+                electric blanket?
+            </questionText>
             <questionInfo title="Electromagnetic fields">&lt;p&gt;
-      Could your bedroom design be preventing you from having a restful sleep 
-      due to Electromagnetic Fields (EMFs).
-    &lt;/p&gt;
-    &lt;p&gt;
-      The issue of EMFs is receiving increasing attention globally in relation 
-      to health concerns and health sensitivities. Many hours are spent 
-      sleeping. Eliminating sources in the bedroom is a precautionary approach 
-      to ensure you get a healthy, good nights sleep.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Remove electrical devices from the bedroom, avoid metal bed frames and 
-      mattresses with metal as metal tends to intensify electromagnetic fields.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Are there appliances on walls adjoining the bedroom?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Keep beds away from appliances on adjoining walls.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Demand switches and other shielding options are available for those who 
-      wish to take further action.
-    &lt;/p&gt;
-    &lt;p&gt;
-      You may like to read more about this contentious issue here - &lt;a target=&quot;_blank&quot; href=&quot;http://www.magdahavas.com/international-experts%E2%80%99-perspective-on-the-health-effects-of-electromagnetic-fields-emf-and-electromagnetic-radiation-emr/&quot;&gt;http://www.magdahavas.com/&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Could your bedroom design be preventing you from having a restful sleep
+                due to Electromagnetic Fields (EMFs).
+                &lt;/p&gt;
+                &lt;p&gt;
+                The issue of EMFs is receiving increasing attention globally in relation
+                to health concerns and health sensitivities. Many hours are spent
+                sleeping. Eliminating sources in the bedroom is a precautionary approach
+                to ensure you get a healthy, good nights sleep.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Remove electrical devices from the bedroom, avoid metal bed frames and
+                mattresses with metal as metal tends to intensify electromagnetic fields.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Are there appliances on walls adjoining the bedroom?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Keep beds away from appliances on adjoining walls.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Demand switches and other shielding options are available for those who
+                wish to take further action.
+                &lt;/p&gt;
+                &lt;p&gt;
+                You may like to read more about this contentious issue here - &lt;a target=&quot;_blank&quot; href=&quot;http://www.magdahavas.com/international-experts%E2%80%99-perspective-on-the-health-effects-of-electromagnetic-fields-emf-and-electromagnetic-radiation-emr/&quot;&gt;http://www.magdahavas.com/&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Kitchen" id="21b2cabe-5337-4d2b-9c69-95f334c8915b">
         <Question id="e6ebc3a8-e1ab-4393-bd24-a6230a3c6dc1" yesIsBad="false">
             <questionText>Do you have a good exhaust fan over the cooking area?</questionText>
             <questionInfo title="Tissue test">&lt;p&gt;
-      The tissue test is a cheap and easy way to test if you have good air 
-      extraction from your exhaust fan. Hold a &amp;#189; ply tissue a few centimetres 
-      away from the vent. When the fan is on does it draw the tissue up to the 
-      vent easily?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Effective extraction of cooking gasses helps to minimise combustion 
-      pollutants that can build up in your indoor air. Combustion pollutants 
-      have been linked to health issues.
-    &lt;/p&gt;</questionInfo>
+                The tissue test is a cheap and easy way to test if you have good air
+                extraction from your exhaust fan. Hold a &amp;#189; ply tissue a few centimetres
+                away from the vent. When the fan is on does it draw the tissue up to the
+                vent easily?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Effective extraction of cooking gasses helps to minimise combustion
+                pollutants that can build up in your indoor air. Combustion pollutants
+                have been linked to health issues.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="40a1ea84-0589-4dba-b4a8-cc17addb0e21" yesIsBad="true">
-            <questionText>Are there any signs of mould or mildew in the kitchen, including under the sink?</questionText>
+            <questionText>Are there any signs of mould or mildew in the kitchen, including under the sink?
+            </questionText>
             <questionInfo title="Removing mould">&lt;p&gt;
-      &amp;quot;Occupants of damp or mouldy buildings are at increased risk of 
-      experiencing health problems such as respiratory symptoms, respiratory 
-      infections, allergic rhinitis and asthma.&amp;quot;
-    &lt;/p&gt;
-    &lt;p&gt;
-      Identify and eliminate the source of moisture. There are various ways to 
-      clean mould - we like the 80% naturally fermented white vinegar solution 
-      with 20% water.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a href=&quot;http://www.euro.who.int/__data/assets/pdf_file/0003/78636/Damp_Mould_Brochure.pdf&quot; target=&quot;_blank&quot;&gt;http://www.euro.who.int/__data/assets/pdf_file/0003/78636/Damp_Mould_Brochure.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                &amp;quot;Occupants of damp or mouldy buildings are at increased risk of
+                experiencing health problems such as respiratory symptoms, respiratory
+                infections, allergic rhinitis and asthma.&amp;quot;
+                &lt;/p&gt;
+                &lt;p&gt;
+                Identify and eliminate the source of moisture. There are various ways to
+                clean mould - we like the 80% naturally fermented white vinegar solution
+                with 20% water.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a href=&quot;http://www.euro.who.int/__data/assets/pdf_file/0003/78636/Damp_Mould_Brochure.pdf&quot;
+                target=&quot;_blank&quot;&gt;http://www.euro.who.int/__data/assets/pdf_file/0003/78636/Damp_Mould_Brochure.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="d138d7b1-9d54-43c8-b665-747f195522b9" yesIsBad="true">
             <questionText>Do you use non-stick cooking items, eg. pots and pans?</questionText>
             <questionInfo title="Non stick">&lt;p&gt;
-      Perfluorchemicals (PFCs) are commonly used to create non-stick cookware. 
-      There is growing concern and information available that PFCs are highly 
-      toxic.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for stainless steel, cast iron or glass cookware.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more - &lt;a href=&quot;http://www.healthybuilding.net/healthcare/2009-04-20PFCs_fact_sheet.pdf&quot; target=&quot;_blank&quot;&gt;http://www.healthybuilding.net/healthcare/2009-04-20PFCs_fact_sheet.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Perfluorchemicals (PFCs) are commonly used to create non-stick cookware.
+                There is growing concern and information available that PFCs are highly
+                toxic.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for stainless steel, cast iron or glass cookware.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more - &lt;a href=&quot;http://www.healthybuilding.net/healthcare/2009-04-20PFCs_fact_sheet.pdf&quot;
+                target=&quot;_blank&quot;&gt;http://www.healthybuilding.net/healthcare/2009-04-20PFCs_fact_sheet.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="de0a1241-2294-4443-98e3-b4ca7f95ec66" yesIsBad="true">
             <questionText>Do you use antibacterial hand or dish soap?</questionText>
             <questionInfo title="Antibacterial">&lt;p&gt;
-      Tricolsan is a chemical found in many consumer products including many 
-      antibacterial soaps and liquids. According to the Environmental Working 
-      group Triclosan has been &amp;quot;linked to liver and inhalation toxicity, and 
-      low levels of triclosan may disrupt thyroid function.&amp;quot;
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for soaps that use natural ingredients and look for ingredients that 
-      you can understand on the label.
-    &lt;/p&gt;</questionInfo>
+                Tricolsan is a chemical found in many consumer products including many
+                antibacterial soaps and liquids. According to the Environmental Working
+                group Triclosan has been &amp;quot;linked to liver and inhalation toxicity, and
+                low levels of triclosan may disrupt thyroid function.&amp;quot;
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for soaps that use natural ingredients and look for ingredients that
+                you can understand on the label.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="636e2389-6a77-4f22-920c-fe9513901338" yesIsBad="false">
             <questionText>Are the garbage recycling and any compost bins covered?</questionText>
             <questionInfo title="Rubbish bins">&lt;p&gt;
-      Pests like food, moisture and shelter and an open recycling bin is the 
-      perfect home.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Keep bins covered to avoid attracting pests. Pests can create a mess, 
-      multiple and spread germs.
-    &lt;/p&gt;</questionInfo>
+                Pests like food, moisture and shelter and an open recycling bin is the
+                perfect home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Keep bins covered to avoid attracting pests. Pests can create a mess,
+                multiple and spread germs.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="7f373616-aa9c-4ce4-83a0-3bf19929fe74" yesIsBad="true">
             <questionText>Are there any signs of pests, eg. droppings or moths, in the kitchen?</questionText>
             <questionInfo title="Pests">&lt;p&gt;
-      Clean up spills quickly and keep surfaces such as bench tops and inside 
-      cupboards clean. To minimise the temptation to pests ensure bins are 
-      sealed, containers used to store food are kept closed and screens on 
-      windows and doors are in good working order.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If you must use a product to help rid your home of pests opt for 
-      chemical free options such as physical traps or non-toxic applications.
-    &lt;/p&gt;</questionInfo>
+                Clean up spills quickly and keep surfaces such as bench tops and inside
+                cupboards clean. To minimise the temptation to pests ensure bins are
+                sealed, containers used to store food are kept closed and screens on
+                windows and doors are in good working order.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If you must use a product to help rid your home of pests opt for
+                chemical free options such as physical traps or non-toxic applications.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="1a46eb56-208f-4127-abd2-a8632cb863b2" yesIsBad="false">
             <questionText>Do you have a carbon monoxide detector in the kitchen?</questionText>
             <questionInfo title="Carbon monoxide">&lt;p&gt;
-      Carbon monoxide detectors are reasonably inexpensive and may help you 
-      detect a gas leak.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Carbon Monoxide known as CO is found in combustion fumes such as those 
-      from stoves, gas cooking, gas heating and engine fumes. CO can build up 
-      in enclosed spaces without an odour and can cause poisoning.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Common symptoms associated with CO poisoning is headaches, weakness, 
-      nausea, vomiting, confusion and chest pain. High levels of Carbon 
-      Monoxide can cause loss of consciousness and death.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Detectors help keep your home safe and alert you to any CO leaks.
-    &lt;/p&gt;</questionInfo>
+                Carbon monoxide detectors are reasonably inexpensive and may help you
+                detect a gas leak.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Carbon Monoxide known as CO is found in combustion fumes such as those
+                from stoves, gas cooking, gas heating and engine fumes. CO can build up
+                in enclosed spaces without an odour and can cause poisoning.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Common symptoms associated with CO poisoning is headaches, weakness,
+                nausea, vomiting, confusion and chest pain. High levels of Carbon
+                Monoxide can cause loss of consciousness and death.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Detectors help keep your home safe and alert you to any CO leaks.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="2a887ae0-1aa9-4029-8be5-268a51620058" yesIsBad="true">
             <questionText>Do you use plastic containers to store your food?</questionText>
             <questionInfo title="Food storage">&lt;p&gt;
-      Plastics contain plastic softeners known as phthalates. Phthalates have 
-      been known to migrate into food sources while food is being stored. Some 
-      phthalates have been linked to hormone disruption health concerns.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for alternatives such as glass, stainless steel or ceramic storage 
-      containers.
-    &lt;/p&gt;</questionInfo>
+                Plastics contain plastic softeners known as phthalates. Phthalates have
+                been known to migrate into food sources while food is being stored. Some
+                phthalates have been linked to hormone disruption health concerns.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for alternatives such as glass, stainless steel or ceramic storage
+                containers.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="2b3b58b8-d8e5-46ca-8029-40166657ce1f" yesIsBad="true">
             <questionText>Do you use plastic in the microwave?</questionText>
             <questionInfo title="Microwave ovens">&lt;p&gt;
-      Plastics should not be heated, especially near food as chemicals can 
-      migrate into the food.
-    &lt;/p&gt;
-    &lt;p&gt;
-      DEHP is a phthalate (plastic softener) found in some plastics and can 
-      particularly migrate into fatty food when heated.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Avoid using plastic in the microwave.
-    &lt;/p&gt;</questionInfo>
+                Plastics should not be heated, especially near food as chemicals can
+                migrate into the food.
+                &lt;/p&gt;
+                &lt;p&gt;
+                DEHP is a phthalate (plastic softener) found in some plastics and can
+                particularly migrate into fatty food when heated.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Avoid using plastic in the microwave.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="f5bc7bcb-dab7-4dd8-9cc3-00c3b507fb38" yesIsBad="true">
             <questionText>Do you drink or eat from pottery items?</questionText>
             <questionInfo title="Pottery kitchenware">&lt;p&gt;
-      Use ceramic cookware from large reputable suppliers.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Look at the label to see if the item guarantees it is lead free. Lead 
-      can be used in the glazing process of ceramics and if ingested is 
-      harmful. Lead test kits can be purchased from the hardware store.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Don't use old glazed ware for cooking, keep these as decorative items. 
-      Wash ceramic cookware by hand and if you notice cracks or chipping 
-      replace the item.
-    &lt;/p&gt;</questionInfo>
+                Use ceramic cookware from large reputable suppliers.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Look at the label to see if the item guarantees it is lead free. Lead
+                can be used in the glazing process of ceramics and if ingested is
+                harmful. Lead test kits can be purchased from the hardware store.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Don't use old glazed ware for cooking, keep these as decorative items.
+                Wash ceramic cookware by hand and if you notice cracks or chipping
+                replace the item.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="7db54c59-4e70-42b2-add7-889de09263d3" yesIsBad="true">
-            <questionText>Do you check the containers you buy your food in - do they have the plastic ID numbers 3,6 or 7 ?</questionText>
+            <questionText>Do you check the containers you buy your food in - do they have the plastic ID numbers 3,6 or
+                7 ?
+            </questionText>
             <questionInfo title="Plastic IDs">&lt;p&gt;
-      Get to know your plastics by checking your food packaging for a small 
-      triangle indicating the type of plastic.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Numbers 3, 6 and 7 have been associated with hormone disrupting 
-      chemicals. Hormone disrupting chemicals have been linked to early 
-      puberty, obesity, development disorders, diabetes and cancer.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more at the plastics pocket guide - &lt;a href=&quot;http://www.ecocycle.org/files/pdfs/pocket_guide_singleprint.pdf&quot; target=&quot;_blank&quot;&gt;http://www.ecocycle.org/files/pdfs/pocket_guide_singleprint.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Get to know your plastics by checking your food packaging for a small
+                triangle indicating the type of plastic.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Numbers 3, 6 and 7 have been associated with hormone disrupting
+                chemicals. Hormone disrupting chemicals have been linked to early
+                puberty, obesity, development disorders, diabetes and cancer.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more at the plastics pocket guide - &lt;a href=&quot;http://www.ecocycle.org/files/pdfs/pocket_guide_singleprint.pdf&quot;
+                target=&quot;_blank&quot;&gt;http://www.ecocycle.org/files/pdfs/pocket_guide_singleprint.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="40391e5a-f086-4bb7-ae2e-2dc915fa0f6f" yesIsBad="false">
             <questionText>Do you choose organic or pesticide free food options?</questionText>
             <questionInfo title="Fresh produce">&lt;p&gt;
-      Organic food can be expensive. If you are not able to eat organic 
-      produce make sure you wash your fresh produce well to remove any 
-      pesticide, fungicide or herbicide residue.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A solution of 10% vinegar with 90% water can be used to soak vegetables 
-      and fruit before rinsing to help remove contaminants.
-    &lt;/p&gt;</questionInfo>
+                Organic food can be expensive. If you are not able to eat organic
+                produce make sure you wash your fresh produce well to remove any
+                pesticide, fungicide or herbicide residue.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A solution of 10% vinegar with 90% water can be used to soak vegetables
+                and fruit before rinsing to help remove contaminants.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="84c6a52c-2417-487c-9895-c76fd2419b35" yesIsBad="true">
             <questionText>Do you eat canned goods?</questionText>
             <questionInfo title="Canned food">&lt;p&gt;
-      Many canning companies are placing a lining inside cans that contains 
-      Bisphenol A, otherwise known as BPA.
-    &lt;/p&gt;
-    &lt;p&gt;
-      BPA has been linked to hormonal disruption health concerns. Studies have 
-      found that BPA can migrate into the canned food which is then eaten. 
-      Given the concern over BPA some companies are using a BPA alternative 
-      known as Bisphenol S (BPS), however there is concern mounting that this 
-      alternative may also not be safe.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for fresh or frozen food instead.
-    &lt;/p&gt;</questionInfo>
+                Many canning companies are placing a lining inside cans that contains
+                Bisphenol A, otherwise known as BPA.
+                &lt;/p&gt;
+                &lt;p&gt;
+                BPA has been linked to hormonal disruption health concerns. Studies have
+                found that BPA can migrate into the canned food which is then eaten.
+                Given the concern over BPA some companies are using a BPA alternative
+                known as Bisphenol S (BPS), however there is concern mounting that this
+                alternative may also not be safe.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for fresh or frozen food instead.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="6246a649-1399-46c3-8164-7b7431493866" yesIsBad="true">
             <questionText>Do you use plastic drinking bottles?</questionText>
             <questionInfo title="Plastic drink bottles">&lt;p&gt;
-      To avoid potential plastic softeners from leaching into your beverage 
-      opt for stainless steel water bottles free from any internal lining.
-    &lt;/p&gt;</questionInfo>
+                To avoid potential plastic softeners from leaching into your beverage
+                opt for stainless steel water bottles free from any internal lining.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="50e24211-30df-4cc1-a5c7-e940db3bc61f" yesIsBad="false">
             <questionText>Do you filter your drinking water?</questionText>
             <questionInfo title="Water">&lt;p&gt;
-      Water supplies around the world vary greatly as does the type of 
-      treatment given to public water supplies. Using a water filter can 
-      remove bacteria, pesticides, lead, copper, iron, chlorine, nitrates and 
-      fluoride (depending on the filter used).
-    &lt;/p&gt;
-    &lt;p&gt;
-      Clean water is essential for good health. In instances where family 
-      members have skin conditions removing harsh irritants such as chlorine 
-      can also be beneficial.
-    &lt;/p&gt;</questionInfo>
+                Water supplies around the world vary greatly as does the type of
+                treatment given to public water supplies. Using a water filter can
+                remove bacteria, pesticides, lead, copper, iron, chlorine, nitrates and
+                fluoride (depending on the filter used).
+                &lt;/p&gt;
+                &lt;p&gt;
+                Clean water is essential for good health. In instances where family
+                members have skin conditions removing harsh irritants such as chlorine
+                can also be beneficial.
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Bathroom" id="093ee4e8-5ab1-44ae-83e2-5b27b6fb2b5c">
         <Question id="cba7de3b-aade-426a-90f9-c541ba0d529e" yesIsBad="true">
             <questionText>Is there a musty mould smell in the bathroom?</questionText>
             <questionInfo title="Bathroom mould">&lt;p&gt;
-      Safely remove the mould and fix the cause.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Tips to avoiding mould in the bathroom are:
-    &lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        Shorter, cooler showers minimises the build-up of steam
-      &lt;/li&gt;
-      &lt;li&gt;
-        Use a ceiling exhaust fan during and shortly after showering to remove 
-        steam and help dehumidify the air
-      &lt;/li&gt;
-      &lt;li&gt;
-        If the bathroom has a window keep it open when possible for air 
-        circulation
-      &lt;/li&gt;
-      &lt;li&gt;
-        Wipe down wet surfaces after finishing in the bathroom
-      &lt;/li&gt;
-      &lt;li&gt;
-        Clean the bathroom regularly to avoid mould growth
-      &lt;/li&gt;
-      &lt;li&gt;
-        Hang towels where they will dry as wet towels in a bathroom all day 
-        create a damp environment.
-      &lt;/li&gt;
-    &lt;/ul&gt;</questionInfo>
+                Safely remove the mould and fix the cause.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Tips to avoiding mould in the bathroom are:
+                &lt;/p&gt;
+                &lt;ul&gt;
+                &lt;li&gt;
+                Shorter, cooler showers minimises the build-up of steam
+                &lt;/li&gt;
+                &lt;li&gt;
+                Use a ceiling exhaust fan during and shortly after showering to remove
+                steam and help dehumidify the air
+                &lt;/li&gt;
+                &lt;li&gt;
+                If the bathroom has a window keep it open when possible for air
+                circulation
+                &lt;/li&gt;
+                &lt;li&gt;
+                Wipe down wet surfaces after finishing in the bathroom
+                &lt;/li&gt;
+                &lt;li&gt;
+                Clean the bathroom regularly to avoid mould growth
+                &lt;/li&gt;
+                &lt;li&gt;
+                Hang towels where they will dry as wet towels in a bathroom all day
+                create a damp environment.
+                &lt;/li&gt;
+                &lt;/ul&gt;</questionInfo>
         </Question>
         <Question id="180bac5a-3562-48a7-bf53-39e4ed4a9b8f" yesIsBad="true">
             <questionText>Do you see any signs of water damage?</questionText>
             <questionInfo title="Water damage">&lt;p&gt;
-      Mould thrives in damp areas. A common area for mould growth in the 
-      bathroom is under silicone sealant around tiles. Remove the sealant, 
-      clean the area well, ensure it is dry and then reseal with a wet area 
-      low VOC sealant.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Tea tree oil is effective in cleaning mould. A 3% solution or 2 
-      teaspoons in a spray bottle with 2 cups of water (shake well) can be 
-      used as an alternative to a vinegar solution.
-    &lt;/p&gt;</questionInfo>
+                Mould thrives in damp areas. A common area for mould growth in the
+                bathroom is under silicone sealant around tiles. Remove the sealant,
+                clean the area well, ensure it is dry and then reseal with a wet area
+                low VOC sealant.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Tea tree oil is effective in cleaning mould. A 3% solution or 2
+                teaspoons in a spray bottle with 2 cups of water (shake well) can be
+                used as an alternative to a vinegar solution.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="c5b7637a-23ca-4da3-a5d3-6c23493bef55" yesIsBad="true">
             <questionText>Does water condense on the inside of the window?</questionText>
             <questionInfo title="Water condensation">&lt;p&gt;
-      Condensation is a common cause of dampness in buildings, often occurring 
-      on cold walls, windows and floors, but it can also occur in roof spaces 
-      and in sub-floor areas.
-    &lt;/p&gt;
-    &lt;p&gt;
-      To minimise condensation increase ventilation by using fans for air 
-      circulation or opening a window.
-    &lt;/p&gt;
-    &lt;p&gt;
-      In cooler months indoor temperature throughout the home should ideally 
-      be kept at a constant even temperature to warm surfaces.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Insulate cold surfaces.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Remove moisture sources such as drying wet clothes indoors.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Install a dehumidifier if required.
-    &lt;/p&gt;</questionInfo>
+                Condensation is a common cause of dampness in buildings, often occurring
+                on walls, windows and floors, but it can also occur in roof spaces and
+                in sub-floor areas.
+                &lt;/p&gt;
+                &lt;p&gt;
+                To minimise condensation increase passive and mechanical ventilation
+                through out the home.
+                &lt;/p&gt;
+                &lt;p&gt;
+                This can be done by opening windows and using effective exhaust fans
+                throughout the home where moisture vapour occurs. Exhaust fans should
+                always be used above the cooktop and over showers. If using a clothes
+                dryer appliance ensure it is vented to the outside of the home (not the
+                roof cavity).
+                &lt;/p&gt;
+                &lt;p&gt;
+                In cooler months indoor temperature throughout the home should ideally
+                be kept at a reasonably constant temperature. Remove additional moisture
+                sources from within the home, such as drying wet clothes indoors. Use a
+                dehumidifier if required.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="09438290-c7fe-4217-9254-75680f6ca7bf" yesIsBad="false">
             <questionText>Is there a working exhaust fan over the shower?</questionText>
             <questionInfo title="Bathroom exhaust">&lt;p&gt;
-      The tissue test is a cheap and easy way to test if you have good air 
-      extraction from your exhaust fan.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Hold a &amp;#189; ply tissue a few centimetres away from the vent. When the fan 
-      is on does it draw the tissue up to the vent easily?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Install a closure device to the top of your exhaust fan that only opens 
-      when in use to prevent heat loss and pest access.
-    &lt;/p&gt;</questionInfo>
+                The tissue test is a cheap and easy way to test if you have good air
+                extraction from your exhaust fan.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Hold a &amp;#189; ply tissue a few centimetres away from the vent. When the fan
+                is on does it draw the tissue up to the vent easily?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Install a closure device to the top of your exhaust fan that only opens
+                when in use to prevent heat loss and pest access.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="bbf86cd1-43da-49f7-ae39-1501f330d708" yesIsBad="true">
             <questionText>Do you have a plastic or PVC shower curtain?</questionText>
             <questionInfo title="Plastic shower curtain">&lt;p&gt;
-      A Study by the Center for Health, Environment &amp;amp; Justice (USA) found PVC 
-      shower curtains can release as many as 108 volatile organic compounds 
-      (VOCs) into the air.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for PVC-free shower curtains made out of safer materials such as 
-      organic cotton, nylon, polyester.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Read more at - &lt;a href=&quot;http://www.chej.org/showercurtainreport/documents/Volatile%20Vinyl%20Executive%20Summary.pdf&quot; target=&quot;_blank&quot;&gt;http://www.chej.org/showercurtainreport/documents/Volatile%20Vinyl%20Executive%20Summary.pdf&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                A Study by the Center for Health, Environment &amp;amp; Justice (USA) found PVC
+                shower curtains can release as many as 108 volatile organic compounds
+                (VOCs) into the air.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for PVC-free shower curtains made out of safer materials such as
+                organic cotton, nylon, polyester.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Read more at - &lt;a href=&quot;http://www.chej.org/showercurtainreport/documents/Volatile%20Vinyl%20Executive%20Summary.pdf&quot;
+                target=&quot;_blank&quot;&gt;http://www.chej.org/showercurtainreport/documents/Volatile%20Vinyl%20Executive%20Summary.pdf&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="e71e97b7-5f63-4094-9b40-a6242ca3a292" yesIsBad="true">
             <questionText>Do you use antibacterial hand soap?</questionText>
             <questionInfo title="Soap">&lt;p&gt;
-      Triclosan is an anti-bacterial chemical used in many anti-bacterial 
-      soaps and products.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Tricolan has been linked to liver, thyroid and endocrine (hormone 
-      development) disorders in children.
-    &lt;/p&gt;
-    &lt;p&gt;
-      The over use of antibacterial products may lead to germs becoming immune 
-      to them and develop into superbugs that are not easily treated with 
-      antibiotics.
-    &lt;/p&gt;
-    &lt;p&gt;
-      See how the World Health Organisation says you get clean hands - &lt;a href=&quot;http://www.who.int/gpsc/clean_hands_protection/en/&quot; target=&quot;_blank&quot;&gt;http://www.who.int/gpsc/clean_hands_protection/en/&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Triclosan is an anti-bacterial chemical used in many anti-bacterial
+                soaps and products.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Tricolan has been linked to liver, thyroid and endocrine (hormone
+                development) disorders in children.
+                &lt;/p&gt;
+                &lt;p&gt;
+                The over use of antibacterial products may lead to germs becoming immune
+                to them and develop into superbugs that are not easily treated with
+                antibiotics.
+                &lt;/p&gt;
+                &lt;p&gt;
+                See how the World Health Organisation says you get clean hands - &lt;a href=&quot;http://www.who.int/gpsc/clean_hands_protection/en/&quot;
+                target=&quot;_blank&quot;&gt;http://www.who.int/gpsc/clean_hands_protection/en/&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="5745b0e3-598d-4e00-9031-576eda0f5bb2" yesIsBad="false">
             <questionText>Do you use non-toxic, natural ingredient hair products?</questionText>
             <questionInfo title="Hair products">&lt;p&gt;
-      What we use to wash our hair with impacts on our skin and can be 
-      irritating.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Avoid Sodium Lauryl Sulphate which is a widely used synthetic detergent 
-      found in many personal items.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Check out David Suzuki's dirty dozen guide - &lt;a target=&quot;_blank&quot; href=&quot;http://davidsuzuki.org/dirty12/#wrapper&quot;&gt;http://davidsuzuki.org/dirty12/#wrapper&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                What we use to wash our hair with impacts on our skin and can be
+                irritating.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Avoid Sodium Lauryl Sulphate which is a widely used synthetic detergent
+                found in many personal items.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Check out David Suzuki's dirty dozen guide - &lt;a target=&quot;_blank&quot; href=&quot;http://davidsuzuki.org/dirty12/#wrapper&quot;&gt;http://davidsuzuki.org/dirty12/#wrapper&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="df4d111b-84d5-42cb-83e4-1688e7515e86" yesIsBad="false">
             <questionText>Do you use non-toxic, natural ingredient personal care products?</questionText>
             <questionInfo title="Personal care products">&lt;p&gt;
-      Have you read the label - do you really know what you are using?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Your skin is your bodies largest organ and is capable of absorbing 
-      products used.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Did you know that formaldehyde is used in many personal care products?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Did you know that formaldehyde is classified a probable carcinogen?
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for products made from natural organic ingredients where possible.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Look for products that are independently certified.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Look for companies that are transparent with their ingredients.
-    &lt;/p&gt;
-    &lt;p&gt;
-      For more tips about personal care products visit the Environmental 
-      Working Group Skin Deep database - &lt;a target=&quot;_blank&quot; href=&quot;http://www.ewg.org/skindeep/&quot;&gt;http://www.ewg.org/skindeep&lt;/a&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      We love the transparent, organic, independently certified natural 
-      products by Miessence, check them out here - &lt;a target=&quot;_blank&quot; href=&quot;http://www.miessence.com/&quot;&gt;http://www.miessence.com&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                Have you read the label - do you really know what you are using?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Your skin is your bodies largest organ and is capable of absorbing
+                products used.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Did you know that formaldehyde is used in many personal care products?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Did you know that formaldehyde is classified a probable carcinogen?
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for products made from natural organic ingredients where possible.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Look for products that are independently certified.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Look for companies that are transparent with their ingredients.
+                &lt;/p&gt;
+                &lt;p&gt;
+                For more tips about personal care products visit the Environmental
+                Working Group Skin Deep database - &lt;a target=&quot;_blank&quot; href=&quot;http://www.ewg.org/skindeep/&quot;&gt;http://www.ewg.org/skindeep&lt;/a&gt;
+                &lt;/p&gt;
+                &lt;p&gt;
+                We love the transparent, organic, independently certified natural
+                products by Miessence, check them out here - &lt;a target=&quot;_blank&quot; href=&quot;http://www.miessence.com/&quot;&gt;http://www.miessence.com&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Laundry" id="236c10a5-8113-4149-a79a-bf8046180df2">
         <Question id="c0b86baa-ab3f-43a3-89bc-56e45114a668" yesIsBad="false">
             <questionText>Do you use non-toxic, washing products?</questionText>
             <questionInfo title="Washing">&lt;p&gt;
-      Many ingredients used to create washing powders are not mentioned on the 
-      product label and are untested for human health.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Harsh washing powders can irritate the skin. Fabric softeners and 
-      scented drying products made from toxic chemicals subtly coat washing. 
-      Synthetic fragrances are among the world's top allergens and are 
-      suspected of being endocrine disruptors.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for products with NO synthetic surfactants, no artificial fragrance, 
-      no bulking agents or fillers.
-    &lt;/p&gt;</questionInfo>
+                Many ingredients used to create washing powders are not mentioned on the
+                product label and are untested for human health.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Harsh washing powders can irritate the skin. Fabric softeners and
+                scented drying products made from toxic chemicals subtly coat washing.
+                Synthetic fragrances are among the world's top allergens and are
+                suspected of being endocrine disruptors.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for products with NO synthetic surfactants, no artificial fragrance,
+                no bulking agents or fillers.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="9e9f67e1-d156-472f-9f5e-531a4861c3cb" yesIsBad="true">
-            <questionText>Does water condense on the walls and ceilings when using appliances in the laundry?</questionText>
+            <questionText>Does water condense on the walls and ceilings when using appliances in the laundry?
+            </questionText>
             <questionInfo title="Laundry moisture">&lt;p&gt;
-      Efficient ventilation and an exhaust fan is needed in the laundry to 
-      prevent moisture damaging the laundry room or making its way into other 
-      rooms of the house and encouraging mould growth.
-    &lt;/p&gt;</questionInfo>
+                Efficient ventilation and an exhaust fan is needed in the laundry to
+                prevent moisture damaging the laundry room or making its way into other
+                rooms of the house and encouraging mould growth.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="df81b6d5-e129-4b94-9065-e658faa15f6b" yesIsBad="false">
-            <questionText>Is your clothes dryer vented to the outside of the house? </questionText>
+            <questionText>Is your clothes dryer vented to the outside of the house?</questionText>
             <questionInfo title="Drying appliance">&lt;p&gt;
-      Venting the air externally will prevent excess moisture indoors. If the 
-      unit is not vented it may cause condensation and encourage mould growth. 
-      Venting into the roof cavity can also cause moisture issues to 
-      insulation and building materials.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for external release of moisture sources where possible.
-    &lt;/p&gt;</questionInfo>
+                Venting the air externally will prevent excess moisture indoors. If the
+                unit is not vented it may cause condensation and encourage mould growth.
+                Venting into the roof cavity can also cause moisture issues to
+                insulation and building materials.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for external release of moisture sources where possible.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="efe3fc79-e175-413b-8500-d298e2ba744a" yesIsBad="true">
             <questionText>Do you store paints and garage related products in your laundry?</questionText>
             <questionInfo title="Garage items inside">&lt;p&gt;
-      Products can offgass while being stored.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Keep paints, coatings and chemicals safely stored outside the house to 
-      avoid off gassing and polluting indoor air.
-    &lt;/p&gt;</questionInfo>
+                Products can offgass while being stored.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Keep paints, coatings and chemicals safely stored outside the house to
+                avoid off gassing and polluting indoor air.
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
     <Category title="Lifestyle practices" id="c25ce223-e471-4774-bbbe-81c9fe2c9550">
         <Question id="31817478-6d8a-474c-bc2b-f0499def6a5c" yesIsBad="true">
             <questionText>Do you dry clean your clothes?</questionText>
             <questionInfo title="Dry cleaning clothes">&lt;p&gt;
-      Tetrachloroethylene is often used in the dry-cleaning process and this 
-      chemical is classed a category 3 carcinogen and has been documented as 
-      having the potential to cause skin irritation.
-    &lt;/p&gt;
-    &lt;p&gt;
-      If dry cleaning is necessary, hang dry cleaned clothes outside for a 
-      while after collecting to minimise the fumes before putting them away 
-      indoors.
-    &lt;/p&gt;</questionInfo>
+                Tetrachloroethylene is often used in the dry-cleaning process and this
+                chemical is classed a category 3 carcinogen and has been documented as
+                having the potential to cause skin irritation.
+                &lt;/p&gt;
+                &lt;p&gt;
+                If dry cleaning is necessary, hang dry cleaned clothes outside for a
+                while after collecting to minimise the fumes before putting them away
+                indoors.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="906ade10-135c-474a-bd8e-99c4e6b0501c" yesIsBad="false">
             <questionText>Do you use microfiber cloths for dusting?</questionText>
             <questionInfo title="Dusting">&lt;p&gt;
-      Microfibre clothes attract dust to the cloth surface and reduce dust 
-      from being airborne.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Many household chemicals migrate into dust such as flame retardants, 
-      stain resistant and insecticide chemicals.
-    &lt;/p&gt;</questionInfo>
+                Microfibre clothes attract dust to the cloth surface and reduce dust
+                from being airborne.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Many household chemicals migrate into dust such as flame retardants,
+                stain resistant and insecticide chemicals.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="19370208-f17d-4e63-86c5-c0f7d7efbcc0" yesIsBad="false">
             <questionText>Do you use a HEPA vacuum filter?</questionText>
             <questionInfo title="HEPA filter">&lt;p&gt;
-      HEPA stands for High Efficiency Particulate Air filter.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Air and dust is forced through a fine mesh filter trapping small 
-      particles of dust, pollens, pet dander and other pollutants to prevent 
-      them from being circulated when cleaning and therefore assists with the 
-      quality of your indoor air.
-    &lt;/p&gt;</questionInfo>
+                HEPA stands for High Efficiency Particulate Air filter.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Air and dust is forced through a fine mesh filter trapping small
+                particles of dust, pollens, pet dander and other pollutants to prevent
+                them from being circulated when cleaning and therefore assists with the
+                quality of your indoor air.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="9374a151-46ab-4fd0-b808-611d73f5d86a" yesIsBad="false">
             <questionText>Do you use environmentally friendly cleaning products?</questionText>
             <questionInfo title="Eco cleaning">&lt;p&gt;
-      Look for manufacturers who list ALL their ingredients on the label.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Contact the consumer number on the label and ask for a copy of the 
-      Material Safety Data Sheet so you understand what you are using and the 
-      hazards.
-    &lt;/p&gt;</questionInfo>
+                Look for manufacturers who list ALL their ingredients on the label.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Contact the consumer number on the label and ask for a copy of the
+                Material Safety Data Sheet so you understand what you are using and the
+                hazards.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="cd5b9f24-7dd8-4154-a131-1621d9dd3a1d" yesIsBad="false">
             <questionText>Do you ask guests to take their shoes off at the door?</questionText>
             <questionInfo title="Visitor's shoes">&lt;p&gt;
-      Put a large door mat outside doors.
-    &lt;/p&gt;
-    &lt;p&gt;
-      People walk all sorts of pollutants such as pesticides, heavy metals and 
-      germs indoors via dust on their shoes.
-    &lt;/p&gt;</questionInfo>
+                Put a large door mat outside doors.
+                &lt;/p&gt;
+                &lt;p&gt;
+                People walk all sorts of pollutants such as pesticides, heavy metals and
+                germs indoors via dust on their shoes.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="c443ac23-62c9-4e05-881d-79792148c1d9" yesIsBad="true">
-            <questionText>Do you use fragrance products inside the home, eg. stand-alone scents, plug ins?</questionText>
+            <questionText>Do you use fragrance products inside the home, eg. stand-alone scents, plug ins?
+            </questionText>
             <questionInfo title="Natural fragrances">&lt;p&gt;
-      Synthetic fragrances are one of the world's top allergens and are also 
-      suspected of being endocrine disruptors.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for natural fragrances such as flowers.
-    &lt;/p&gt;</questionInfo>
+                Synthetic fragrances are one of the world's top allergens and are also
+                suspected of being endocrine disruptors.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for natural fragrances such as flowers.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="cecf4da3-931f-4a15-84e8-3f802202fdd7" yesIsBad="true">
             <questionText>Do you leave your car idling in the driveway?</questionText>
             <questionInfo title="Car">&lt;p&gt;
-      Exhaust fumes can potentially contain carbon monoxide, nitrogen dioxide, 
-      benzenes, sulphur dioxide, lead, formaldehyde and particulate matter.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Vehicle emissions are toxic and can make their way indoors if stationery 
-      for extended periods of time.
-    &lt;/p&gt;</questionInfo>
+                Exhaust fumes can potentially contain carbon monoxide, nitrogen dioxide,
+                benzenes, sulphur dioxide, lead, formaldehyde and particulate matter.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Vehicle emissions are toxic and can make their way indoors if stationery
+                for extended periods of time.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="4fad6e0a-7e43-4413-a546-02474a48fb72" yesIsBad="true">
             <questionText>Do you use an open fire in your home?</questionText>
             <questionInfo title="Wood fire">&lt;p&gt;
-      Wood smoke is a mixture of gasses and particles that are airborne. Wood 
-      smoke has been documented by many organisations as impacting on human 
-      health particularly on susceptible people such as those with heart and 
-      lung disease, asthma and small children.
-    &lt;/p&gt;</questionInfo>
+                Wood smoke is a mixture of gasses and particles that are airborne. Wood
+                smoke has been documented by many organisations as impacting on human
+                health particularly on susceptible people such as those with heart and
+                lung disease, asthma and small children.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="05db5ad9-edff-41e6-baa2-4036e2574ba1" yesIsBad="false">
             <questionText>Do you have indoor plants?</questionText>
             <questionInfo title="Indoor plants">&lt;p&gt;
-      A study by NASA has shown that indoor house plants have been shown to 
-      remove various toxins from indoor air such as formaldehyde, benzene, 
-      xylene among others.
-    &lt;/p&gt;
-    &lt;p&gt;
-      To learn more about the type of plants studied read &amp;quot;How to Grow Fresh 
-      Air&amp;quot; available here - &lt;a href=&quot;http://www.healthyinteriors.com.au/shop/products/great-books/&quot; target=&quot;_blank&quot;&gt;http://www.healthyinteriors.com.au/shop/products/great-books/&lt;/a&gt;
-    &lt;/p&gt;</questionInfo>
+                A study by NASA has shown that indoor house plants have been shown to
+                remove various toxins from indoor air such as formaldehyde, benzene,
+                xylene among others.
+                &lt;/p&gt;
+                &lt;p&gt;
+                To learn more about the type of plants studied read &amp;quot;How to Grow Fresh
+                Air&amp;quot; available here - &lt;a href=&quot;http://www.healthyinteriors.com.au/shop/products/great-books/&quot;
+                target=&quot;_blank&quot;&gt;http://www.healthyinteriors.com.au/shop/products/great-books/&lt;/a&gt;
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="bb2ebc01-747f-48f2-9707-9cc835e03e4d" yesIsBad="true">
             <questionText>Does anyone smoke indoors?</questionText>
             <questionInfo title="Smoking">&lt;p&gt;
-      Tobacco smoke will pollute indoor air and has been shown to cause cancer.
-    &lt;/p&gt;
-    &lt;p&gt;
-      A healthy family is a great reason to give up or ask visitors to smoke 
-      outdoors away from windows and doors to prevent smoke entering the house.
-    &lt;/p&gt;</questionInfo>
+                Tobacco smoke will pollute indoor air and has been shown to cause cancer.
+                &lt;/p&gt;
+                &lt;p&gt;
+                A healthy family is a great reason to give up or ask visitors to smoke
+                outdoors away from windows and doors to prevent smoke entering the house.
+                &lt;/p&gt;</questionInfo>
         </Question>
         <Question id="7ea6fc94-1247-4746-9cb4-5c1eae9ff658" yesIsBad="true">
             <questionText>Do you spray pesticides in the house or use pest free plug ins?</questionText>
             <questionInfo title="Pesticides">&lt;p&gt;
-      Airborne pesticide products pollute indoor air and can potentially be 
-      inhaled.
-    &lt;/p&gt;
-    &lt;p&gt;
-      Opt for natural pest remedies where possible or physical type baits or 
-      traps that do not spread chemicals throughout the home.
-    &lt;/p&gt;</questionInfo>
+                Airborne pesticide products pollute indoor air and can potentially be
+                inhaled.
+                &lt;/p&gt;
+                &lt;p&gt;
+                Opt for natural pest remedies where possible or physical type baits or
+                traps that do not spread chemicals throughout the home.
+                &lt;/p&gt;</questionInfo>
         </Question>
     </Category>
 </CheckList>

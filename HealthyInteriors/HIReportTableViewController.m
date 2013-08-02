@@ -39,7 +39,7 @@
             self.checkList = checkList;
             self.checkListAnswers = checkListAnswers;
             self.managedObjectContext = managedObjectContext;
-           // [self requery];
+            // [self requery];
         }
 
         return self;
@@ -58,6 +58,15 @@
     - (void)viewWillAppear:(BOOL)animated {
         self.navigationController.navigationBar.topItem.title = @"Checklist";
         [self requery];
+        [super viewWillAppear:animated];
+    }
+
+    - (void)viewDidAppear:(BOOL)animated {
+        //if there are no questions to display, pop off the nav stack
+        if ([self totalNumberOfQuestions] == 0) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        [super viewDidAppear:animated];
     }
 
     - (void)requery {
@@ -88,7 +97,7 @@
     }
 
     - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
-        return NO;
+        return 0;
     }
 
     - (CheckListQuestionAnswers *)getAnswerManagedObjectForQuestionID:(NSString *)questionID {
@@ -175,6 +184,7 @@
             view.backgroundColor = [UIColor clearColor];
         }
     }
+
     - (BOOL)infoIsFavouriteForQuestionWIthKey:(NSString *)key {
 
         NSFetchRequest *request = [[NSFetchRequest alloc] init];

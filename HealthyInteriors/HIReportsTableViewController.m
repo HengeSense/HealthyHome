@@ -12,6 +12,8 @@
 #import "HIChallengesReportTableViewController.h"
 #import "HIReportTypeCell.h"
 #import "UIColor-Expanded.h"
+#import "MSSimpleGauge.h"
+#import "MSAnnotatedGauge.h"
 
 @interface HIReportsTableViewController ()
     @property(nonatomic, strong) NSArray *reportNames;
@@ -29,29 +31,34 @@
         if (self) {
 
             self.reportNames = [[NSArray alloc] initWithObjects:
+                    @"Gauge",
                     @"Assets Results",
                     @"Challenge Results",
                     @"Incomplete Questions",
                     nil];
 
             self.reportDetails = [[NSArray alloc] initWithObjects:
+                    @"Gauge",
                     @"This list shows all the areas that are healthy assets",
                     @"This list shows all the areas that are potential health challenges",
                     @"This list shows all the questions that have not yet been answered",
                     nil];
 
             self.reportViews = [[NSArray alloc] initWithObjects:
+                    [[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     [[HIAssetsReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     [[HIChallengesReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     [[HICompletionReportTableViewController alloc] initWithStyle:UITableViewStyleGrouped],
                     nil];
             self.reportBackColours = [[NSArray alloc] initWithObjects:
+                    [self.checkListModel.noAnswerBackColour colorByChangingAlphaTo:0.5],
                     [self.checkListModel.goodAnswerBackColour colorByChangingAlphaTo:0.5],
                     [self.checkListModel.badAnswerBackColour colorByChangingAlphaTo:0.5],
                     [self.checkListModel.noAnswerBackColour colorByChangingAlphaTo:0.5],
                     nil];
 
             self.reportTextColours = [[NSArray alloc] initWithObjects:
+                    self.checkListModel.noAnswerTextColour,
                     self.checkListModel.goodAnswerTextColour,
                     self.checkListModel.badAnswerTextColour,
                     self.checkListModel.noAnswerTextColour,
@@ -66,15 +73,24 @@
         return [super controllerWithCheckListAnswers:checkListAnswers checkListModel:checkListModel];
     }
 
-//] checkList:self.checkListModel checkListAnswers:self.checkListAnswers managedObjectContext:self.managedObjectContext],
-
     - (void)configureReportCell:(HIReportTypeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
         cell.titleLabel.text = [self.reportNames objectAtIndex:indexPath.row];
         cell.descriptionLabel.text = [self.reportDetails objectAtIndex:indexPath.row];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
         HIReportTableViewController *report = [self.reportViews objectAtIndex:indexPath.row];
-        cell.countLabel.text = @""; // [NSString stringWithFormat:@"%d", [report countOfRowsForTemplate:self.checkListModel withAnswers:self.checkListAnswers]];
+        report.managedObjectContext = self.managedObjectContext;
+        report.checkList = self.checkListModel;
+        report.checkListAnswers = self.checkListAnswers;
+        [report requery];
+
+        cell.countLabel.text = [NSString stringWithFormat:@"%d", [report countOfRowsForTemplate]];
+
+        if ([report totalNumberOfQuestions] == 0) {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
 
     }
 
@@ -97,73 +113,97 @@
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        static NSString *CellIdentifier = @"ReportCell";
-        HIReportTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-        if (cell == nil) {
-            cell = [[HIReportTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        if (indexPath.row == 0) {
+
+            static NSString *CellIdentifier = @"GaugeCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+
+                MSAnnotatedGauge *gauge = [[MSAnnotatedGauge alloc] initWithFrame:CGRectMake(70, 10, 150, 80)];
+                gauge.startRangeLabel.text = @"";
+                gauge.endRangeLabel.font = [UIFont systemFontOfSize:8];
+                gauge.endRangeLabel.text = @"Healthy Home";
+                gauge.valueLabel.hidden = YES;
+
+                gauge.tag = 101;
+                gauge.backgroundColor = [UIColor clearColor];
+
+                [cell.contentView addSubview:gauge];
+
+                cell.backgroundView = [[UACellBackgroundView alloc] initWithFrame:CGRectZero];
+
+            }
+
+            int totalQuestions = self.checkListModel.totalNumberOfQuestions;
+            int assets = [self.checkListAnswers numberOfAssetsForCheckList:self.checkListModel];
+            float status = (100 * assets) / totalQuestions;
+            MSAnnotatedGauge *gauge = [cell viewWithTag:101];
+            gauge.fillArcFillColor = self.checkListModel.goodAnswerBackColour;
+            [gauge setValue:status animated:YES];
+
+            return cell;
+
+        } else {
+
+            static NSString *CellIdentifier = @"ReportCell";
+            HIReportTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+            if (cell == nil) {
+                cell = [[HIReportTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+
+            [self configureReportCell:cell atIndexPath:indexPath];
+            return cell;
         }
 
-        [self configureReportCell:cell atIndexPath:indexPath];
-        return cell;
     }
 
     - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-        cell.textLabel.textColor = [self.reportTextColours objectAtIndex:indexPath.row];
-        UIColor *backColour = [self.reportBackColours objectAtIndex:indexPath.row];
-        cell.backgroundColor = backColour;
-        for (UIView *view in cell.contentView.subviews) {
-            view.backgroundColor = [UIColor clearColor];
+
+        if (indexPath.row == 0) {
+
+        } else {
+
+            cell.textLabel.textColor = [self.reportTextColours objectAtIndex:indexPath.row];
+            UIColor *backColour = [[self.reportBackColours objectAtIndex:indexPath.row] colorWithAlphaComponent:0.5];
+            UIColor *textColour = [self.reportTextColours objectAtIndex:indexPath.row];
+
+            ((UACellBackgroundView *) cell).bottomColor = backColour;
+
+            for (UIView *view in cell.contentView.subviews) {
+                view.backgroundColor = [UIColor clearColor];
+            }
         }
     }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
+    - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+
+        if (indexPath.row == 0) {
+            return NO;
+        }
+        else {
+            HIReportTableViewController *vc = [self.reportViews objectAtIndex:indexPath.row];
+            return [vc totalNumberOfQuestions] > 0;
+        }
+
+    }
+
     - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-        HIReportTableViewController *vc = [self.reportViews objectAtIndex:indexPath.row];
-        vc.managedObjectContext = self.managedObjectContext;
-        vc.checkList = self.checkListModel;
-        vc.checkListAnswers = self.checkListAnswers;
-        [vc requery];
-        [self.navController pushViewController:vc animated:YES];
+
+        if (indexPath.row == 0) {
+
+        } else {
+            HIReportTableViewController *vc = [self.reportViews objectAtIndex:indexPath.row];
+
+            if ([vc totalNumberOfQuestions] > 0) {
+                [self.navController pushViewController:vc animated:YES];
+            }
+        }
 
     }
 

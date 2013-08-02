@@ -31,7 +31,7 @@
         self.managedObjectContext = self.checkListAnswers.managedObjectContext;
 
         self.navigationController.navigationBar.topItem.title = @"Checklist";
-        
+
     }
 
     - (void)viewWillAppear:(BOOL)animated {
@@ -46,11 +46,11 @@
 #pragma mark - Table view data source
 
     - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-        return [self.categoryModel questionsCount];
+        return 1;
     }
 
     - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return 1;
+        return [self.categoryModel questionsCount];
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,7 +61,7 @@
             cell = [[HIQuestionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
 
-        HICheckListQuestionModel *question = [self.categoryModel getQuestionAtIndex:indexPath.section];
+        HICheckListQuestionModel *question = [self.categoryModel getQuestionAtIndex:indexPath.row];
         [cell setQuestion:question andAnswer:self.checkListAnswers];
         [cell isFavourite:[self infoIsFavouriteForQuestionWIthKey:question.key]];
 
@@ -69,10 +69,22 @@
     }
 
     - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-        HICheckListQuestionModel *question = [self.categoryModel getQuestionAtIndex:indexPath.section];
-        cell.textLabel.textColor = [self.checkListAnswers textColourForAnswerToQuestion:question.key forTemplateQuestion:question];
-        UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.5];
-        cell.backgroundColor = backColour;
+        HICheckListQuestionModel *question = [self.categoryModel getQuestionAtIndex:indexPath.row];
+        HIQuestionCell *thisCell = (HIQuestionCell *) cell;
+
+        thisCell.textLabel.textColor = [self.checkListAnswers textColourForAnswerToQuestion:question.key forTemplateQuestion:question];
+        UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.6];
+
+        if (indexPath.row == 0) {
+            [thisCell setPosition:UACellBackgroundViewPositionTop];
+        } else if (indexPath.row == [self.categoryModel questionsCount] - 1) {
+            [thisCell setPosition:UACellBackgroundViewPositionBottom];
+        } else {
+            [thisCell setPosition:UACellBackgroundViewPositionMiddle];
+        }
+
+        thisCell.bottomColor = backColour;
+
         for (UIView *view in cell.contentView.subviews) {
             view.backgroundColor = [UIColor clearColor];
         }

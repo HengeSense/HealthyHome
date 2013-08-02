@@ -12,6 +12,7 @@
 #import "IASKSettingsReader.h"
 #import "HIFavouritesTableViewController.h"
 #import "HIIntroViewController.h"
+#import "HITabBarController.h"
 
 @interface HIAppDelegate (/*private*/)
     @property(nonatomic, strong) HICheckListTemplateManager *templateManager;
@@ -39,70 +40,61 @@
         UINavigationController *findTab;
         UINavigationController *favouritesTab;
 
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 
-            //Checklists
+        //Checklists
 
-            HICheckListsTableViewController *checkListsController = [[HICheckListsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-            checkListsController.managedObjectContext = self.managedObjectContext;
-            checkListsController.templateDelegate = self.templateManager;
+        HICheckListsTableViewController *checkListsController = [[HICheckListsTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        checkListsController.managedObjectContext = self.managedObjectContext;
+        checkListsController.templateDelegate = self.templateManager;
 
-            checkListsTab = [[UINavigationController alloc] initWithRootViewController:checkListsController];
-            checkListsTab.tabBarItem.image = [UIImage imageNamed:@"library"];
-            checkListsTab.tabBarItem.title = @"My Checklists";
+        checkListsTab = [[UINavigationController alloc] initWithRootViewController:checkListsController];
+        checkListsTab.tabBarItem.image = [UIImage imageNamed:@"library"];
+        checkListsTab.tabBarItem.title = @"My Checklists";
 
-            //Find
+        //Find
 
-            FindInfoViewController *findController = [[FindInfoViewController alloc] initWithNibName:@"FindInfoView" bundle:nil];
-            findController.title = @"Search Tips";
-            findController.managedObjectContext = self.managedObjectContext;
-            findController.templateDelegate = self.templateManager;
+        FindInfoViewController *findController = [[FindInfoViewController alloc] initWithNibName:@"FindInfoView" bundle:nil];
+        findController.title = @"Search Tips";
+        findController.managedObjectContext = self.managedObjectContext;
+        findController.templateDelegate = self.templateManager;
 
-            findTab = [[UINavigationController alloc] initWithRootViewController:findController];
-            findTab.tabBarItem.image = [UIImage imageNamed:@"search"];
+        findTab = [[UINavigationController alloc] initWithRootViewController:findController];
+        findTab.tabBarItem.image = [UIImage imageNamed:@"search"];
 
-            //Favourites
+        //Favourites
 
-            HIFavouritesTableViewController *favouritesController = [[HIFavouritesTableViewController alloc] initWithStyle:UITableViewStyleGrouped managedObjectContext:self.managedObjectContext];
-            favouritesController.title = @"Favourite Tips";
-            favouritesController.templateDelegate = self.templateManager;
+        HIFavouritesTableViewController *favouritesController = [[HIFavouritesTableViewController alloc] initWithStyle:UITableViewStyleGrouped managedObjectContext:self.managedObjectContext];
+        favouritesController.title = @"Favourite Tips";
+        favouritesController.templateDelegate = self.templateManager;
 
-            favouritesTab = [[UINavigationController alloc] initWithRootViewController:favouritesController];
-            favouritesTab.tabBarItem.image = [UIImage imageNamed:@"favorite"];
+        favouritesTab = [[UINavigationController alloc] initWithRootViewController:favouritesController];
+        favouritesTab.tabBarItem.image = [UIImage imageNamed:@"favorite"];
 
-            //Settings
+        //Settings
 
-            IASKAppSettingsViewController *settingsController = [[IASKAppSettingsViewController alloc] init];
+        IASKAppSettingsViewController *settingsController = [[IASKAppSettingsViewController alloc] init];
 
-            settingsController.title = NSLocalizedString(@"Settings", @"Settings");
-            settingsController.delegate = self;
-            settingsController.showCreditsFooter = NO;
-            settingsController.showDoneButton = NO;
+        settingsController.title = NSLocalizedString(@"Settings", @"Settings");
+        settingsController.delegate = self;
+        settingsController.showCreditsFooter = NO;
+        settingsController.showDoneButton = NO;
 
-            settingsTab = [[UINavigationController alloc] initWithRootViewController:settingsController];
-            settingsTab.tabBarItem.image = [UIImage imageNamed:@"settings"];
-
-        } else {
-
-        }
-
-        self.tabBarController = [[UITabBarController alloc] init];
+        settingsTab = [[UINavigationController alloc] initWithRootViewController:settingsController];
+        settingsTab.tabBarItem.image = [UIImage imageNamed:@"settings"];
+        self.tabBarController = [[HITabBarController alloc] init];
         self.tabBarController.viewControllers = @[checkListsTab, findTab, favouritesTab, settingsTab];
-        self.window.rootViewController = self.tabBarController;
 
         [application setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 
+        self.window.rootViewController = self.tabBarController;
         [self.window makeKeyAndVisible];
 
         //get the intro version lst displayed
-        NSString * introVersion = [HIAppDelegate retrieveFromUserDefaults:@"introVersion"];
-        int introVersionNum = [introVersion intValue];
-
-        NSString * bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
-        int bundleVersionNum = [bundleVersion intValue];
+        NSString *introVersion = [HIAppDelegate retrieveFromUserDefaults:@"introVersion"];
+        NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
 
         if (bundleVersion > introVersion) {
-            HIIntroViewController * introViewController = [[HIIntroViewController alloc] init];
+            HIIntroViewController *introViewController = [[HIIntroViewController alloc] init];
             introViewController.displaySkipButton = YES;
             [self.window.rootViewController presentViewController:introViewController animated:YES completion:nil];
             [HIAppDelegate saveToUserDefaults:@"introVersion" value:bundleVersion];
@@ -144,27 +136,29 @@
 
     }
 
-    - (void)settingsViewController:(id)sender buttonTappedForKey:(NSString*)key
-    {
+    - (void)settingsViewController:(id)sender buttonTappedForKey:(NSString *)key {
 
         if ([key isEqualToString:@"tutorial"]) {
 
-            HIIntroViewController * introViewController = [[HIIntroViewController alloc] init];
+            HIIntroViewController *introViewController = [[HIIntroViewController alloc] init];
             introViewController.displaySkipButton = NO;
-             [((UIViewController *)sender).navigationController pushViewController:introViewController animated:YES];
+            [((UIViewController *) sender).navigationController pushViewController:introViewController animated:YES];
 
         }
     }
-    - (NSString*) settingsViewController:(id<IASKViewController>)settingsViewController
-             mailComposeBodyForSpecifier:(IASKSpecifier*) specifier
-    {
-        NSLog(@"%@", [specifier.specifierDict objectForKey:@"tellafriend"]);
 
+    - (NSString *)settingsViewController:(id <IASKViewController>)settingsViewController
+             mailComposeBodyForSpecifier:(IASKSpecifier *)specifier {
 
+        NSString *title = [specifier.specifierDict objectForKey:@"Title"];
+        NSMutableString *returnString = [[NSMutableString alloc] init];
 
-        NSMutableString *returnString=[[NSMutableString alloc] init];
-        [returnString appendString:@"Check out this new Healthy Home App I found, it has some great tips.\n\n"];
-        [returnString appendString:@"<a href=\"https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&mt=8\" target=\"itunes_store\">Healthy Home App</a>"];
+        if ([title isEqualToString:@"Send Feedback"]) {
+            [returnString appendString:@"Enter any feedback you would like to pass on to the developers.\n\n"];
+        } else if ([title isEqualToString:@"Tell A Friend"]) {
+            [returnString appendString:@"Check out this new Healthy Home App I found, it has some great tips.\n\n"];
+            [returnString appendString:@"<a href=\"https://itunes.apple.com/us/app/healthy-home/id665863480?ls=1&mt=8\" target=\"itunes_store\">Healthy Home App</a>"];
+        }
 
         return returnString;
 
@@ -299,7 +293,9 @@
 
 #pragma mark - NSUserDefaults methods (from: http://greghaygood.com/2009/03/09/updating-nsuserdefaults-from-settingsbundle)
 
-    + (void)saveToUserDefaults:(NSString *)key value:(NSString *)valueString {
+    + (void)saveToUserDefaults:(NSString *)key
+                         value:
+                                 (NSString *)valueString {
         NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
 
         if (standardUserDefaults) {
@@ -314,7 +310,9 @@
         return [HIAppDelegate retrieveFromUserDefaults:key withPlist:@"Root.plist"];
     }
 
-    + (NSString *)retrieveFromUserDefaults:(NSString *)key withPlist:(NSString *)plist {
+    + (NSString *)retrieveFromUserDefaults:(NSString *)key
+                                 withPlist:
+                                         (NSString *)plist {
         NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
         NSString *val = nil;
 

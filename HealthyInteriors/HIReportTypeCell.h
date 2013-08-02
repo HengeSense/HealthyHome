@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HITableViewCell.h"
 
-@interface HIReportTypeCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-@property (strong, nonatomic) IBOutlet UILabel *countLabel;
+@interface HIReportTypeCell : HITableViewCell
+    @property(strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+    @property(strong, nonatomic) IBOutlet UILabel *titleLabel;
+    @property(strong, nonatomic) IBOutlet UILabel *countLabel;
 
 @end

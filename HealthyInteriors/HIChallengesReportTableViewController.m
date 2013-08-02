@@ -40,8 +40,8 @@
         return [self.checkListAnswers isAnswerToQuestionAChallenge:question];
     }
 
-    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
-        return [checkListAnswers numberOfChallenges:question];
+    - (int)countOfRowsForTemplate {
+        return [self.checkListAnswers numberOfChallengesForCheckList:self.checkList];
     }
 
     - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question {

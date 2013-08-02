@@ -8,6 +8,7 @@
 
 #import "HICheckListsTableViewController.h"
 #import "HICheckListCategoriesViewController.h"
+#import "MSSimpleGauge.h"
 
 @interface HICheckListsTableViewController ()
     @property(nonatomic, strong) UIBarButtonItem *createListButton;
@@ -40,9 +41,9 @@
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
 
-    - (void)viewWillAppear:(BOOL)animated
-    {
+    - (void)viewWillAppear:(BOOL)animated {
         [super viewWillAppear:animated];
+        [self.tableView reloadData];
 
     }
 
@@ -67,7 +68,6 @@
     - (void)showNewCheckList {
 
         HICheckListModel *model = [self.templateDelegate checkListWithIndex:0];
-
         HINewCheckListDetailViewController *detailViewController = [[HINewCheckListDetailViewController alloc] init];
         detailViewController.delegate = self;
         detailViewController.model = model;
@@ -172,8 +172,7 @@
     - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 
         CheckListAnswers *answers = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        NSLog(@"Configuring Cell in Section %d for CheckList Answers: %@", indexPath.section, answers.checkListID);
-
+        HICheckListModel *checkListModel = [self.templateDelegate checkListWithID:answers.checkListID];
         NSString *address = @"Unknown";
         if (![answers.address isEqualToString:@""]) {
             address = answers.address;
@@ -184,6 +183,14 @@
                                                               timeStyle:NSDateFormatterShortStyle];
 
         cell.detailTextLabel.text = dateString;
+
+        int totalQuestions = checkListModel.totalNumberOfQuestions;
+        int assets = [answers numberOfAssetsForCheckList:checkListModel];
+        float status = (100 * assets) / totalQuestions;
+        MSSimpleGauge *gauge = [cell viewWithTag:101];
+
+        gauge.fillArcFillColor = checkListModel.goodAnswerBackColour;
+        [gauge setValue:status animated:YES];
     }
 
 #pragma mark - Table view data source
@@ -216,6 +223,13 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+
+                MSSimpleGauge *gauge = [[MSSimpleGauge alloc] initWithFrame:CGRectMake(220, -12, 50, 50)];
+                gauge.value = 0;
+                gauge.tag = 101;
+                gauge.backgroundColor = [UIColor clearColor];
+                [cell.contentView addSubview:gauge];
+
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
         }

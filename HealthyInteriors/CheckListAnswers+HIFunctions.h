@@ -25,28 +25,34 @@ typedef NS_ENUM(NSInteger, AnswerState) {
 
     - (CheckListQuestionAnswers *)answerToQuestionWithID:(NSString *)questionID;
 
-    - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
+    - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel;
 
-    - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
+    - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel;
 
-    - (UIColor *)textColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
+    - (UIColor *)textColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel;
 
-    - (UIColor *)backColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel;
+    - (UIColor *)backColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel;
 
-    - (BOOL)isAnswerToQuestionAnAsset:(HICheckListQuestionModel *)templateModel;
+    - (BOOL)isAnswerToQuestionAnAsset:(HICheckListQuestionModel *)questionModel;
 
-    - (BOOL)isAnswerToQuestionAChallenge:(HICheckListQuestionModel *)templateModel;
+    - (BOOL)isAnswerToQuestionAChallenge:(HICheckListQuestionModel *)questionModel;
 
-    - (NSUInteger)countOfImagesForQuestion:(HICheckListQuestionModel *)templateModel;
+    - (NSUInteger)countOfImagesForQuestion:(HICheckListQuestionModel *)questionModel;
 
-    - (BOOL)questionHasNotes:(HICheckListQuestionModel *)templateModel;
+    - (BOOL)questionHasNotes:(HICheckListQuestionModel *)questionModel;
 
-    - (BOOL)questionHasImages:(HICheckListQuestionModel *)templateModel;
+    - (BOOL)questionHasImages:(HICheckListQuestionModel *)questionModel;
 
-    - (NSUInteger)numberOfAssets:(HICheckListQuestionModel *)templateModel;
+    - (NSUInteger)numberOfAssetsForCheckList:(HICheckListModel *)checkListModel;
 
-    - (NSUInteger)numberOfChallenges:(HICheckListQuestionModel *)templateModel;
+    - (NSUInteger)numberOfChallengesForCheckList:(HICheckListModel *)checkListModel;
 
-    - (NSUInteger)numberNotCompleted:(HICheckListQuestionModel *)templateModel;
+    - (NSUInteger)numberNotCompletedForCheckList:(HICheckListModel *)checkListModel;
+
+    - (NSUInteger)numberOfAssetsForCategory:(HICheckListCategoryModel *)categoryListModel;
+
+    - (NSUInteger)numberOfChallengesForCategory:(HICheckListCategoryModel *)categoryListModel;
+
+    - (NSUInteger)numberNotCompletedForCategory:(HICheckListCategoryModel *)categoryListModel;
 
 @end

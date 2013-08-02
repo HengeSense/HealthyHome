@@ -22,7 +22,6 @@
         return self;
     }
 
-
     - (void)viewDidLoad {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
@@ -41,8 +40,8 @@
         return [self.checkListAnswers isAnswerToQuestionAnAsset:question];
     }
 
-    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
-        return [checkListAnswers numberOfAssets:question];
+    - (int)countOfRowsForTemplate {
+        return [self.checkListAnswers numberOfAssetsForCheckList:self.checkList];
     }
 
     - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question {

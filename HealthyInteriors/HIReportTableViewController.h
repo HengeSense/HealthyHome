@@ -23,6 +23,6 @@
 
     //- (id)initWithStyle:(UITableViewStyle)style checkList:(HICheckListModel *)checkList checkListAnswers:(CheckListAnswers *)checkListAnswers managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
-    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers;
+    - (int)countOfRowsForTemplate;
 
 @end

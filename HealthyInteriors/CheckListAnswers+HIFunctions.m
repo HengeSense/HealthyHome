@@ -57,44 +57,44 @@
         return nil;
     }
 
-    - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel {
+    - (UIImage *)smallImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel {
         CheckListQuestionAnswers *answer = [self answerToQuestionWithID:questionID];
         if (answer) {
-            return [answer smallImageForAnswerToTemplateQuestion:templateModel];
+            return [answer smallImageForAnswerToTemplateQuestion:questionModel];
         } else {
             return [UIImage imageNamed:@"question_16.png"];
         }
 
     }
 
-    - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel {
+    - (UIImage *)largeImageForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel {
         CheckListQuestionAnswers *answer = [self answerToQuestionWithID:questionID];
         if (answer) {
-            return [[self answerToQuestionWithID:questionID] largeImageForAnswerToTemplateQuestion:templateModel];
+            return [[self answerToQuestionWithID:questionID] largeImageForAnswerToTemplateQuestion:questionModel];
         } else {
             return [UIImage imageNamed:@"question_24.png"];
         }
     }
 
-    - (UIColor *)textColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel {
+    - (UIColor *)textColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel {
 
         switch ([self getAnswerStateForQuestion:questionID]) {
 
             case AnswerStateYes:
 
-                if (templateModel.yesIsBad) {
-                    return templateModel.categoryModel.checkList.badAnswerTextColour;
+                if (questionModel.yesIsBad) {
+                    return questionModel.categoryModel.checkList.badAnswerTextColour;
                 } else {
-                    return templateModel.categoryModel.checkList.goodAnswerTextColour;
+                    return questionModel.categoryModel.checkList.goodAnswerTextColour;
                 }
                 break;
 
             case AnswerStateNo:
 
-                if (templateModel.yesIsBad) {
-                    return templateModel.categoryModel.checkList.goodAnswerTextColour;
+                if (questionModel.yesIsBad) {
+                    return questionModel.categoryModel.checkList.goodAnswerTextColour;
                 } else {
-                    return templateModel.categoryModel.checkList.badAnswerTextColour;
+                    return questionModel.categoryModel.checkList.badAnswerTextColour;
                 }
                 break;
 
@@ -108,24 +108,24 @@
         }
     }
 
-    - (UIColor *)backColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)templateModel {
+    - (UIColor *)backColourForAnswerToQuestion:(NSString *)questionID forTemplateQuestion:(HICheckListQuestionModel *)questionModel {
         switch ([self getAnswerStateForQuestion:questionID]) {
 
             case AnswerStateYes:
 
-                if (templateModel.yesIsBad) {
-                    return templateModel.categoryModel.checkList.badAnswerBackColour;
+                if (questionModel.yesIsBad) {
+                    return questionModel.categoryModel.checkList.badAnswerBackColour;
                 } else {
-                    return templateModel.categoryModel.checkList.goodAnswerBackColour;
+                    return questionModel.categoryModel.checkList.goodAnswerBackColour;
                 }
                 break;
 
             case AnswerStateNo:
 
-                if (templateModel.yesIsBad) {
-                    return templateModel.categoryModel.checkList.goodAnswerBackColour;
+                if (questionModel.yesIsBad) {
+                    return questionModel.categoryModel.checkList.goodAnswerBackColour;
                 } else {
-                    return templateModel.categoryModel.checkList.badAnswerBackColour;
+                    return questionModel.categoryModel.checkList.badAnswerBackColour;
                 }
                 break;
 
@@ -170,13 +170,13 @@
         }
     }
 
-    - (BOOL)isAnswerToQuestionAChallenge:(HICheckListQuestionModel *)templateModel {
+    - (BOOL)isAnswerToQuestionAChallenge:(HICheckListQuestionModel *)questionModel {
 
-        switch ([self getAnswerStateForQuestion:templateModel.key]) {
+        switch ([self getAnswerStateForQuestion:questionModel.key]) {
 
             case AnswerStateYes:
 
-                if (templateModel.yesIsBad) {
+                if (questionModel.yesIsBad) {
                     return YES;
                 } else {
                     return NO;
@@ -185,7 +185,7 @@
 
             case AnswerStateNo:
 
-                if (templateModel.yesIsBad) {
+                if (questionModel.yesIsBad) {
                     return NO;
                 } else {
                     return YES;
@@ -203,43 +203,83 @@
 
     }
 
-    - (NSUInteger)countOfImagesForQuestion:(HICheckListQuestionModel *)templateModel {
-        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:templateModel.key];
+    - (NSUInteger)countOfImagesForQuestion:(HICheckListQuestionModel *)questionModel {
+        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:questionModel.key];
         return answer.answerImages.count;
     }
 
-    - (BOOL)questionHasNotes:(HICheckListQuestionModel *)templateModel {
-        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:templateModel.key];
+    - (BOOL)questionHasNotes:(HICheckListQuestionModel *)questionModel {
+        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:questionModel.key];
         return answer.notes && answer.notes.length > 0;
     }
 
-    - (BOOL)questionHasImages:(HICheckListQuestionModel *)templateModel {
-        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:templateModel.key];
+    - (BOOL)questionHasImages:(HICheckListQuestionModel *)questionModel {
+        CheckListQuestionAnswers *answer = [self answerToQuestionWithID:questionModel.key];
         return answer.answerImages.count > 0;
     }
 
-    - (NSUInteger)numberOfAssets:(HICheckListQuestionModel *)templateModel {
+    - (NSUInteger)numberOfAssetsForCheckList:(HICheckListModel *)checkListModel {
         int count = 0;
-        for (CheckListQuestionAnswers *answer in self.checkListQuestions) {
-            if ([self isAnswerToQuestionAnAsset:templateModel]) {
+        int totalQuestions = checkListModel.totalNumberOfQuestions;
+
+        for (int index = 0; index < totalQuestions; index++) {
+            if ([self isAnswerToQuestionAnAsset:[checkListModel questionAtIndex:index]]) {
                 count++;
             }
         }
+        //NSLog(@"Number of Assets: %d", count);
         return (NSUInteger) count;
     }
 
-    - (NSUInteger)numberOfChallenges:(HICheckListQuestionModel *)templateModel {
+    - (NSUInteger)numberOfChallengesForCheckList:(HICheckListModel *)checkListModel {
         int count = 0;
-        for (CheckListQuestionAnswers *answer in self.checkListQuestions) {
-            if ([self isAnswerToQuestionAChallenge:templateModel]) {
+        int totalQuestions = checkListModel.totalNumberOfQuestions;
+
+        for (int index = 0; index < totalQuestions; index++) {
+            if ([self isAnswerToQuestionAChallenge:[checkListModel questionAtIndex:index]]) {
                 count++;
             }
         }
+        //NSLog(@"Number of Challenges: %d", count);
         return (NSUInteger) count;
     }
 
-    - (NSUInteger)numberNotCompleted:(HICheckListQuestionModel *)templateModel {
-        return self.checkListQuestions.count - [self numberOfAssets:templateModel] - [self numberOfChallenges:templateModel];
+    - (NSUInteger)numberNotCompletedForCheckList:(HICheckListModel *)checkListModel {
+        int count = checkListModel.totalNumberOfQuestions - [self numberOfAssetsForCheckList:checkListModel] - [self numberOfChallengesForCheckList:checkListModel];
+        //NSLog(@"Number not answered: %d", count);
+        return count;
+    }
+
+    - (NSUInteger)numberOfAssetsForCategory:(HICheckListCategoryModel *)categoryListModel {
+        int count = 0;
+        int totalQuestions = categoryListModel.questionsCount;
+
+        for (int index = 0; index < totalQuestions; index++) {
+            if ([self isAnswerToQuestionAnAsset:[categoryListModel getQuestionAtIndex:index]]) {
+                count++;
+            }
+        }
+        //NSLog(@"Number of Assets: %d", count);
+        return (NSUInteger) count;
+    }
+
+    - (NSUInteger)numberOfChallengesForCategory:(HICheckListCategoryModel *)categoryListModel {
+        int count = 0;
+        int totalQuestions = categoryListModel.questionsCount;
+
+        for (int index = 0; index < totalQuestions; index++) {
+            if ([self isAnswerToQuestionAChallenge:[categoryListModel getQuestionAtIndex:index]]) {
+                count++;
+            }
+        }
+        //NSLog(@"Number of Challenges: %d", count);
+        return (NSUInteger) count;
+    }
+
+    - (NSUInteger)numberNotCompletedForCategory:(HICheckListCategoryModel *)categoryListModel {
+        int count = categoryListModel.questionsCount - [self numberOfAssetsForCategory:categoryListModel] - [self numberOfChallengesForCategory:categoryListModel];
+        //NSLog(@"Number not answered: %d", count);
+        return count;
     }
 
 @end

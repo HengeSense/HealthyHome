@@ -11,7 +11,7 @@
 #define challengeTextColour [UIColor colorWithRed:0.372 green:0.311 blue:0.254 alpha:1.000]
 #define challengeBackColour [UIColor colorWithRed:0.722 green:0.655 blue:0.592 alpha:1.000]
 #define noneTextColour [UIColor blackColor]
-#define noneBackColour [UIColor whiteColor]
+#define noneBackColour [UIColor colorWithRed:0.866 green:0.866 blue:0.866 alpha:1.000]
 
 @interface HICheckListModel (/*private*/)
     @property(nonatomic, strong) NSMutableArray *categories;
@@ -124,8 +124,8 @@
     }
 
     - (NSArray *)searchQuestionsForText:(NSString *)text {
-        NSMutableArray * results = [[NSMutableArray alloc] init];
-        for (HICheckListQuestionModel * question in self.questions) {
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        for (HICheckListQuestionModel *question in self.questions) {
             if ([[question.text lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound) {
                 [results addObject:question];
             }
@@ -134,8 +134,8 @@
     }
 
     - (NSArray *)searchInfoForText:(NSString *)text {
-        NSMutableArray * results = [[NSMutableArray alloc] init];
-        for (HICheckListQuestionModel * question in self.questions) {
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        for (HICheckListQuestionModel *question in self.questions) {
             if ([[question.information lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound || [[question.infoTitle lowercaseString] rangeOfString:[text lowercaseString]].location != NSNotFound) {
                 [results addObject:question];
             }

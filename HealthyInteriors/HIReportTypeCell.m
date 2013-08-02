@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Mark O'Flynn. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import "HIReportTypeCell.h"
 
 @interface HIReportTypeCell (/* private */)
@@ -20,14 +19,10 @@
         if (self) {
             NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"HIReportTypeCell" owner:self options:nil];
             self = [nibArray objectAtIndex:0];
+
+            self.backgroundView = [[UACellBackgroundView alloc] initWithFrame:CGRectZero];
         }
         return self;
-    }
-
-    - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-        [super setSelected:selected animated:animated];
-
-        // Configure the view for the selected state
     }
 
 @end

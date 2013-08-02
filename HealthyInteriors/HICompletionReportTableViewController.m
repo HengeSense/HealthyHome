@@ -39,11 +39,11 @@
     - (BOOL)isAnswerToQuestionEligibleForDisplay:(HICheckListQuestionModel *)question {
 
         AnswerState answer = [self.checkListAnswers getAnswerStateForQuestion:question.key];
-        return answer == AnswerStateNotAnswered;
+        return answer == AnswerStateNotAnswered || answer == AnswerStateNotApplicable;
     }
 
-    - (int)countOfRowsForTemplate:(HICheckListQuestionModel *)question withAnswers:(CheckListAnswers *)checkListAnswers {
-        return [checkListAnswers numberNotCompleted:question];
+    - (int)countOfRowsForTemplate {
+        return [self.checkListAnswers numberNotCompletedForCheckList:self.checkList];
     }
 
     - (HIQuestionViewDataSource *)parentDataSourceForQuestion:(HICheckListQuestionModel *)question {
