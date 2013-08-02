@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HITableViewCell.h"
 
-@interface HISearchResultsCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@interface HISearchResultsCell : HITableViewCell
+@property(strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property(strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

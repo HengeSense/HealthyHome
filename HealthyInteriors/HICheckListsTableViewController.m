@@ -9,70 +9,71 @@
 #import "HICheckListsTableViewController.h"
 #import "HICheckListCategoriesViewController.h"
 #import "MSSimpleGauge.h"
+#import "UACellBackgroundView.h"
 
 @interface HICheckListsTableViewController ()
-    @property(nonatomic, strong) UIBarButtonItem *createListButton;
+@property(nonatomic, strong) UIBarButtonItem *createListButton;
 
-    - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
-    - (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers;
+- (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers;
 @end
 
 @implementation HICheckListsTableViewController
 
-    - (id)initWithStyle:(UITableViewStyle)style {
-        self = [super initWithStyle:style];
-        if (self) {
-            // Custom initialization
-        }
-        return self;
+- (id)initWithStyle:(UITableViewStyle)style {
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
     }
+    return self;
+}
 
-    - (void)viewDidLoad {
-        [super viewDidLoad];
-        self.navigationItem.title = @"My Checklists";
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title = @"My Checklists";
 
-        // Uncomment the following line to preserve selection between presentations.
-        // self.clearsSelectionOnViewWillAppear = NO;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
 
-        self.createListButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showNewCheckList)];
+    self.createListButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showNewCheckList)];
 
-        self.navigationItem.rightBarButtonItem = self.createListButton;
-        self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    }
+    self.navigationItem.rightBarButtonItem = self.createListButton;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+}
 
-    - (void)viewWillAppear:(BOOL)animated {
-        [super viewWillAppear:animated];
-        [self.tableView reloadData];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 
-    }
+}
 
-    - (void)viewDidAppear:(BOOL)animated {
-        [super viewDidAppear:animated];
-        int sections = [[self.fetchedResultsController sections] count];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    int sections = [[self.fetchedResultsController sections] count];
 /*
         if (sections == 0) {
             [self showPopTipView];
         }
 */
 
-    }
+}
 
-    - (void)didReceiveMemoryWarning {
-        [super didReceiveMemoryWarning];
-        // Dispose of any resources that can be recreated.
-    }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 #pragma mark - New Checklist
 
-    - (void)showNewCheckList {
+- (void)showNewCheckList {
 
-        HICheckListModel *model = [self.templateDelegate checkListWithIndex:0];
-        HINewCheckListDetailViewController *detailViewController = [[HINewCheckListDetailViewController alloc] init];
-        detailViewController.delegate = self;
-        detailViewController.model = model;
-        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:detailViewController];
-        [self presentViewController:nc animated:YES completion:nil];
+    HICheckListModel *model = [self.templateDelegate checkListWithIndex:0];
+    HINewCheckListDetailViewController *detailViewController = [[HINewCheckListDetailViewController alloc] init];
+    detailViewController.delegate = self;
+    detailViewController.model = model;
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    [self presentViewController:nc animated:YES completion:nil];
 
 /* temporary deletion until in app purchases are enabled
         HINewCheckListViewController *newc = [[HINewCheckListViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -82,184 +83,184 @@
 
         [self presentViewController:nc animated:YES completion:nil];
 */
-    }
+}
 
 #pragma mark - Fetched results controller
 
-    - (NSFetchedResultsController *)fetchedResultsController {
-        if (_fetchedResultsController != nil) {
-            return _fetchedResultsController;
-        }
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
 
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        // Edit the entity name as appropriate.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"CheckListAnswers" inManagedObjectContext:self.managedObjectContext];
-        [fetchRequest setEntity:entity];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CheckListAnswers" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
 
-        // Set the batch size to a suitable number.
-        [fetchRequest setFetchBatchSize:20];
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
 
-        // Edit the sort key as appropriate.
-        NSSortDescriptor *sortListIDDescriptor = [[NSSortDescriptor alloc] initWithKey:@"checkListID" ascending:NO];
-        NSSortDescriptor *sortDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
-        NSArray *sortDescriptors = [NSArray arrayWithObjects:sortListIDDescriptor, sortDateDescriptor, nil];
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortListIDDescriptor = [[NSSortDescriptor alloc] initWithKey:@"checkListID" ascending:NO];
+    NSSortDescriptor *sortDateDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortListIDDescriptor, sortDateDescriptor, nil];
 
-        [fetchRequest setSortDescriptors:sortDescriptors];
+    [fetchRequest setSortDescriptors:sortDescriptors];
 
-        // Edit the section name key path and cache name if appropriate.
-        // nil for section name key path means "no sections".
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"checkListID" cacheName:@"Master"];
-        aFetchedResultsController.delegate = self;
-        self.fetchedResultsController = aFetchedResultsController;
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"checkListID" cacheName:@"Master"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+    return _fetchedResultsController;
+}
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    UITableView *tableView = self.tableView;
+
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    CheckListAnswers *answers = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    HICheckListModel *checkListModel = [self.templateDelegate checkListWithID:answers.checkListID];
+    NSString *address = @"Unknown";
+    if (![answers.address isEqualToString:@""]) {
+        address = answers.address;
+    }
+    cell.textLabel.text = address;
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:answers.creationDate
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterShortStyle];
+
+    cell.detailTextLabel.text = dateString;
+
+    int totalQuestions = checkListModel.totalNumberOfQuestions;
+    int assets = [answers numberOfAssetsForCheckList:checkListModel];
+    float status = (100 * assets) / totalQuestions;
+    MSSimpleGauge *gauge = [cell viewWithTag:101];
+
+    gauge.fillArcFillColor = checkListModel.goodAnswerBackColour;
+    [gauge setValue:status animated:YES];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    int count = [[self.fetchedResultsController sections] count];
+    NSLog(@"Number of sections:%d", count);
+    return count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    int numberOfItems = [sectionInfo numberOfObjects];
+    return numberOfItems;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ([[self.fetchedResultsController sections] count] > section) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+        HICheckListModel *template = [self.templateDelegate checkListWithID:[sectionInfo name]];
+        return template.name;
+    }
+
+    return @"";
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+
+        MSSimpleGauge *gauge = [[MSSimpleGauge alloc] initWithFrame:CGRectMake(220, -12, 50, 50)];
+        gauge.value = 0;
+        gauge.tag = 101;
+        gauge.backgroundColor = [UIColor clearColor];
+        [cell.contentView addSubview:gauge];
+
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        cell.backgroundView = [[UACellBackgroundView alloc] initWithFrame:CGRectNull];
+    }
+
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 
         NSError *error = nil;
-        if (![self.fetchedResultsController performFetch:&error]) {
+        if (![context save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-
-        return _fetchedResultsController;
     }
+}
 
-    - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-        [self.tableView beginUpdates];
-    }
-
-    - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-               atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-        switch (type) {
-            case NSFetchedResultsChangeInsert:
-                [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-
-            case NSFetchedResultsChangeDelete:
-                [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-        }
-    }
-
-    - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-           atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-          newIndexPath:(NSIndexPath *)newIndexPath {
-        UITableView *tableView = self.tableView;
-
-        switch (type) {
-            case NSFetchedResultsChangeInsert:
-                [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-
-            case NSFetchedResultsChangeDelete:
-                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-
-            case NSFetchedResultsChangeUpdate:
-                [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-                break;
-
-            case NSFetchedResultsChangeMove:
-                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-                break;
-        }
-    }
-
-    - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-        [self.tableView endUpdates];
-    }
-
-    - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-
-        CheckListAnswers *answers = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        HICheckListModel *checkListModel = [self.templateDelegate checkListWithID:answers.checkListID];
-        NSString *address = @"Unknown";
-        if (![answers.address isEqualToString:@""]) {
-            address = answers.address;
-        }
-        cell.textLabel.text = address;
-        NSString *dateString = [NSDateFormatter localizedStringFromDate:answers.creationDate
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterShortStyle];
-
-        cell.detailTextLabel.text = dateString;
-
-        int totalQuestions = checkListModel.totalNumberOfQuestions;
-        int assets = [answers numberOfAssetsForCheckList:checkListModel];
-        float status = (100 * assets) / totalQuestions;
-        MSSimpleGauge *gauge = [cell viewWithTag:101];
-
-        gauge.fillArcFillColor = checkListModel.goodAnswerBackColour;
-        [gauge setValue:status animated:YES];
-    }
-
-#pragma mark - Table view data source
-
-    - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-        int count = [[self.fetchedResultsController sections] count];
-        NSLog(@"Number of sections:%d", count);
-        return count;
-    }
-
-    - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-        int numberOfItems = [sectionInfo numberOfObjects];
-        return numberOfItems;
-    }
-
-    - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-        if ([[self.fetchedResultsController sections] count] > section) {
-            id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-            HICheckListModel *template = [self.templateDelegate checkListWithID:[sectionInfo name]];
-            return template.name;
-        }
-
-        return @"";
-    }
-
-    - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        static NSString *CellIdentifier = @"Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-
-                MSSimpleGauge *gauge = [[MSSimpleGauge alloc] initWithFrame:CGRectMake(220, -12, 50, 50)];
-                gauge.value = 0;
-                gauge.tag = 101;
-                gauge.backgroundColor = [UIColor clearColor];
-                [cell.contentView addSubview:gauge];
-
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            }
-        }
-
-        [self configureCell:cell atIndexPath:indexPath];
-        return cell;
-    }
-
-    - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-        return YES;
-    }
-
-    - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-        if (editingStyle == UITableViewCellEditingStyleDelete) {
-            NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-            [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-
-            NSError *error = nil;
-            if (![context save:&error]) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                abort();
-            }
-        }
-    }
-
-    - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-        return NO;
-    }
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
 
 /*
 // Override to support rearranging the table view.
@@ -270,9 +271,16 @@
 
 #pragma mark - Table view delegate
 
-    - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-        CheckListAnswers *answers = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [self pushDetailView:[self.templateDelegate checkListWithID:answers.checkListID] answers:answers];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    for (UIView *view in cell.contentView.subviews) {
+        view.backgroundColor = [UIColor clearColor];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CheckListAnswers *answers = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    [self pushDetailView:[self.templateDelegate checkListWithID:answers.checkListID] answers:answers];
 
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 //	    if (!self.detailViewController) {
@@ -283,46 +291,46 @@
 //    } else {
 //        self.detailViewController.detailItem = object;
 //    }
+}
+
+- (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel withAddress:(NSString *)address {
+    //[self dismissPopTipView];
+
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    CheckListAnswers *answers = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+
+    answers.creationDate = [NSDate date];
+    answers.checkListID = checkListModel.key;
+    if (address != nil) {
+        answers.address = address;
     }
 
-    - (void)requestCreationOfCheckList:(HICheckListModel *)checkListModel withAddress:(NSString *)address {
-        //[self dismissPopTipView];
+    NSError *error = nil;
+    if (![context save:&error]) {
 
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-        CheckListAnswers *answers = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+        /*
+         Replace this implementation with code to handle the error appropriately.
 
-        answers.creationDate = [NSDate date];
-        answers.checkListID = checkListModel.key;
-        if (address != nil) {
-            answers.address = address;
-        }
+         abort() causes the application to generate a crash log and terminate.
+         You should not use this function in a shipping application, although it may be useful during development.
+         If it is not possible to recover from the error,
+         display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
 
-        NSError *error = nil;
-        if (![context save:&error]) {
-
-            /*
-             Replace this implementation with code to handle the error appropriately.
-
-             abort() causes the application to generate a crash log and terminate.
-             You should not use this function in a shipping application, although it may be useful during development.
-             If it is not possible to recover from the error,
-             display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
-
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-        [self pushDetailView:checkListModel answers:answers];
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
     }
+    [self pushDetailView:checkListModel answers:answers];
+}
 
-    - (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers {
-        HICheckListCategoriesViewController *vc = [[HICheckListCategoriesViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        vc.managedObjectContext = self.managedObjectContext;
-        vc.checkListModel = checkListModel;
-        vc.checkListAnswers = answers;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+- (void)pushDetailView:(HICheckListModel *)checkListModel answers:(CheckListAnswers *)answers {
+    HICheckListCategoriesViewController *vc = [[HICheckListCategoriesViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    vc.managedObjectContext = self.managedObjectContext;
+    vc.checkListModel = checkListModel;
+    vc.checkListAnswers = answers;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 /*
     - (void)showPopTipView {
@@ -349,12 +357,12 @@
     }
 */
 
-    - (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address {
-        HICheckListModel *model = ((HINewCheckListDetailViewController *) viewController).model;
-        [self dismissViewControllerAnimated:YES completion:^(void) {
-            [self requestCreationOfCheckList:model withAddress:(NSString *) address];
-        }];
+- (void)viewController:(UIViewController *)viewController didDismissOKWithAddress:(NSString *)address {
+    HICheckListModel *model = ((HINewCheckListDetailViewController *) viewController).model;
+    [self dismissViewControllerAnimated:YES completion:^(void) {
+        [self requestCreationOfCheckList:model withAddress:(NSString *) address];
+    }];
 
-    }
+}
 
 @end
