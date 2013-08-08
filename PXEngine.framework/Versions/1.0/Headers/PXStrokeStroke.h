@@ -21,10 +21,11 @@
  *  however, before the stroke is rendered, the strokeToApply will be applied to the generated CGPath, thus creating a
  *  stroke of a stroke
  */
-    @property(nonatomic, strong) PXStroke *strokeEffect;
+@property (nonatomic, strong) PXStroke *strokeEffect;
+
 /**
  *  The stroke to apply once the stroke effect CGPath has been generated.
  */
-    @property(nonatomic, strong) id <PXStrokeRenderer> strokeToApply;
+@property (nonatomic, strong) id<PXStrokeRenderer> strokeToApply;
 
 @end

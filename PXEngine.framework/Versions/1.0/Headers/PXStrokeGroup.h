@@ -21,6 +21,6 @@
  *
  *  @param stroke The stroke to add to this group
  */
-    - (void)addStroke:(id <PXStrokeRenderer>)stroke;
+- (void)addStroke:(id<PXStrokeRenderer>)stroke;
 
 @end

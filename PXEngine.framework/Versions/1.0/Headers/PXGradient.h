@@ -17,28 +17,31 @@
 /**
  *  An array of offsets, from zero to one inclusive, one for each color
  */
-    @property(nonatomic) NSMutableArray *offsets;
+@property (nonatomic) NSMutableArray *offsets;
+
 /**
  *  An array of colors, one for each color in the gradient. It is expected that each color will have a corresponding
  *  offset; however, if the two arrays differ in size, then the colors will be evenly distributed between zero and one,
  *  inclusive.
  */
-    @property(nonatomic) NSMutableArray *colors;
+@property (nonatomic) NSMutableArray *colors;
+
 /**
  *  The transform to apply before rendering this gradient
  */
-    @property(nonatomic) CGAffineTransform transform;
+@property (nonatomic) CGAffineTransform transform;
+
 /**
  *  The CGGRadient representing this gradient.
  */
-    @property(readonly) CGGradientRef gradient;
+@property (readonly) CGGradientRef gradient;
 
 /**
  *  Add a color to this gradients list of colors
  *
  *  @param color The color to add
  */
-    - (void)addColor:(UIColor *)color;
+- (void)addColor:(UIColor *)color;
 
 /**
  *  Add a color at the given offset
@@ -46,6 +49,6 @@
  *  @param color The color to add
  *  @param offset The offset to add
  */
-    - (void)addColor:(UIColor *)color withOffset:(CGFloat)offset;
+- (void)addColor:(UIColor *)color withOffset:(CGFloat)offset;
 
 @end

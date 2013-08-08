@@ -17,7 +17,7 @@
  *  A PXShape must implement the PXRenderable protocol and the PXPaintable protocol. This class can be used to cache the
  *  geometry of the shape it describes.
  */
-@interface PXShape : NSObject <PXRenderable, PXPaintable>
+@interface PXShape : NSObject <PXRenderable,PXPaintable>
 
 /**
  *  A read-only property of the path data associated with this shape instance.
@@ -25,20 +25,21 @@
  *  Note that when this property is accessed, the buildPath method may be called to populate the path cache for the
  *  instance. This property may return nil, which indicates that the instance was unable to create a path.
  */
-    @property(readonly, nonatomic) CGPathRef path;
+@property (readonly, nonatomic) CGPathRef path;
+
 /**
  *  A read-only property pointing to the PXScene that owns this instance.
  *
  *  This property can be thought of as being analogous to the W3C DOM Node#getDocument method.
  */
-    @property(readonly, nonatomic) PXScene *owningScene;
+@property (readonly, nonatomic) PXScene *owningScene;
 
 /**
  *  Build a CGPathRef that contains the geometry of this instance's shape.
  *
  *  Typically, this method would not be called in isolation. It is more of a helper method for the path property.
  */
-    - (CGPathRef)newPath;
+- (CGPathRef)newPath;
 
 /**
  *  Clear the path cache.
@@ -47,7 +48,7 @@
  *  but this is more likely to be used when some attribute of the shape has changed which affects its geometry. At which
  *  point, the cache is invalidated and will be rebuilt the next time the path property is accessed.
  */
-    - (void)clearPath;
+- (void)clearPath;
 
 /**
  *  Render any children associated with this shape.
@@ -57,7 +58,7 @@
  *
  *  @param context The context into which children of this shape should be rendered.
  */
-    - (void)renderChildren:(CGContextRef)context;
+- (void)renderChildren:(CGContextRef)context;
 
 /**
  *  Indicate that this shape needs to be redrawn.
@@ -67,6 +68,6 @@
  *  be redrawn, but it will not force the shape's geometry to be recalculated. If you need to clear the cache and
  *  refresh, call clearPath.
  */
-    - (void)setNeedsDisplay;
+- (void)setNeedsDisplay;
 
 @end

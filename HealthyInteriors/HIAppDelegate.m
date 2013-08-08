@@ -115,12 +115,12 @@
             currentTheme = @"default";
         }
 
-        [PXEngine styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:currentTheme ofType:@"css"]
-                              withOrigin:PXStylesheetOriginApplication];
+        //[PXEngine styleSheetFromFilePath:[[NSBundle mainBundle] pathForResource:currentTheme ofType:@"css"]
+        //                      withOrigin:PXStylesheetOriginApplication];
 
-        [PXEngine applyStylesheets];
-        [PXEngine currentApplicationStylesheet].monitorChanges = YES;
-        NSLog(@"%@", [PXEngine currentApplicationStylesheet].filePath);
+        //[PXEngine applyStylesheets];
+        //[PXEngine currentApplicationStylesheet].monitorChanges = YES;
+        //NSLog(@"%@", [PXEngine currentApplicationStylesheet].filePath);
     }
 
     - (void)settingDidChange:(NSNotification *)notification {

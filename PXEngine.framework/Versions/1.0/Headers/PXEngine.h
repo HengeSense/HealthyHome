@@ -25,41 +25,40 @@
 /**
  * The build date of this version of the Pixate Engine
  */
-    + (NSString *)version;
++(NSString *)version;
 
 /**
  * The build date of this version of the Pixate Engine
  */
-    + (NSDate *)buildDate;
++(NSDate *)buildDate;
 
 /**
  * The email address used for licensing
  */
-    + (NSString *)licenseEmail;
++(NSString *)licenseEmail;
 
 /**
  * The user name used for licensing
  */
-    + (NSString *)licenseKey;
++(NSString *)licenseKey;
 
 /**
  * Are we in Appcelerator Titanium mode
  */
-    + (BOOL)titaniumMode;
++(BOOL)titaniumMode;
 
 /**
  *  A property used to configure options in the PXEngine
  */
-    + (PXEngineConfiguration *)configuration;
++(PXEngineConfiguration *)configuration;
 
 /**
  * This property, when set to YES, automatically refreshes
  * styling when the orientation of your device changes. This is
  * set to NO by default.
  */
-    + (BOOL)refreshStylesWithOrientationChange;
-
-    + (void)setRefreshStylesWithOrientationChange:(BOOL)value;
++(BOOL)refreshStylesWithOrientationChange;
++(void)setRefreshStylesWithOrientationChange:(BOOL)value;
 
 /**
  *  Set the license key and license serial number into the Pixate
@@ -68,7 +67,7 @@
  *  @param licenseKey The serial number of your license
  *  @param licenseEmail The user of the license, usually an email address
  */
-    + (void)licenseKey:(NSString *)licenseKey forUser:(NSString *)licenseEmail;
++ (void) licenseKey:(NSString *)licenseKey forUser:(NSString *)licenseEmail;
 
 /**
  *  Return a collection of all styleables that match the specified selector. Note that the selector runs against views
@@ -77,14 +76,14 @@
  *  @param styleable The root of the tree to search
  *  @param source The selector to use for matching
  */
-    + (NSArray *)selectFromStyleable:(id <PXStyleable>)styleable usingSelector:(NSString *)source;
++ (NSArray *)selectFromStyleable:(id<PXStyleable>)styleable usingSelector:(NSString *)source;
 
 /**
  *  Return a string representation of all active rule sets matching the specified styleable
  *
  *  @param styleable The styleable to match
  */
-    + (NSString *)matchingRuleSetsForStyleable:(id <PXStyleable>)styleable;
++ (NSString *)matchingRuleSetsForStyleable:(id<PXStyleable>)styleable;
 
 /**
  *  Return a string representation of all active declarations that apply to the specified styleable. Note that the list
@@ -92,7 +91,7 @@
  *
  *  @param styleable The styleable to match
  */
-    + (NSString *)matchingDeclarationsForStyleable:(id <PXStyleable>)styleable;
++ (NSString *)matchingDeclarationsForStyleable:(id<PXStyleable>)styleable;
 
 /**
  *  Allocate and initialize a new stylesheet using the specified source and stylesheet origin
@@ -100,7 +99,7 @@
  *  @param source The CSS source for this stylesheet
  *  @param origin The specificity origin for this stylesheet
  */
-    + (id)styleSheetFromSource:(NSString *)source withOrigin:(PXStylesheetOrigin)origin;
++ (id)styleSheetFromSource:(NSString *)source withOrigin:(PXStylesheetOrigin)origin;
 
 /**
  *  Allocate and initialize a new styleheet for the specified path and stylesheet origin
@@ -108,40 +107,40 @@
  *  @param filePath The string path to the stylesheet file
  *  @param origin The specificity origin for this stylesheet
  */
-    + (id)styleSheetFromFilePath:(NSString *)filePath withOrigin:(PXStylesheetOrigin)origin;
++ (id)styleSheetFromFilePath:(NSString *)filePath withOrigin:(PXStylesheetOrigin)origin;
 
 /**
  *  A class-level getter returning the current application-level stylesheet. This value may be nil
  */
-    + (PXStylesheet *)currentApplicationStylesheet;
++ (PXStylesheet *)currentApplicationStylesheet;
 
 /**
  *  A class-level getter returning the current user-level stylesheet. This value may be nil
  */
-    + (PXStylesheet *)currentUserStylesheet;
++ (PXStylesheet *)currentUserStylesheet;
 
 /**
  *  A class-level getter returning the current view-level stylesheet. This value may be nil
  */
-    + (PXStylesheet *)currentViewStylesheet;
++ (PXStylesheet *)currentViewStylesheet;
 
 /**
  *  Apply all registered stylesheet (i.e. Application, User, and/or View)
  */
-    + (void)applyStylesheets;
++ (void)applyStylesheets;
 
 /**
  *  Update styles for this styleable and all of its descendant styleables
  *
  *  @param styleable The styleable to update
  */
-    + (void)updateStyles:(id <PXStyleable>)styleable;
++ (void)updateStyles:(id<PXStyleable>)styleable;
 
 /**
  *  Update styles for this styleable only
  *
  *  @param styleable The styleable to update
  */
-    + (void)updateStylesNonRecursively:(id <PXStyleable>)styleable;
++ (void)updateStylesNonRecursively:(id<PXStyleable>)styleable;
 
 @end

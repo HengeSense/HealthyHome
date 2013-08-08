@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (PXCSSEncoding)
-    - (NSString *)toCSS;
+-(NSString *)toCSS;
 @end

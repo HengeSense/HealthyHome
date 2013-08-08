@@ -25,6 +25,6 @@
 @interface UIBarButtonItem (PXStyling) <PXVirtualControl>
 
 // make styleParent writeable here
-    @property(nonatomic, readwrite, copy) id pxStyleParent;
+@property (nonatomic, readwrite, copy) id pxStyleParent;
 
 @end

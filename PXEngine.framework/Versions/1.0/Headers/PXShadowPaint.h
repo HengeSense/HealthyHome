@@ -20,7 +20,7 @@
  *  @param path A path used to generate a shadow
  *  @param context The context into which to render the shadow
  */
-    - (void)applyOutsetToPath:(CGPathRef)path withContext:(CGContextRef)context;
+- (void)applyOutsetToPath:(CGPathRef)path withContext:(CGContextRef)context;
 
 /**
  *  Apply an inner shadow to the specified path
@@ -28,6 +28,6 @@
  *  @param path A path used to generate a shadow
  *  @param context The context into which to render the shadow
  */
-    - (void)applyInsetToPath:(CGPathRef)path withContext:(CGContextRef)context;
+- (void)applyInsetToPath:(CGPathRef)path withContext:(CGContextRef)context;
 
 @end

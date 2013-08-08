@@ -20,17 +20,18 @@
  *  If you do not close this polygon and instead duplicate the first point as the last, you will not get a clean
  *  connection at the start point.
  */
-    @property(nonatomic) BOOL closed;
+@property (nonatomic) BOOL closed;
+
 /**
  *  An array of points describing the shape of this polygon
  */
-    @property(nonatomic, strong) NSArray *points;
+@property (nonatomic, strong) NSArray *points;
 
 /**
  *  Initializes a newly allocated polygon using the specified list of points
  *
  *  @param points The list of points describing the shape of this polygon
  */
-    - (id)initWithPoints:(NSArray *)points;
+- (id)initWithPoints:(NSArray *)points;
 
 @end

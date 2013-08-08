@@ -23,32 +23,36 @@
  *
  *  This renderer is used to paint the outline of a contour
  */
-    @property(nonatomic, strong) id <PXStrokeRenderer> stroke;
+@property (nonatomic, strong) id<PXStrokeRenderer> stroke;
+
 /**
  *  A property returning a PXPaint
  *
  *  This renderer is used to paint the interior of a contour
  */
-    @property(nonatomic, strong) id <PXPaint> fill;
+@property (nonatomic, strong) id<PXPaint> fill;
+
 /**
  *  A property indicating the opacity of a shape.
  *
  *  This value is in the closed interval [0,1] where 0 is transparent and 1 is opaque.
  */
-    @property(nonatomic) CGFloat opacity;
+@property (nonatomic) CGFloat opacity;
+
 /**
  *  A property indicating if this shape is visible or not.
  */
-    @property(nonatomic) BOOL visible;
+@property (nonatomic) BOOL visible;
 
 // NOTE: ideally the type here should be a protocol that returns a CGPathRef
 /**
  *  A property returning a PXShape to be used as a clipping path on this shape
  */
-    @property(nonatomic, strong) PXShape *clippingPath;
+@property (nonatomic, strong) PXShape *clippingPath;
+
 /**
  *  A property returning a PXShadow to be used to case inner and outer shadows
  */
-    @property(nonatomic, strong) id <PXShadowPaint> shadow;
+@property (nonatomic, strong) id<PXShadowPaint> shadow;
 
 @end

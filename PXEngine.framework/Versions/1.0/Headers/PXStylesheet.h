@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const PXStylesheetDidChangeNotification;
+
 /**
  *  A PXStylesheetOrigin enumeration captures the various stylesheet origins (application, user, and view) which are
  *  used when determining cascading and weights of declarations.
  */
-typedef enum {
+typedef enum
+{
     PXStylesheetOriginApplication,
     PXStylesheetOriginUser,
     PXStylesheetOriginView,
@@ -30,18 +32,21 @@ typedef enum {
  *  A PXStylesheetOrigin enumeration value indicating the origin of this stylesheet. Origin values are used in
  *  specificity calculations.
  */
-    @property(readonly, nonatomic) PXStylesheetOrigin origin;
+@property (readonly, nonatomic) PXStylesheetOrigin origin;
+
 /**
  *  A nonmutable array of error strings that were encountered when parsing the source of this stylesheet
  */
-    @property(nonatomic, strong) NSArray *errors;
+@property (nonatomic, strong) NSArray *errors;
+
 /**
  *  The string path to the file containing the source of this stylesheet
  */
-    @property(nonatomic, strong) NSString *filePath;
+@property (nonatomic, strong) NSString *filePath;
+
 /**
  *  A flag to watch the file for changes. If file changes, then a call to sendChangeNotifation is made.
  */
-    @property(nonatomic, assign) BOOL monitorChanges;
+@property (nonatomic, assign) BOOL monitorChanges;
 
 @end

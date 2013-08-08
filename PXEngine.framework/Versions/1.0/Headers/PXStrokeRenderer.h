@@ -21,6 +21,6 @@
  *  @param path The path contour onto which the stroke is to be applied
  *  @param context The context into which this stroke is to be rendered
  */
-    - (void)applyStrokeToPath:(CGPathRef)path withContext:(CGContextRef)context;
+- (void)applyStrokeToPath:(CGPathRef)path withContext:(CGContextRef)context;
 
 @end

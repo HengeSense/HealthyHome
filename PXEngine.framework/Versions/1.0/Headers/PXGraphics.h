@@ -46,7 +46,6 @@
 #import <PXEngine/PXScene.h>
 #import <PXEngine/PXShape.h>
 #import <PXEngine/PXShapeGroup.h>
-
 #ifdef PXTEXT_SUPPORT
 #import <PXEngine/PXText.h>
 #endif

@@ -11,7 +11,8 @@
 /**
  *  An enumeration indicating a dimension type
  */
-typedef enum {
+typedef enum
+{
     kDimensionTypeEms,
     kDimensionTypeExs,
     kDimensionTypePixels,
@@ -41,17 +42,19 @@ typedef enum {
 /**
  *  The scalar value of this dimension
  */
-    @property(readonly, nonatomic) CGFloat number;
+@property (readonly, nonatomic) CGFloat number;
+
 /**
  *  The string value of the dimension. This is used for user-defined types.
  */
-    @property(readonly, nonatomic, strong) NSString *dimension;
+@property (readonly, nonatomic, strong) NSString *dimension;
+
 /**
  *  The dimension type of this dimension as defined in the PXSSDimensionType enumeration. If this value is
  *  kDimensionTypeUserDefined, then dimension will be defined, incidating the string value used when creating this
  *  instance.
  */
-    @property(readonly, nonatomic) PXDimensionType type;
+@property (readonly, nonatomic) PXDimensionType type;
 
 /**
  *  Allocate and initialize a new PXDimension using the given number and dimension
@@ -59,7 +62,7 @@ typedef enum {
  *  @param number The dimension's scalar value
  *  @param dimension The dimension units as a string
  */
-    + (id)dimensionWithNumber:(CGFloat)number withDimension:(NSString *)dimension;
++ (id)dimensionWithNumber:(CGFloat)number withDimension:(NSString *)dimension;
 
 /**
  *  Initialize a new instance
@@ -67,48 +70,48 @@ typedef enum {
  *  @param number The dimension's scalar value
  *  @param dimension The dimension units as a string
  */
-    - (id)initWithNumber:(CGFloat)number withDimension:(NSString *)dimension;
+- (id)initWithNumber:(CGFloat)number withDimension:(NSString *)dimension;
 
 /**
  *  A predicate indicating if this is a length value
  */
-    - (BOOL)isLength;
+- (BOOL)isLength;
 
 /**
  *  A predicate indicating if this is a angle value
  */
-    - (BOOL)isAngle;
+- (BOOL)isAngle;
 
 /**
  *  A predicate indicating if this is a time value
  */
-    - (BOOL)isTime;
+- (BOOL)isTime;
 
 /**
  *  A predicate indicating if this is a frequency value
  */
-    - (BOOL)isFrequency;
+- (BOOL)isFrequency;
 
 /**
  *  A predicate indicating if this is a percentage
  */
-    - (BOOL)isPercentage;
+- (BOOL)isPercentage;
 
 /**
  *  A predicate indicating if this is a user-defined value
  */
-    - (BOOL)isUserDefined;
+- (BOOL)isUserDefined;
 
 /**
  *  Return a new PXDimension, converting this instance's value to points. If this instance is not a length, then a zero
  *  value will be returned.
  */
-    - (PXDimension *)points;
+- (PXDimension *)points;
 
 /**
  *  Return a new PXDimension, converting this instance's value to degrees. If this instance is not an angle, then a zero
  *  value will be returned.
  */
-    - (PXDimension *)degrees;
+- (PXDimension *)degrees;
 
 @end

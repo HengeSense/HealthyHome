@@ -16,6 +16,6 @@
 /**
  *  The bounds of this rectangle
  */
-    @property(nonatomic) CGRect bounds;
+@property (nonatomic) CGRect bounds;
 
 @end

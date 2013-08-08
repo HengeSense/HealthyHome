@@ -25,11 +25,11 @@
     - (void)viewDidLoad {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
-        self.view.styleClass = @"view";
+        //self.view.styleClass = @"view";
     }
 
     - (void)viewDidAppear:(BOOL)animated {
-        [PXEngine applyStylesheets];
+        //[PXEngine applyStylesheets];
     }
 
     - (void)didReceiveMemoryWarning {

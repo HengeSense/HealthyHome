@@ -27,7 +27,7 @@
     }
 
     - (void)viewDidAppear:(BOOL)animated {
-        [PXEngine applyStylesheets];
+        //[PXEngine applyStylesheets];
     }
 
     - (void)didReceiveMemoryWarning {

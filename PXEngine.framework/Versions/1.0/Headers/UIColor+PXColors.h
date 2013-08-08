@@ -19,7 +19,7 @@
  *
  *  @param name The color name
  */
-    + (UIColor *)colorFromName:(NSString *)name;
++ (UIColor *)colorFromName:(NSString *)name;
 
 /**
  *  Return a UIColor using the HSL color space
@@ -28,7 +28,7 @@
  *  @param saturation The color's saturation
  *  @param lightness The color's lightness
  */
-    + (UIColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness;
++ (UIColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness;
 
 /**
  *  Return a UIColor using the HSL color space and an alpha value
@@ -38,14 +38,14 @@
  *  @param lightness The color's lightness
  *  @param alpha The color's alpha value
  */
-    + (UIColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha;
++ (UIColor *)colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation lightness:(CGFloat)lightness alpha:(CGFloat)alpha;
 
 /**
  *  Return a UIColor from a 3- or 6-digit hex string
  *
  *  @param hexString The hex color string value
  */
-    + (UIColor *)colorWithHexString:(NSString *)hexString;
++ (UIColor *)colorWithHexString:(NSString *)hexString;
 
 /**
  *  Return a UIColor from a 3- or 6-digit hex string and an alpha value
@@ -53,28 +53,28 @@
  *  @param hexString The hex color string value
  *  @param alpha The color's alpha value
  */
-    + (UIColor *)colorWithHexString:(NSString *)hexString withAlpha:(CGFloat)alpha;
++ (UIColor *)colorWithHexString:(NSString *)hexString withAlpha:(CGFloat)alpha;
 
 /**
  *  Return a UIColor from a RGBA int
  *
  *  @param value The int value
  */
-    + (UIColor *)colorWithRGBAValue:(uint)value;
++ (UIColor *)colorWithRGBAValue:(uint)value;
 
 /**
  *  Return a UIColor from a ARGB int
  *
  *  @param value The int value
  */
-    + (UIColor *)colorWithARGBValue:(uint)value;
++ (UIColor *)colorWithARGBValue:(uint)value;
 
 /**
  *  Return a UIColor from a RGB int
  *
  *  @param value The int value
  */
-    + (UIColor *)colorWithRGBValue:(uint)value;
++ (UIColor *)colorWithRGBValue:(uint)value;
 
 /**
  *  Convert this color to HSLA
@@ -84,6 +84,6 @@
  *  @param lightness A float pointer that will be set by this conversion
  *  @param alpha A float pointer that will be set by this conversion
  */
-    - (BOOL)getHue:(CGFloat *)hue saturation:(CGFloat *)saturation lightness:(CGFloat *)lightness alpha:(CGFloat *)alpha;
+- (BOOL)getHue:(CGFloat *)hue saturation:(CGFloat *)saturation lightness:(CGFloat *)lightness alpha:(CGFloat *)alpha;
 
 @end

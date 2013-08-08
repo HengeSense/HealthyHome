@@ -98,7 +98,6 @@
 		4D3B843B1771F5DB0053F546 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B843A1771F5DA0053F546 /* Default@2x.png */; };
 		4D3B843D1771F5E70053F546 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B843C1771F5E60053F546 /* Default.png */; };
 		4D3B843F1771F7490053F546 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3B843E1771F7490053F546 /* Default-568h@2x.png */; };
-		4D5A23FE1760BDA100624A8E /* PXEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A23FD1760BDA100624A8E /* PXEngine.framework */; };
 		4D5A24021760CD8800624A8E /* notepad_write_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5A24011760CD8800624A8E /* notepad_write_16.png */; };
 		4D5A24041760CE2800624A8E /* camera_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5A24031760CE2800624A8E /* camera_16.png */; };
 		4D5A24081760D05B00624A8E /* HIQuestionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D5A24061760D05B00624A8E /* HIQuestionCell.h */; };
@@ -141,10 +140,6 @@
 		4DA3A98C16E8B9AE00D8CE62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A98A16E8B9AE00D8CE62 /* InfoPlist.strings */; };
 		4DA3A98E16E8B9AE00D8CE62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A98D16E8B9AE00D8CE62 /* main.m */; };
 		4DA3A99216E8B9AE00D8CE62 /* HIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A99116E8B9AE00D8CE62 /* HIAppDelegate.m */; };
-		4DA3A9A216E8B9AE00D8CE62 /* HISecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9A116E8B9AE00D8CE62 /* HISecondViewController.m */; };
-		4DA3A9AC16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */; };
-		4DA3A9AF16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9AD16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib */; };
-		4DA3A9B216E8B9AF00D8CE62 /* HISecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */; };
 		4DA3A9BD16E8BF3200D8CE62 /* HICheckListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9BC16E8BF3200D8CE62 /* HICheckListsTableViewController.m */; };
 		4DA3A9C116E8C2E400D8CE62 /* HINewCheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3A9C016E8C2E400D8CE62 /* HINewCheckListViewController.m */; };
 		4DADAEE816FC67DF00BAA63F /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DADAEE716FC67DF00BAA63F /* library@2x.png */; };
@@ -334,7 +329,6 @@
 		4D3B843A1771F5DA0053F546 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4D3B843C1771F5E60053F546 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4D3B843E1771F7490053F546 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4D5A23FD1760BDA100624A8E /* PXEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PXEngine.framework; sourceTree = "<group>"; };
 		4D5A24011760CD8800624A8E /* notepad_write_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notepad_write_16.png; sourceTree = "<group>"; };
 		4D5A24031760CE2800624A8E /* camera_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_16.png; sourceTree = "<group>"; };
 		4D5A24061760D05B00624A8E /* HIQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIQuestionCell.h; sourceTree = "<group>"; };
@@ -394,11 +388,6 @@
 		4DA3A98F16E8B9AE00D8CE62 /* Healthy Home-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Healthy Home-Prefix.pch"; sourceTree = "<group>"; };
 		4DA3A99016E8B9AE00D8CE62 /* HIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HIAppDelegate.h; sourceTree = "<group>"; };
 		4DA3A99116E8B9AE00D8CE62 /* HIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HIAppDelegate.m; sourceTree = "<group>"; };
-		4DA3A9A016E8B9AE00D8CE62 /* HISecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HISecondViewController.h; sourceTree = "<group>"; };
-		4DA3A9A116E8B9AE00D8CE62 /* HISecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HISecondViewController.m; sourceTree = "<group>"; };
-		4DA3A9AB16E8B9AE00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HIFirstViewController_iPad.xib; sourceTree = "<group>"; };
-		4DA3A9AE16E8B9AE00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISecondViewController_iPhone.xib; sourceTree = "<group>"; };
-		4DA3A9B116E8B9AF00D8CE62 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HISecondViewController_iPad.xib; sourceTree = "<group>"; };
 		4DA3A9BB16E8BF3200D8CE62 /* HICheckListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HICheckListsTableViewController.h; sourceTree = "<group>"; };
 		4DA3A9BC16E8BF3200D8CE62 /* HICheckListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HICheckListsTableViewController.m; sourceTree = "<group>"; };
 		4DA3A9BF16E8C2E400D8CE62 /* HINewCheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HINewCheckListViewController.h; sourceTree = "<group>"; };
@@ -517,7 +506,6 @@
 				4DA3A98416E8B9AE00D8CE62 /* Foundation.framework in Frameworks */,
 				4DA3A98616E8B9AE00D8CE62 /* CoreGraphics.framework in Frameworks */,
 				4DEE71B916EC37E8002ED288 /* CoreData.framework in Frameworks */,
-				4D5A23FE1760BDA100624A8E /* PXEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +883,6 @@
 		4DA3A98016E8B9AE00D8CE62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D5A23FD1760BDA100624A8E /* PXEngine.framework */,
 				4DC481F517524D2700BA8F34 /* MessageUI.framework */,
 				848C812C1717F8DB00850432 /* CoreImage.framework */,
 				4DADAF2017071B6000BAA63F /* QuartzCore.framework */,
@@ -974,8 +961,6 @@
 		4DA3A9B916E8BB0900D8CE62 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */,
-				4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -1175,9 +1160,6 @@
 		4DE370AC174D9C45004C16F8 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4DA3A9A016E8B9AE00D8CE62 /* HISecondViewController.h */,
-				4DA3A9A116E8B9AE00D8CE62 /* HISecondViewController.m */,
-				4DA3A9AD16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1379,9 +1361,6 @@
 			files = (
 				4DADAF161705C5DB00BAA63F /* HiNewCheckListCellView.xib in Resources */,
 				4DA3A98C16E8B9AE00D8CE62 /* InfoPlist.strings in Resources */,
-				4DA3A9AC16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib in Resources */,
-				4DA3A9AF16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib in Resources */,
-				4DA3A9B216E8B9AF00D8CE62 /* HISecondViewController_iPad.xib in Resources */,
 				4D8B054A16E98A4D007328B1 /* HINewCheckListDetailViewController.xib in Resources */,
 				4D8B057D16EAF653007328B1 /* HICheckListQuestionDetailViewController.xib in Resources */,
 				4DEE71B516EC311A002ED288 /* question_24.png in Resources */,
@@ -1468,7 +1447,6 @@
 			files = (
 				4DA3A98E16E8B9AE00D8CE62 /* main.m in Sources */,
 				4DA3A99216E8B9AE00D8CE62 /* HIAppDelegate.m in Sources */,
-				4DA3A9A216E8B9AE00D8CE62 /* HISecondViewController.m in Sources */,
 				4DA3A9BD16E8BF3200D8CE62 /* HICheckListsTableViewController.m in Sources */,
 				4DA3A9C116E8C2E400D8CE62 /* HINewCheckListViewController.m in Sources */,
 				4D8B054916E98A4D007328B1 /* HINewCheckListDetailViewController.m in Sources */,
@@ -1563,30 +1541,6 @@
 				4DA3A98B16E8B9AE00D8CE62 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		4DA3A9AA16E8B9AE00D8CE62 /* HIFirstViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3A9AB16E8B9AE00D8CE62 /* en */,
-			);
-			name = HIFirstViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		4DA3A9AD16E8B9AE00D8CE62 /* HISecondViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3A9AE16E8B9AE00D8CE62 /* en */,
-			);
-			name = HISecondViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		4DA3A9B016E8B9AF00D8CE62 /* HISecondViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4DA3A9B116E8B9AF00D8CE62 /* en */,
-			);
-			name = HISecondViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

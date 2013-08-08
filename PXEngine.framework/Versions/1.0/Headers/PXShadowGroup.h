@@ -17,17 +17,18 @@
 /**
  *  Returns the number of PXShadowPaints in this group
  */
-    @property(nonatomic, readonly) NSUInteger count;
+@property (nonatomic, readonly) NSUInteger count;
+
 /**
  *  The list of PXShadowPaints associated with this shadow group
  */
-    @property(nonatomic, readonly) NSArray *shadows;
+@property (nonatomic, readonly) NSArray *shadows;
 
 /**
  *  Add a PXShapowPaint to this shadow group
  *
  *  @param shadow The PXShadowPaint to add
  */
-    - (void)addShadowPaint:(id <PXShadowPaint>)shadow;
+- (void)addShadowPaint:(id<PXShadowPaint>)shadow;
 
 @end

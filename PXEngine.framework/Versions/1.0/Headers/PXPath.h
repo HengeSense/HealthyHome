@@ -23,12 +23,12 @@
  *  @param data A string of path data
  *  @returns A newly allocated PXPath instance
  */
-    + (PXPath *)createPathFromPathData:(NSString *)data;
++ (PXPath *)createPathFromPathData:(NSString *)data;
 
 /**
  *  Add a close command to the current path
  */
-    - (void)close;
+- (void)close;
 
 /**
  *  Add a lineto command to the current path
@@ -36,7 +36,7 @@
  *  @param x The x-coordinate of the line being added
  *  @param y The y-coordinate of the line being added
  */
-    - (void)lineToX:(CGFloat)x y:(CGFloat)y;
+- (void)lineToX:(CGFloat)x y:(CGFloat) y;
 
 /**
  *  Add a moveto command to the current path
@@ -44,7 +44,7 @@
  *  @param x The x-coordinate of the new position to move to within this path
  *  @param y The y-coordinate of the new position to move to within this path
  */
-    - (void)moveToX:(CGFloat)x y:(CGFloat)y;
+- (void)moveToX:(CGFloat)x y:(CGFloat) y;
 
 /**
  *  Add a curveto command to the current path
@@ -56,7 +56,7 @@
  *  @param x3 The x-coordinate of the third handle of the cubic bezier curve being added
  *  @param y3 The y-coordinate of the third handle of the cubic bezier curve being added
  */
-    - (void)cubicBezierToX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2 x3:(CGFloat)x3 y3:(CGFloat)y3;
+- (void)cubicBezierToX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2 x3:(CGFloat)x3 y3:(CGFloat)y3;
 
 /**
  *  Add a qcurveto command to the current path
@@ -66,6 +66,6 @@
  *  @param x2 The x-coordinate of the second handle of the quadratic bezier curve being added
  *  @param y2 The y-coordinate of the second handle of the quadratic bezier curve being added
  */
-    - (void)quadraticBezierToX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2;
+- (void)quadraticBezierToX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2;
 
 @end

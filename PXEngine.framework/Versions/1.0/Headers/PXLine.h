@@ -16,11 +16,12 @@
 /**
  *  A point indicating the location of the start of this line.
  */
-    @property(nonatomic) CGPoint p1;
+@property (nonatomic) CGPoint p1;
+
 /**
  *  A point indicating the location of the end of this line.
  */
-    @property(nonatomic) CGPoint p2;
+@property (nonatomic) CGPoint p2;
 
 /**
  *  Initializes a newly allocated line using the specified x and y locations
@@ -30,6 +31,6 @@
  *  @param x2 The x coordinate of the end of the line
  *  @param y2 The y coordinate of the end of the line
  */
-    - (id)initX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2;
+- (id)initX1:(CGFloat)x1 y1:(CGFloat)y1 x2:(CGFloat)x2 y2:(CGFloat)y2;
 
 @end

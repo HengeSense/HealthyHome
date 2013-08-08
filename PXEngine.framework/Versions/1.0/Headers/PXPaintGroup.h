@@ -21,6 +21,6 @@
  *
  *  @param paint The paint to add
  */
-    - (void)addPaint:(id <PXPaint>)paint;
+- (void)addPaint:(id<PXPaint>)paint;
 
 @end

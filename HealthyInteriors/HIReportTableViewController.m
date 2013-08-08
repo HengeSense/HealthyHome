@@ -152,11 +152,11 @@
 
     - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
         // Return the number of sections.
-        return self.questions.count;
+        return 1;
     }
 
     - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        return 1;
+        return self.questions.count;
     }
 
     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -168,7 +168,7 @@
         }
 
         //get the category
-        HICheckListQuestionModel *question = [self.questions objectAtIndex:(NSUInteger) indexPath.section];
+        HICheckListQuestionModel *question = [self.questions objectAtIndex:(NSUInteger) indexPath.row];
         [cell setQuestion:question andAnswer:self.checkListAnswers];
         [cell isFavourite:[self infoIsFavouriteForQuestionWIthKey:question.key]];
 
@@ -252,7 +252,7 @@
         detailViewController.managedObjectContext = self.managedObjectContext;
         detailViewController.checkListAnswers = self.checkListAnswers;
         detailViewController.dataSource = self;
-        detailViewController.currentQuestion = indexPath.section;
+        detailViewController.currentQuestion = indexPath.row;
 
         //detailViewController.isReportPage = YES;
 

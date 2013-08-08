@@ -20,6 +20,7 @@ typedef enum {
     PXParseErrorDestination_Logger
 #endif
 } PXParseErrorDestination;
+
 /**
  *  A PXUpdateStylesType enumeration determines if the PXEngine will try to automatically style views.
  */
@@ -27,6 +28,7 @@ typedef enum {
     PXUpdateStylesTypeAuto,
     PXUpdateStylesTypeManual,
 } PXUpdateStylesType;
+
 /**
  *  A PXCacheStylesType enumeration determines if the PXEngine will try to cache styling.
  */
@@ -43,30 +45,34 @@ typedef enum {
 /**
  *  Allow a style id to be associated with this object
  */
-    @property(nonatomic, copy) NSString *styleId;
+@property (nonatomic, copy) NSString *styleId;
+
 /**
  *  Allow a style class to be associated with this object
  */
-    @property(nonatomic, copy) NSString *styleClass;
+@property (nonatomic, copy) NSString *styleClass;
+
 /**
  *  Determine where parse errors will be emitted
  */
-    @property(nonatomic) PXParseErrorDestination parseErrorDestination;
+@property (nonatomic) PXParseErrorDestination parseErrorDestination;
+
 /**
  *  Determine when views should have their style updated
  */
-    @property(nonatomic) PXUpdateStylesType updateStylesType;
+@property (nonatomic) PXUpdateStylesType updateStylesType;
+
 /**
  *  Determine if view styling is cached
  */
-    @property(nonatomic) PXCacheStylesType cacheStylesType;
+@property (nonatomic) PXCacheStylesType cacheStylesType;
 
 /*
  *  Return the property value for the specifified property name
  *
  *  @param name The name of the property
  */
-    - (id)propertyValueForName:(NSString *)name;
+- (id)propertyValueForName:(NSString *)name;
 
 /*
  *  Set the property value for the specified property name
@@ -74,13 +80,13 @@ typedef enum {
  *  @param value The new value
  *  @param name The property name
  */
-    - (void)setPropertyValue:(id)value forName:(NSString *)name;
+- (void)setPropertyValue:(id)value forName:(NSString *)name;
 
 /**
  *  Log the specified message to the target indicated by the loggingType property
  *
  *  @param message The message to emit
  */
-    - (void)sendParseMessage:(NSString *)message;
+- (void)sendParseMessage:(NSString *)message;
 
 @end

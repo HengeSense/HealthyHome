@@ -24,11 +24,11 @@
 
     - (void)viewDidLoad {
         [super viewDidLoad];
-        self.view.styleClass = @"view";
+        //self.view.styleClass = @"view";
     }
 
     - (void)viewDidAppear:(BOOL)animated {
-        [PXEngine applyStylesheets];
+        //[PXEngine applyStylesheets];
     }
 
     - (void)viewWillLayoutSubviews {

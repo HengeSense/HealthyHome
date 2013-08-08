@@ -75,13 +75,13 @@
     thisCell.textLabel.textColor = [self.checkListAnswers textColourForAnswerToQuestion:question.key forTemplateQuestion:question];
     UIColor *backColour = [[self.checkListAnswers backColourForAnswerToQuestion:question.key forTemplateQuestion:question] colorByChangingAlphaTo:0.6];
 
-    if (indexPath.row == 0) {
-        [thisCell setPosition:UACellBackgroundViewPositionTop];
-    } else if (indexPath.row == [self.categoryModel questionsCount] - 1) {
-        [thisCell setPosition:UACellBackgroundViewPositionBottom];
-    } else {
-        [thisCell setPosition:UACellBackgroundViewPositionMiddle];
-    }
+//    if (indexPath.row == 0) {
+//        [thisCell setPosition:UACellBackgroundViewPositionTop];
+//    } else if (indexPath.row == [self.categoryModel questionsCount] - 1) {
+//        [thisCell setPosition:UACellBackgroundViewPositionBottom];
+//    } else {
+//        [thisCell setPosition:UACellBackgroundViewPositionMiddle];
+//    }
 
     thisCell.bottomColor = backColour;
 

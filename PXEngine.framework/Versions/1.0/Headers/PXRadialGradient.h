@@ -18,15 +18,17 @@
 /**
  *  The center point where the first color is to be rendered
  */
-    @property(nonatomic) CGPoint startCenter;
+@property (nonatomic) CGPoint startCenter;
+
 /**
  *  The center point where the last color is to be rendered
  */
-    @property(nonatomic) CGPoint endCenter;
+@property (nonatomic) CGPoint endCenter;
+
 /**
  *  The radius of the final color being rendered. The starting radius is implied to be zero, or some reasonably small
  *  value
  */
-    @property(nonatomic) CGFloat radius;
+@property (nonatomic) CGFloat radius;
 
 @end

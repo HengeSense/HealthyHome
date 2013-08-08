@@ -22,6 +22,7 @@ typedef enum {
     kAlignViewPortXMaxYMid,
     kAlignViewPortXMaxYMax,
 } AlignViewPortType;
+
 typedef enum {
     kCropTypeMeet,
     kCropTypeSlice
@@ -37,34 +38,40 @@ typedef enum {
  *
  *  This value is deprecated
  */
-    @property(nonatomic) CGFloat width;
+@property (nonatomic) CGFloat width;
+
 /**
  *  The height of this shape group.
  *
  *  This value is deprecated
  */
-    @property(nonatomic) CGFloat height;
+@property (nonatomic) CGFloat height;
+
 /**
  *  The viewport of this shape group.
  */
-    @property(nonatomic) CGRect viewport;
+@property (nonatomic) CGRect viewport;
+
 /**
  *  The alignment to use when mapping a shape group's viewport to the screen
  */
-    @property(nonatomic) AlignViewPortType viewportAlignment;
+@property (nonatomic) AlignViewPortType viewportAlignment;
+
 /**
  *  The type of crop to use when applying the shape group's viewport to the screen
  */
-    @property(nonatomic) CropType viewportCrop;
+@property (nonatomic) CropType viewportCrop;
+
 /**
  *  A read-only property indicating how many child shapes this group contains.
  */
-    @property(readonly, nonatomic) NSUInteger shapeCount;
+@property (readonly, nonatomic) NSUInteger shapeCount;
+
 /**
  *  A read-only property of the transform that would need to be applied to this shape group in order for its viewport to
  *  fit within the specified shape group width and height.
  */
-    @property(readonly, nonatomic) CGAffineTransform viewPortTransform;
+@property (readonly, nonatomic) CGAffineTransform viewPortTransform;
 
 /**
  *  Adds a shape to this shape group.
@@ -73,14 +80,14 @@ typedef enum {
  *
  *  @param shape The shape to add
  */
-    - (void)addShape:(id <PXRenderable>)shape;
+- (void)addShape:(id<PXRenderable>)shape;
 
 /**
  *  Removes the specified shape from the shape group
  *
  *  @param shape The shape to remove
  */
-    - (void)removeShape:(id <PXRenderable>)shape;
+- (void)removeShape:(id<PXRenderable>)shape;
 
 /**
  *  Returns the shape at the specified index.
@@ -90,6 +97,6 @@ typedef enum {
  *  @param index The index of the shape to return
  *  @returns A PXRenderable to nil
  */
-    - (id <PXRenderable>)shapeAtIndex:(NSUInteger)index;
+- (id<PXRenderable>)shapeAtIndex:(NSUInteger)index;
 
 @end

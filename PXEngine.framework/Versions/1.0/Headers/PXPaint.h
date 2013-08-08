@@ -16,7 +16,7 @@
 /**
  *  The blend mode to use when applying this fill
  */
-    @property(nonatomic) CGBlendMode blendMode;
+@property (nonatomic) CGBlendMode blendMode;
 
 /**
  *  A method used to apply the implementations fill to the specified CGPath in the given CGContext
@@ -24,6 +24,6 @@
  *  @param path The path to which the fill is to be applied
  *  @param context The context within which the fill is to be rendered
  */
-    - (void)applyFillToPath:(CGPathRef)path withContext:(CGContextRef)context;
+- (void)applyFillToPath:(CGPathRef)path withContext:(CGContextRef)context;
 
 @end

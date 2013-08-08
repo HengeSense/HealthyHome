@@ -10,12 +10,12 @@
 
 @interface PXMargin : NSObject
 
-    @property(nonatomic, readonly) CGFloat top;
-    @property(nonatomic, readonly) CGFloat right;
-    @property(nonatomic, readonly) CGFloat bottom;
-    @property(nonatomic, readonly) CGFloat left;
-    @property(nonatomic, readonly) BOOL hasMargin;
+@property (nonatomic, readonly) CGFloat top;
+@property (nonatomic, readonly) CGFloat right;
+@property (nonatomic, readonly) CGFloat bottom;
+@property (nonatomic, readonly) CGFloat left;
+@property (nonatomic, readonly) BOOL hasMargin;
 
-    - (id)initWithTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left;
+- (id)initWithTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left;
 
 @end

@@ -17,20 +17,20 @@
 /**
  *  The color used when filling a specified contour
  */
-    @property(nonatomic, strong) UIColor *color;
+@property (nonatomic, strong) UIColor *color;
 
 /**
  *  Allocate and initialize a new solid paint with the specified color
  *
  *  @param color The color of this paint
  */
-    + (id)paintWithColor:(UIColor *)color;
++ (id)paintWithColor:(UIColor *)color;
 
 /**
  *  Initialize a new solid paint with the specified color
  *
  *  @param color The color of this paint
  */
-    - (id)initWithColor:(UIColor *)color;
+- (id)initWithColor:(UIColor *)color;
 
 @end

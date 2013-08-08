@@ -14,6 +14,6 @@
 
 @protocol PXVirtualControl <PXStyleable>
 
-    @property(nonatomic, readonly) BOOL isVirtualControl;
+@property (nonatomic, readonly) BOOL isVirtualControl;
 
 @end

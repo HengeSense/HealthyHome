@@ -14,7 +14,8 @@
  *  PXStrokeType is an enumeration indicating the placement of the stroke in relation to the contour it is being applied
  *  to.
  */
-typedef enum {
+typedef enum
+{
     kStrokeTypeCenter,
     kStrokeTypeInner,
     kStrokeTypeOuter
@@ -29,48 +30,55 @@ typedef enum {
 /**
  *  An indication of how this stroke should be applied to its associated contour.
  */
-    @property(nonatomic) PXStrokeType type;
+@property (nonatomic) PXStrokeType type;
+
 /**
  *  The width of this stroke
  */
-    @property(nonatomic) CGFloat width;
+@property (nonatomic) CGFloat width;
+
 /**
  *  The paint to apply when rendering this stroke
  */
-    @property(nonatomic, strong) id <PXPaint> color;
+@property (nonatomic, strong) id<PXPaint> color;
+
 /**
  *  An array indicating a pattern of dashes to be applied during rendering of this stroke
  */
-    @property(nonatomic, strong) NSArray *dashArray;
+@property (nonatomic, strong) NSArray* dashArray;
+
 /**
  *  An offset to be applied before applying the values of the dashArayy
  */
-    @property(nonatomic) CGFloat dashOffset;
+@property (nonatomic) CGFloat dashOffset;
+
 /**
  *  A value indicating how end-points of a stroke should be closed
  */
-    @property(nonatomic) CGLineCap lineCap;
+@property (nonatomic) CGLineCap lineCap;
+
 /**
  *  A value indicating how joined line segments should be joined
  */
-    @property(nonatomic) CGLineJoin lineJoin;
+@property (nonatomic) CGLineJoin lineJoin;
+
 /**
  *  A value indicating at which point an acute line join should be mitered
  */
-    @property(nonatomic) CGFloat miterLimit;
+@property (nonatomic) CGFloat miterLimit;
 
 /**
  *  Initialize a new allocated stroke with the specified stroke width
  *
  *  @param width The stroke width
  */
-    - (id)initWithStrokeWidth:(CGFloat)width;
+- (id)initWithStrokeWidth:(CGFloat)width;
 
 /**
  *  Return ths CGPath representation of the stroke as it will be rendered in the CGContext
  *
  *  @param path The path to stroke
  */
-    - (CGPathRef)newStrokedPath:(CGPathRef)path;
+- (CGPathRef)newStrokedPath:(CGPathRef)path;
 
 @end

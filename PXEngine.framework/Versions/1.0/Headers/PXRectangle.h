@@ -19,34 +19,39 @@
 /**
  *  The size (width and height) of this rectangle
  */
-    @property(nonatomic) CGSize size;
+@property (nonatomic) CGSize size;
+
 /**
  *  The x-coordinate of the top-left corner of this rectangle
  */
-    @property(nonatomic) CGFloat x;
+@property (nonatomic) CGFloat x;
+
 /**
  *  The y-coordinate of the top-left corner of this rectangle
  */
-    @property(nonatomic) CGFloat y;
+@property (nonatomic) CGFloat y;
+
 /**
  *  The width of this rectangle
  */
-    @property(nonatomic) CGFloat width;
+@property (nonatomic) CGFloat width;
+
 /**
  *  The height of this rectangle
  */
-    @property(nonatomic) CGFloat height;
+@property (nonatomic) CGFloat height;
+
 /**
  *  The x-radius of the rounded corners of this rectangle
  */
-    @property(nonatomic) PXCornerRadius *cornerRadius;
+@property (nonatomic) PXCornerRadius *cornerRadius;
 
 /**
  *  Initializes a newly allocated rectangle using the specified bounds
  *
  *  @param bounds The bounds point of the rectangle
  */
-    - (id)initWithRect:(CGRect)bounds;
+- (id)initWithRect:(CGRect)bounds;
 
 /**
  *  Initializes a newly allocated rectangle using the specified bounds and rounds the corners with the specified radius
